@@ -12,7 +12,8 @@ accounts:
     trigger:
       type: commercialization_program
       description: commercial airborne disease surveillance and spray optimization claims require buyer-inspectable evidence
-      date: 2026-09-06
+      event_date: 2026-09-06
+      observed_at: 2026-09-06
       source: src_commercial_dossier
     buyer_map:
       economic_buyer: contact_role_eb
@@ -74,7 +75,8 @@ accounts:
     trigger:
       type: deployment_growth
       description: robotics and precision application deployments create field evidence buyers need to interpret
-      date: 2026-09-06
+      event_date: 2026-09-06
+      observed_at: 2026-09-06
       source: src_commercial_dossier
     buyer_map:
       economic_buyer: contact_role_eb
@@ -135,7 +137,8 @@ accounts:
     trigger:
       type: commercial_claim
       description: microbial carbon and agronomic claims require applicability and evidence boundaries
-      date: 2026-09-06
+      event_date: 2026-09-06
+      observed_at: 2026-09-06
       source: src_commercial_dossier
     buyer_map:
       economic_buyer: contact_role_eb

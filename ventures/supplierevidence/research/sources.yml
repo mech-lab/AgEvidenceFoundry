@@ -2,14 +2,16 @@ sources:
   - id: src_branding_dossier
     type: internal_dossier
     title: AgEvidence ANZ First Ten Startups Revised Comprehensive Branding Dossier
-    path: /Users/mini/Library/Mobile Documents/com~apple~CloudDocs/cxo/tenacious/ten/AgEvidence_ANZ_First_Ten_Startups_Revised_Comprehensive_Branding_Dossier_2026-09-06.pdf
+    document_date: 2026-09-06
+    availability: internal
     accessed_at: 2026-09-06
     evidence_class: supplied_research
     external_use: false
   - id: src_commercial_dossier
     type: internal_dossier
     title: AgEvidence Foundry Commercial Target Encyclopedias
-    path: /Users/mini/Library/Mobile Documents/com~apple~CloudDocs/cxo/tenacious/ten/AgEvidence_Foundry_Commercial_Target_Encyclopedias_2026-09-06.pdf
+    document_date: 2026-09-06
+    availability: internal
     accessed_at: 2026-09-06
     evidence_class: supplied_research
     external_use: false

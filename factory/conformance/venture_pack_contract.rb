@@ -3,6 +3,7 @@
 require_relative "../loaders/program_profile_loader"
 require_relative "../loaders/terminology_loader"
 require_relative "../loaders/venture_pack"
+require_relative "schema_validator"
 
 module Factory
   class VenturePackContract
@@ -69,6 +70,7 @@ module Factory
 
     def validate
       errors = []
+      errors.concat(validate_schemas)
       errors.concat(validate_required_keys)
       errors.concat(validate_identity)
       errors.concat(validate_features)
@@ -88,6 +90,21 @@ module Factory
     end
 
     private
+
+    def validate_schemas
+      validator = SchemaValidator.new(root: VenturePack.repo_root)
+      errors = validator.validate(
+        pack.data,
+        schema_path: "factory/schemas/venture-pack.schema.json",
+        label: "#{pack.id}: product/venture.yml"
+      )
+      pack.integration_files.each do |integration|
+        label = "#{pack.id}: product/#{integration.fetch('source_path', 'integrations')}"
+        data = integration.reject { |key, _value| key == "source_path" }
+        errors.concat(validator.validate(data, schema_path: "factory/schemas/integration.schema.json", label: label))
+      end
+      errors
+    end
 
     def validate_required_keys
       missing = REQUIRED_KEYS.reject { |key| present?(pack.data[key]) }

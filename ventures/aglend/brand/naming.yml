@@ -2,22 +2,28 @@ tests:
   buyer_recognition:
     question: Does the first buyer recognize agricultural finance before explanation?
     score: 5
-    evidence:
-      - brand_dossier_agbasis_section
+    evidence_refs:
+      - src_branding_dossier
   role_discipline:
     question: Could the name imply lending, scoring, approval, rating, or underwriting authority?
     score: 3
-    evidence:
-      - aglend_role_boundary
+    evidence_refs:
+      - src_branding_dossier
   land_motion_fit:
     question: Does the name help sell one lender evidence workflow?
     score: 4
+    evidence_refs:
+      - src_branding_dossier
   expansion_permission:
     question: Can the name survive beyond the initial lending wedge into insurance and linked finance?
     score: 4
+    evidence_refs:
+      - src_branding_dossier
   investor_signal:
     question: Does the name signal infrastructure around institutional credit?
     score: 4
+    evidence_refs:
+      - src_branding_dossier
 territories:
   institutional:
     - AgBasis

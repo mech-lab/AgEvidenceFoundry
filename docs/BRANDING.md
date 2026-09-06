@@ -10,7 +10,7 @@ Each company separates:
 - category descriptor: what the institution should understand it is
 - GTM proposition: why the first buyer should care now
 
-The naming scorecard lives in `ventures/<venture>/brand/naming.yml` and is executable:
+The naming scorecard lives in `ventures/<venture>/brand/naming.yml` and is executable. Each score must cite `evidence_refs` from the same source/proof-point ledger used by GTM.
 
 ```sh
 bin/factory brand score methaneproof

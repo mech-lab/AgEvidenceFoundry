@@ -1,7 +1,7 @@
 # athian-evidence-bazaar Migration Inventory
 
-`/Users/mini/BAINK copy 2` is migration/reference material only. AgEvidence is
-the canonical forward repository.
+The legacy local BAINK checkout is migration/reference material only. AgEvidence
+is the canonical forward repository.
 
 | Area | Classification | Notes |
 | --- | --- | --- |

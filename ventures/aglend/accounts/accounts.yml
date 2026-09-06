@@ -12,7 +12,8 @@ accounts:
     trigger:
       type: evidence_linked_finance
       description: agribusiness finance products create a need for accepted farm evidence
-      date: 2026-09-06
+      event_date: 2026-09-06
+      observed_at: 2026-09-06
       source: src_commercial_dossier
     buyer_map:
       economic_buyer: contact_role_eb
@@ -74,7 +75,8 @@ accounts:
     trigger:
       type: sustainable_finance
       description: rural banking products require evidence-linked sustainability and production review
-      date: 2026-09-06
+      event_date: 2026-09-06
+      observed_at: 2026-09-06
       source: src_commercial_dossier
     buyer_map:
       economic_buyer: contact_role_eb
@@ -135,7 +137,8 @@ accounts:
     trigger:
       type: sustainable_farm_loan
       description: sustainable farm finance requires farm evidence that can be inspected and reviewed
-      date: 2026-09-06
+      event_date: 2026-09-06
+      observed_at: 2026-09-06
       source: src_commercial_dossier
     buyer_map:
       economic_buyer: contact_role_eb

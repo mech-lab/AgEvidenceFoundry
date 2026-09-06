@@ -2,22 +2,28 @@ tests:
   buyer_recognition:
     question: Does the first buyer recognize the methane intervention workflow before explanation?
     score: 5
-    evidence:
-      - brand_dossier_methane_section
+    evidence_refs:
+      - src_branding_dossier
   role_discipline:
     question: Could the name imply certification, registry authority, or guaranteed reduction?
     score: 4
-    evidence:
-      - proof_language_caution
+    evidence_refs:
+      - src_branding_dossier
   land_motion_fit:
     question: Does the name help sell one intervention and one downstream reliance workflow?
     score: 5
+    evidence_refs:
+      - src_branding_dossier
   expansion_permission:
     question: Can the name survive multiple intervention types and measurement paths?
     score: 4
+    evidence_refs:
+      - src_branding_dossier
   investor_signal:
     question: Does the name sound like repeatable evidence infrastructure rather than consulting?
     score: 5
+    evidence_refs:
+      - src_branding_dossier
 territories:
   institutional:
     - MethaneEvidence

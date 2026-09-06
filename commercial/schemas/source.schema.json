@@ -3,13 +3,22 @@
   "$id": "https://agevidence.dev/commercial/schemas/source.schema.json",
   "title": "Commercial Source",
   "type": "object",
-  "required": ["id", "type", "title", "accessed_at"],
+  "required": ["id", "type", "title", "accessed_at", "availability"],
   "properties": {
     "id": { "type": "string" },
     "type": { "type": "string" },
     "title": { "type": "string" },
     "url": { "type": "string" },
     "path": { "type": "string" },
+    "artifact_ref": { "type": "string" },
+    "availability": {
+      "type": "string",
+      "enum": ["public", "internal", "repo"]
+    },
+    "document_date": {
+      "type": "string",
+      "format": "date"
+    },
     "accessed_at": {
       "type": "string",
       "format": "date"

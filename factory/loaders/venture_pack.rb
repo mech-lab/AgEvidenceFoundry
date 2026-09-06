@@ -102,6 +102,10 @@ module Factory
       Array(data["integrations"])
     end
 
+    def integration_files
+      yaml_files("integrations")
+    end
+
     def acceptance_gates
       Array(data["acceptance_gates"])
     end

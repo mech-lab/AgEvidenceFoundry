@@ -2,6 +2,7 @@
 
 require "date"
 require_relative "venture_pack_contract"
+require_relative "schema_validator"
 require_relative "../loaders/company_pack"
 
 module Factory
@@ -50,6 +51,7 @@ module Factory
 
     def validate
       errors = []
+      errors.concat(validate_schemas)
       errors.concat(VenturePackContract.new(pack.product_pack).validate)
       errors.concat(validate_company_manifest)
       errors.concat(validate_brand)
@@ -70,6 +72,58 @@ module Factory
     end
 
     private
+
+    def validate_schemas
+      validator = SchemaValidator.new(root: CompanyPack.repo_root)
+      errors = []
+
+      errors.concat(validator.validate(pack.data, schema_path: "commercial/schemas/company-pack.schema.json", label: "#{pack.id}: company.yml"))
+      errors.concat(validator.validate(pack.brand, schema_path: "commercial/schemas/brand.schema.json", label: "#{pack.id}: brand/brand.yml"))
+      errors.concat(validator.validate(pack.naming, schema_path: "commercial/schemas/naming.schema.json", label: "#{pack.id}: brand/naming.yml"))
+      errors.concat(validator.validate(pack.claim_discipline, schema_path: "commercial/schemas/claim-discipline.schema.json", label: "#{pack.id}: brand/claim_discipline.yml"))
+      errors.concat(validator.validate(pack.formation_status, schema_path: "commercial/schemas/formation-status.schema.json", label: "#{pack.id}: formation/status.yml"))
+
+      pack.accounts.each_with_index do |account, index|
+        account_id = account["id"] || index
+        errors.concat(validator.validate(account, schema_path: "commercial/schemas/account.schema.json", label: "#{pack.id}: accounts/accounts.yml account #{account_id}"))
+      end
+
+      pack.contacts.each_with_index do |contact, index|
+        contact_id = contact["id"] || index
+        errors.concat(validator.validate(contact, schema_path: "commercial/schemas/contact.schema.json", label: "#{pack.id}: accounts/contacts.yml contact #{contact_id}"))
+      end
+
+      pack.offers.each_with_index do |offer, index|
+        offer_id = offer["id"] || index
+        errors.concat(validator.validate(offer, schema_path: "commercial/schemas/offer.schema.json", label: "#{pack.id}: gtm/offers.yml offer #{offer_id}"))
+      end
+
+      pack.sources.each_with_index do |source, index|
+        source_id = source["id"] || index
+        errors.concat(validator.validate(source, schema_path: "commercial/schemas/source.schema.json", label: "#{pack.id}: research/sources.yml source #{source_id}"))
+      end
+
+      pack.path.join("formation", "experiments").children(false).select { |file| file.extname == ".yml" }.sort.each do |file|
+        errors.concat(
+          validator.validate(
+            pack.read_yaml("formation/experiments/#{file}"),
+            schema_path: "commercial/schemas/experiment.schema.json",
+            label: "#{pack.id}: formation/experiments/#{file}"
+          )
+        )
+      end
+
+      %w[customer investor founder architecture].each do |audience|
+        errors.concat(validator.validate(pack.pitch(audience), schema_path: "commercial/schemas/pitch.schema.json", label: "#{pack.id}: pitch/#{audience}.yml"))
+      end
+
+      pack.pitch("proof_points").fetch("proof_points", []).each_with_index do |proof_point, index|
+        proof_id = proof_point["id"] || index
+        errors.concat(validator.validate(proof_point, schema_path: "commercial/schemas/proof-point.schema.json", label: "#{pack.id}: pitch/proof_points.yml proof point #{proof_id}"))
+      end
+
+      errors
+    end
 
     def validate_company_manifest
       errors = []
@@ -94,6 +148,15 @@ module Factory
         score = test["score"]
         unless score.is_a?(Numeric) && score >= 0 && score <= 5
           errors << "#{pack.id}: naming test #{test_id} score must be 0..5"
+        end
+
+        errors << "#{pack.id}: naming test #{test_id} uses legacy evidence key; use evidence_refs" if present?(test["evidence"])
+      end
+
+      evidence_refs = pack.sources.map { |source| source["id"] } + pack.pitch("proof_points").fetch("proof_points", []).map { |proof_point| proof_point["id"] }
+      naming_tests.each do |test_id, test|
+        Array(test["evidence_refs"]).each do |ref|
+          errors << "#{pack.id}: naming test #{test_id} references unknown evidence #{ref}" unless evidence_refs.include?(ref)
         end
       end
 
@@ -140,10 +203,12 @@ module Factory
         end
 
         if tier == 1
-          %w[date type source].each do |key|
+          %w[event_date observed_at type source].each do |key|
             errors << "#{pack.id}: Tier-1 account #{account_id} trigger missing #{key}" unless present?(account.dig("trigger", key))
           end
         end
+
+        errors << "#{pack.id}: account #{account_id} uses legacy trigger.date; use trigger.event_date and trigger.observed_at" if present?(account.dig("trigger", "date"))
 
         errors << "#{pack.id}: account #{account_id} trigger source is unknown" if present?(account.dig("trigger", "source")) && !source_ids.include?(account.dig("trigger", "source"))
 
@@ -194,6 +259,9 @@ module Factory
       pack.sources.each do |source|
         %w[id type title accessed_at].each do |key|
           errors << "#{pack.id}: source #{source['id']} missing #{key}" unless present?(source[key])
+        end
+        if present?(source["path"]) && (source["path"].start_with?("/") || source["path"].start_with?("~"))
+          errors << "#{pack.id}: source #{source['id']} path must be repo-relative, not machine-local"
         end
       end
       pack.proof_points.each do |proof_point|

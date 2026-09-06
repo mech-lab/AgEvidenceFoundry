@@ -371,6 +371,8 @@ agevidence:
 
 The product pack under `product/` remains the technical vertical definition. The root `company.yml` and neighboring folders turn that vertical product into a company formation object.
 
+The `id` is permanent infrastructure identity. It names directories, CLI targets, tests, generated paths, and extraction boundaries. The `company.working_name` is mutable brand strategy and may change as naming tests, buyer language, or trademark work improves. For example, `supplierevidence` can remain the stable venture ID while `SourceRelay` is the current buyer-facing working name.
+
 ## Branding
 
 Branding is part of the Company Pack.
@@ -511,7 +513,10 @@ Shared vocabulary lives in `commercial/vocabulary/contact_roles.yml`.
 
 ## A Logo Is Not An Opportunity
 
-Every Tier-1 sales opportunity requires a dated trigger.
+Every Tier-1 sales opportunity requires a source-backed commercial trigger with two dates:
+
+- `event_date`: when the commercial forcing function happened or became active.
+- `observed_at`: when the Foundry recorded or reviewed that trigger.
 
 Examples:
 
@@ -526,7 +531,7 @@ Examples:
 - leadership change
 - commercial partnership
 
-A company with no live trigger belongs in the market map, not the active pipeline.
+A company with no live trigger belongs in the market map, not the active pipeline. If only an internal dossier is available, the trigger can remain dossier-backed, but the account should not pretend that dossier creation is the same thing as the commercial event date.
 
 `bin/factory gtm validate <company>` enforces this rule for Tier-1 accounts.
 

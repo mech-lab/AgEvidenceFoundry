@@ -3,11 +3,15 @@
   "$id": "https://agevidence.dev/commercial/schemas/trigger.schema.json",
   "title": "Commercial Trigger",
   "type": "object",
-  "required": ["type", "description", "date", "source"],
+  "required": ["type", "description", "event_date", "observed_at", "source"],
   "properties": {
     "type": { "type": "string" },
     "description": { "type": "string" },
-    "date": {
+    "event_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "observed_at": {
       "type": "string",
       "format": "date"
     },

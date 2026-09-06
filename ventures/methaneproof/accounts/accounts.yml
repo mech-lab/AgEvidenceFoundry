@@ -12,7 +12,8 @@ accounts:
     trigger:
       type: commercialization_program
       description: scaling asparagopsis intervention evidence for commercial livestock customers
-      date: 2026-09-06
+      event_date: 2026-09-06
+      observed_at: 2026-09-06
       source: src_commercial_dossier
     buyer_map:
       economic_buyer: contact_role_eb
@@ -74,7 +75,8 @@ accounts:
     trigger:
       type: product_commercialization
       description: commercializing synthetic methane-reduction bioactives across delivery formats
-      date: 2026-09-06
+      event_date: 2026-09-06
+      observed_at: 2026-09-06
       source: src_commercial_dossier
     buyer_map:
       economic_buyer: contact_role_eb
@@ -135,7 +137,8 @@ accounts:
     trigger:
       type: telemetry_program
       description: automated supplementation and water-delivery telemetry creates intervention evidence
-      date: 2026-09-06
+      event_date: 2026-09-06
+      observed_at: 2026-09-06
       source: src_commercial_dossier
     buyer_map:
       economic_buyer: contact_role_eb

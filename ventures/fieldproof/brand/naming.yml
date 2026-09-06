@@ -2,20 +2,28 @@ tests:
   buyer_recognition:
     question: Does the first buyer recognize field or efficacy claims before explanation?
     score: 4
-    evidence:
-      - brand_dossier_efficacy_section
+    evidence_refs:
+      - src_branding_dossier
   role_discipline:
     question: Could the name imply warranty, certification, or agronomic endorsement?
     score: 4
+    evidence_refs:
+      - src_branding_dossier
   land_motion_fit:
     question: Does the name help sell one consequential claim artifact?
     score: 5
+    evidence_refs:
+      - src_branding_dossier
   expansion_permission:
     question: Can the name work across biologicals, machinery, irrigation, robotics, and AI agronomy?
     score: 5
+    evidence_refs:
+      - src_branding_dossier
   investor_signal:
     question: Does the name signal repeatable claim infrastructure?
     score: 4
+    evidence_refs:
+      - src_branding_dossier
 territories:
   institutional:
     - EfficacyRail

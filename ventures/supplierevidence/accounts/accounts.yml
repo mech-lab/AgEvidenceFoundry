@@ -12,7 +12,8 @@ accounts:
     trigger:
       type: reporting_workflow
       description: on-farm data verification and LCA handoff create supplier evidence acceptance needs
-      date: 2026-09-06
+      event_date: 2026-09-06
+      observed_at: 2026-09-06
       source: src_commercial_dossier
     buyer_map:
       economic_buyer: contact_role_eb
@@ -74,7 +75,8 @@ accounts:
     trigger:
       type: supplier_engagement
       description: FLAG and supplier engagement programs require reusable agricultural supplier evidence
-      date: 2026-09-06
+      event_date: 2026-09-06
+      observed_at: 2026-09-06
       source: src_commercial_dossier
     buyer_map:
       economic_buyer: contact_role_eb
@@ -135,7 +137,8 @@ accounts:
     trigger:
       type: agricultural_scope3
       description: agricultural Scope 3 reporting creates supplier evidence requirements across categories
-      date: 2026-09-06
+      event_date: 2026-09-06
+      observed_at: 2026-09-06
       source: src_commercial_dossier
     buyer_map:
       economic_buyer: contact_role_eb

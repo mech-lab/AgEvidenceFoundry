@@ -2,20 +2,28 @@ tests:
   buyer_recognition:
     question: Does the first buyer recognize supplier evidence movement and acceptance before explanation?
     score: 5
-    evidence:
-      - brand_dossier_sourcerelay_section
+    evidence_refs:
+      - src_branding_dossier
   role_discipline:
     question: Could the name imply carbon accounting, assurance, or traceability authority?
     score: 5
+    evidence_refs:
+      - src_branding_dossier
   land_motion_fit:
     question: Does the name help sell one supplier program and one acceptance profile?
     score: 5
+    evidence_refs:
+      - src_branding_dossier
   expansion_permission:
     question: Can the name expand beyond beef methane into dairy, grain, fertilizer, and field practices?
     score: 5
+    evidence_refs:
+      - src_branding_dossier
   investor_signal:
     question: Does the name signal a network through which evidence moves across organizations?
     score: 5
+    evidence_refs:
+      - src_branding_dossier
 territories:
   institutional:
     - SupplierEvidence

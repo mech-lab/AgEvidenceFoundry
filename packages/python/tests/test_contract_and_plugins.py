@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import inspect
+import subprocess
+import sys
 from pathlib import Path
 
 import agevidence
@@ -83,6 +85,30 @@ def test_v1_public_exports_and_typed_marker():
     assert AsyncClient is not None
     assert RetryPolicy(max_attempts=1).max_attempts == 1
     assert (repo_root / "packages" / "python" / "src" / "agevidence" / "py.typed").exists()
+
+
+def test_package_root_import_is_dependency_light_without_httpx():
+    repo_root = Path(__file__).resolve().parents[3]
+    script = f"""
+import builtins
+import sys
+
+sys.path.insert(0, {str(repo_root / "packages" / "python" / "src")!r})
+original_import = builtins.__import__
+
+def guarded_import(name, *args, **kwargs):
+    if name == "httpx":
+        raise ModuleNotFoundError("No module named 'httpx'")
+    return original_import(name, *args, **kwargs)
+
+builtins.__import__ = guarded_import
+import agevidence
+print(agevidence.__version__)
+"""
+    result = subprocess.run([sys.executable, "-c", script], capture_output=True, text=True, check=False)
+
+    assert result.returncode == 0, result.stderr
+    assert result.stdout.strip() == "0.1.0"
 
 
 def test_livestock_value_objects_are_lightweight_and_typed():

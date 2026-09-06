@@ -29,9 +29,10 @@ module Factory
         errors = []
         account_id = account.fetch("id", "unknown")
         if account.dig("priority", "tier").to_i == 1
-          %w[date type source].each do |key|
+          %w[event_date observed_at type source].each do |key|
             errors << "#{account_id}: Tier-1 trigger missing #{key}" unless present?(account.dig("trigger", key))
           end
+          errors << "#{account_id}: Tier-1 trigger uses legacy date field" if present?(account.dig("trigger", "date"))
         end
 
         %w[first_offer next_action confidence source_ledger].each do |key|

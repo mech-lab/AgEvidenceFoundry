@@ -46,6 +46,17 @@ CAMPAIGN_MARKERS = (
 )
 
 
+def ref_exists(ref: str) -> bool:
+    result = subprocess.run(
+        ["git", "rev-parse", "--verify", "--quiet", f"{ref}^{{commit}}"],
+        cwd=REPO_ROOT,
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+    return result.returncode == 0
+
+
 def category(path: str) -> str | None:
     name = Path(path).name
     if name in EXCLUDED or "__pycache__" in path:
@@ -74,7 +85,12 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--baseline", default=DEFAULT_BASELINE)
     parser.add_argument("--all", action="store_true", help="Count every changed path instead of the country-adapter program subset.")
+    parser.add_argument("--strict-baseline", action="store_true", help="Fail if the baseline ref is not available.")
     args = parser.parse_args()
+
+    if not ref_exists(args.baseline):
+        print(f"LOC baseline ref unavailable: {args.baseline}")
+        return 1 if args.strict_baseline else 0
 
     result = subprocess.run(
         ["git", "diff", "--numstat", args.baseline, "--"],

@@ -10,7 +10,7 @@
       "required": ["buyer_recognition", "role_discipline", "land_motion_fit", "expansion_permission", "investor_signal"],
       "additionalProperties": {
         "type": "object",
-        "required": ["question", "score"],
+        "required": ["question", "score", "evidence_refs"],
         "properties": {
           "question": { "type": "string" },
           "score": {
@@ -18,9 +18,10 @@
             "minimum": 0,
             "maximum": 5
           },
-          "evidence": {
+          "evidence_refs": {
             "type": "array",
-            "items": { "type": "string" }
+            "items": { "type": "string" },
+            "minItems": 1
           }
         }
       }

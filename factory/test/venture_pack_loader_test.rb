@@ -5,6 +5,7 @@ require "json"
 require_relative "../loaders/company_pack_loader"
 require_relative "../loaders/venture_pack_loader"
 require_relative "../conformance/factory_contract"
+require_relative "../conformance/schema_validator"
 require_relative "../operations/brand_score"
 require_relative "../operations/gtm_scorer"
 require_relative "../operations/gtm_validator"
@@ -38,6 +39,20 @@ class VenturePackLoaderTest < Minitest::Test
 
   def test_all_seed_packs_satisfy_factory_contract
     assert_empty Factory::FactoryContract.new(root: ROOT).validate
+  end
+
+  def test_company_pack_schema_is_executable
+    validator = Factory::SchemaValidator.new(root: ROOT)
+    pack = Factory::CompanyPackLoader.new(root: ROOT).load("methaneproof")
+
+    assert_empty validator.validate(pack.data, schema_path: "commercial/schemas/company-pack.schema.json", label: "company")
+
+    errors = validator.validate(
+      pack.data.merge("id" => "MethaneProof"),
+      schema_path: "commercial/schemas/company-pack.schema.json",
+      label: "company"
+    )
+    assert errors.any? { |error| error.include?("$.id must match") }
   end
 
   def test_company_pack_wraps_product_pack
