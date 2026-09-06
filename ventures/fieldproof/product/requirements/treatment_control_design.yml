@@ -1,0 +1,6 @@
+id: treatment_control_design
+name: Treatment And Control Design
+required_evidence_types:
+  - treatment_event
+  - control_observation
+evaluation: comparable_design

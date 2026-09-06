@@ -1,0 +1,5 @@
+id: model_support
+name: Methane Model Support
+required_evidence_types:
+  - methane_model_run
+evaluation: model_lineage

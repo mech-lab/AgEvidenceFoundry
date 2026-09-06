@@ -1,0 +1,16 @@
+discovery:
+  primary_question:
+    text: Which methane evidence problem is blocking the largest downstream decision right now?
+  questions:
+    - id: q01
+      stage: problem
+      text: Which buyer, processor, or assurance workflow is asking for evidence you cannot assemble quickly today?
+    - id: q02
+      stage: current_workflow
+      text: How do you currently connect intervention delivery, cohort status, measurement records, and model assumptions?
+    - id: q03
+      stage: reliance
+      text: What would the downstream party need to inspect before accepting the methane claim?
+    - id: q04
+      stage: budget
+      text: What commercial event would justify a paid six-week evidence-to-reliance sprint?

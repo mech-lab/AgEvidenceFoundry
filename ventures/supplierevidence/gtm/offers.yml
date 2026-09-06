@@ -1,0 +1,24 @@
+offers:
+  - id: supplier_evidence_passport_sprint
+    objective: prove_one_supplier_claim_acceptance_workflow
+    scope:
+      evidence_sources: 3-6
+      program_profiles: 1
+      artifact_types: 1
+      reliance_endpoints: 1
+    duration:
+      weeks: 6
+    outputs:
+      - supplier_evidence_map
+      - buyer_acceptance_profile
+      - evidence_gap_report
+      - supplier_evidence_passport
+      - assurance_export
+      - reliance_event_record
+    success_gate:
+      external_party_can_evaluate_artifact: true
+    pricing:
+      currency: AUD
+      range:
+        minimum: 50000
+        maximum: 125000

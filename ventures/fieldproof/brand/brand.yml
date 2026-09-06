@@ -1,0 +1,37 @@
+name:
+  primary: FieldProof
+  alternatives:
+    - EfficacyRail
+    - FieldClaim
+category:
+  descriptor: Agricultural efficacy-claim infrastructure
+primary_line:
+  text: Make efficacy claims portable.
+gtm_proposition:
+  text: Turn the claim holding up the next commercial deal into an inspectable evidence artifact.
+role:
+  is:
+    - claim_infrastructure
+    - buyer_inspection_layer
+  is_not:
+    - trial_management_system
+    - marketing_agency
+    - agronomic_warranty
+    - certification_body
+audience:
+  first_buyer:
+    - funded_agtech_vendor
+    - biological_input_company
+    - intervention_vendor
+  downstream:
+    - procurement_buyer
+    - distributor
+    - agronomist
+    - investor
+agevidence_endorsement:
+  homepage_hero: hidden
+  main_logo: hidden
+  architecture: visible
+  developer_docs: visible
+  trust_page: visible
+  artifact: protocol_reference

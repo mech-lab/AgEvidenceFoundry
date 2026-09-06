@@ -1,0 +1,24 @@
+offers:
+  - id: evidence_to_reliance_sprint
+    objective: prove_one_methane_reliance_workflow
+    scope:
+      evidence_sources: 3-6
+      program_profiles: 1
+      artifact_types: 1
+      reliance_endpoints: 1
+    duration:
+      weeks: 6
+    outputs:
+      - source_mapping
+      - methane_method_profile
+      - evidence_gap_report
+      - methane_evidence_statement
+      - verifier_reconstruction
+      - reliance_event_record
+    success_gate:
+      external_party_can_evaluate_artifact: true
+    pricing:
+      currency: AUD
+      range:
+        minimum: 25000
+        maximum: 50000

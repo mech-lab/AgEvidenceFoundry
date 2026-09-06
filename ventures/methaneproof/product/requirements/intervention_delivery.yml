@@ -1,0 +1,6 @@
+id: intervention_delivery
+name: Intervention Delivery Evidence
+required_evidence_types:
+  - feeding_event
+  - treatment_lot
+evaluation: documented_delivery

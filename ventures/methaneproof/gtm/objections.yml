@@ -1,0 +1,17 @@
+objections:
+  - id: already_have_mrv
+    objection: We already have an MRV provider.
+    diagnosis:
+      misconception: category_boundary
+    response:
+      core: MethaneProof does not replace MRV; it packages operational intervention evidence so downstream parties can inspect what supports a bounded claim.
+    discovery_followups:
+      - Which operational records are hardest to reconcile before a buyer accepts the claim?
+  - id: proof_language
+    objection: Can you prove the methane reduction?
+    diagnosis:
+      misconception: evidentiary_scope
+    response:
+      core: MethaneProof preserves the evidence basis and limitations; it does not guarantee biological outcomes.
+    discovery_followups:
+      - Which limitations would a processor need to see before relying on the statement?

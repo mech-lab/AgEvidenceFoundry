@@ -1,0 +1,13 @@
+classes:
+  verified_public_signal:
+    external_use: true
+    description: Confirmed in an official public source at the stated observation date.
+  brief_derived:
+    external_use: false
+    description: Supported by an internal investment or formation brief.
+  supplied_research:
+    external_use: false
+    description: Included from supplied research and must be revalidated before outbound.
+  gtm_inference:
+    external_use: false
+    description: Commercial hypothesis derived from public facts; use for discovery, not external factual claims.

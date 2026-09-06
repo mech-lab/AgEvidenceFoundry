@@ -1,0 +1,13 @@
+id: EXP-001
+hypothesis:
+  text: Methane buyers respond better to intervention evidence language than broad MRV platform language.
+test:
+  type: buyer_interview
+sample:
+  target: 8
+  completed: 0
+result:
+  status: pending
+decision:
+  action: pending
+date: 2026-09-06

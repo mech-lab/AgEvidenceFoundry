@@ -1,0 +1,37 @@
+organizations:
+  - id: sea_forest
+    name: Sea Forest
+    geography: AU
+  - id: rumin8
+    name: Rumin8
+    geography: AU
+  - id: dit_agtech
+    name: DIT AgTech
+    geography: AU
+  - id: synlait
+    name: Synlait Milk
+    geography: NZ
+  - id: coles
+    name: Coles Group
+    geography: AU
+  - id: woolworths
+    name: Woolworths Group
+    geography: AU
+  - id: nab
+    name: National Australia Bank
+    geography: AU
+  - id: rabobank_anz
+    name: Rabobank Australia & New Zealand
+    geography: AU_NZ
+  - id: bnz
+    name: Bank of New Zealand
+    geography: NZ
+  - id: bioscout
+    name: BioScout
+    geography: AU
+  - id: swarmfarm
+    name: SwarmFarm Robotics
+    geography: AU
+  - id: loam_bio
+    name: Loam Bio
+    geography: AU

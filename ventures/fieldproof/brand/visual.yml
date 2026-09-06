@@ -1,0 +1,21 @@
+family: market_scientific_evidence
+principles:
+  - scientific_white_space
+  - confidence_intervals
+  - applicability_bounds
+  - visible_claim_evidence_relationships
+avoid:
+  - generic_leaf_icons
+  - farm_stock_photos
+  - marketing_badges
+  - faux_regulatory_seals
+typography:
+  interface: precise_sans
+  document: evidence_report_serif_optional
+tokens:
+  radius: 6
+  spacing: compact
+  primary: "#2F6F61"
+  secondary: "#6C7A2F"
+  ink: "#202B2D"
+  paper: "#F6F7F2"

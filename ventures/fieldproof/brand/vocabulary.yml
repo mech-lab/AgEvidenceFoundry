@@ -1,0 +1,6 @@
+product_terms:
+  claim_grammar: Machine-readable claim structure.
+  claim_passport: Portable bounded claim artifact.
+  claims_registry: Versioned claim families.
+  buyer_portal: Buyer inspection and comparison surface.
+  evidence_to_claim: Implementation sprint.

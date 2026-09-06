@@ -1,0 +1,23 @@
+problem:
+  one_sentence: Agricultural efficacy claims are commercially important but hard for buyers to inspect and reuse.
+why_now:
+  - biological_input_growth
+  - precision_agtech_commercialization
+first_buyer:
+  type: funded_agtech_vendor
+first_workflow:
+  description: Convert one commercial claim into a bounded evidence artifact.
+reliance_event:
+  description: Buyer uses the artifact to inspect or compare the claim.
+artifact:
+  description: Field efficacy evidence package.
+wedge:
+  description: One claim, one buyer, one inspectable artifact.
+expansion:
+  - claim_registry
+  - buyer_portal
+  - cross_vendor_claim_formats
+moat:
+  - claim_taxonomy
+  - buyer_workflow_network
+  - accumulated_reliance

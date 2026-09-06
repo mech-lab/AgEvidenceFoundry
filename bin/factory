@@ -1,0 +1,185 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require "json"
+require "pathname"
+
+ROOT = Pathname.new(__dir__).join("..").expand_path
+
+require_relative "../factory/loaders/venture_pack_loader"
+require_relative "../factory/loaders/company_pack_loader"
+require_relative "../factory/conformance/factory_contract"
+require_relative "../factory/conformance/company_pack_contract"
+require_relative "../factory/conformance/venture_pack_contract"
+require_relative "../factory/operations/brand_score"
+require_relative "../factory/operations/claims_checker"
+require_relative "../factory/operations/gtm_scorer"
+require_relative "../factory/operations/gtm_validator"
+require_relative "../factory/operations/opportunity_hypothesis"
+require_relative "../factory/operations/pitch_renderer"
+require_relative "../factory/operations/research_staleness"
+
+def usage
+  <<~TEXT
+    Usage:
+      bin/factory list
+      bin/factory show <venture> [--json]
+      bin/factory doctor [venture]
+      bin/factory brand score <venture>
+      bin/factory claims check <venture> [path...]
+      bin/factory gtm validate <venture>
+      bin/factory gtm score <venture>
+      bin/factory gtm hypothesis <venture> <account-id>
+      bin/factory research stale <venture>
+      bin/factory pitch <customer|investor|founder|architecture> <venture>
+      bin/factory demo <venture>
+      bin/factory test <venture> [test args...]
+
+    Planned:
+      bin/factory new <venture>
+      bin/factory extract <venture> <target-dir>
+  TEXT
+end
+
+def loader
+  Factory::CompanyPackLoader.new(root: ROOT)
+end
+
+def fail_with(message)
+  warn "ERROR: #{message}"
+  exit 1
+end
+
+def render_company_status(pack)
+  brand_score = Factory::Operations::BrandScore.new(pack)
+  accounts = pack.accounts
+  tier1_accounts = accounts.count { |account| account.dig("priority", "tier").to_i == 1 }
+  gates = pack.formation_status.fetch("gates", {})
+  pending_gates = gates.select { |_name, gate| gate["status"] != "passed" }.keys
+
+  [
+    "#{pack.name} (#{pack.id})",
+    "PRODUCT",
+    "  ProgramProfiles: #{pack.product_pack.program_profiles.length}",
+    "  Requirements: #{pack.product_pack.requirements.length}",
+    "  Artifact templates: #{pack.product_pack.artifact_templates.length}",
+    "BRAND",
+    "  Descriptor: #{pack.brand.dig('category', 'descriptor')}",
+    "  Naming score: #{brand_score.total}/#{brand_score.maximum}",
+    "  Prohibited claims: #{Array(pack.claim_discipline['prohibited']).length}",
+    "GTM",
+    "  Accounts: #{accounts.length}",
+    "  Tier-1 accounts: #{tier1_accounts}",
+    "  Primary offer: #{pack.gtm['primary_offer']}",
+    "PITCH",
+    "  Customer, investor, founder, and architecture pitches configured",
+    "FORMATION",
+    "  Stage: #{pack.formation_status['stage']}",
+    "  Pending gates: #{pending_gates.join(', ')}"
+  ].join("\n")
+end
+
+begin
+  command = ARGV.shift
+
+  case command
+  when "list"
+    puts loader.ids
+  when "show"
+    id = ARGV.shift || fail_with("venture id is required")
+    as_json = ARGV.delete("--json")
+    pack = loader.load(id)
+    if as_json
+      puts JSON.pretty_generate(pack.summary)
+    else
+      puts "#{pack.name} (#{pack.id})"
+      puts "Category: #{pack.brand.dig('category', 'descriptor')}"
+      puts "Product substrate: #{pack.product_pack.name}"
+      puts "Protocol: #{pack.product_pack.protocol_version}"
+      puts "Foundry: >= #{pack.product_pack.minimum_foundry_version}"
+      puts "ProgramProfiles: #{pack.product_pack.program_profiles.join(', ')}"
+      puts "Integrations: #{pack.product_pack.integrations.join(', ')}"
+      puts "Reliance: #{pack.reliance['event']}"
+    end
+  when "doctor"
+    verbose = ARGV.delete("--verbose")
+    ids = ARGV
+    packs = ids.empty? ? loader.all : ids.map { |id| loader.load(id) }
+    fail_with("no venture packs found") if packs.empty?
+
+    errors = []
+    packs.each do |pack|
+      pack_errors = Factory::CompanyPackContract.new(pack).validate
+      if pack_errors.empty?
+        puts(verbose ? render_company_status(pack) : "OK #{pack.id}")
+      else
+        errors.concat(pack_errors)
+      end
+    end
+
+    fail_with(errors.join("\n")) if errors.any?
+  when "brand"
+    subcommand = ARGV.shift
+    fail_with("unknown brand command #{subcommand}") unless subcommand == "score"
+
+    id = ARGV.shift || fail_with("venture id is required")
+    puts Factory::Operations::BrandScore.new(loader.load(id)).render
+  when "claims"
+    subcommand = ARGV.shift
+    fail_with("unknown claims command #{subcommand}") unless subcommand == "check"
+
+    id = ARGV.shift || fail_with("venture id is required")
+    checker = Factory::Operations::ClaimsChecker.new(loader.load(id), paths: ARGV)
+    findings = checker.findings
+    puts checker.render
+    exit 1 if findings.any?
+  when "gtm"
+    subcommand = ARGV.shift || fail_with("gtm command is required")
+    id = ARGV.shift || fail_with("venture id is required")
+    pack = loader.load(id)
+
+    case subcommand
+    when "validate"
+      validator = Factory::Operations::GtmValidator.new(pack)
+      errors = validator.errors
+      puts validator.render
+      exit 1 if errors.any?
+    when "score"
+      puts Factory::Operations::GtmScorer.new(pack).render
+    when "hypothesis"
+      account_id = ARGV.shift || fail_with("account id is required")
+      puts Factory::Operations::OpportunityHypothesis.new(pack, account_id: account_id).render
+    else
+      fail_with("unknown gtm command #{subcommand}")
+    end
+  when "research"
+    subcommand = ARGV.shift
+    fail_with("unknown research command #{subcommand}") unless subcommand == "stale"
+
+    id = ARGV.shift || fail_with("venture id is required")
+    puts Factory::Operations::ResearchStaleness.new(loader.load(id)).render
+  when "pitch"
+    audience = ARGV.shift || fail_with("pitch audience is required")
+    id = ARGV.shift || fail_with("venture id is required")
+    puts Factory::Operations::PitchRenderer.new(loader.load(id), audience: audience).render
+  when "demo"
+    id = ARGV.shift || fail_with("venture id is required")
+    loader.load(id)
+    ENV["VENTURE_PACK"] = id
+    exec(ROOT.join("bin/demo").to_s)
+  when "test"
+    id = ARGV.shift || fail_with("venture id is required")
+    loader.load(id)
+    ENV["VENTURE_PACK"] = id
+    exec(ROOT.join("bin/test").to_s, *ARGV)
+  when "new"
+    fail_with("bin/factory new is scheduled for phase F12")
+  when "extract"
+    fail_with("bin/factory extract is scheduled for phase F13")
+  else
+    puts usage
+    exit(command ? 1 : 0)
+  end
+rescue KeyError, ArgumentError => e
+  fail_with(e.message)
+end

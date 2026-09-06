@@ -1,0 +1,21 @@
+family: market_scientific_evidence
+principles:
+  - provenance_lines
+  - network_paths
+  - buyer_acceptance_states
+  - passport_objects
+avoid:
+  - generic_leaf_icons
+  - carbon_clouds
+  - supply_chain_clipart
+  - faux_regulatory_seals
+typography:
+  interface: network_sans
+  document: assurance_report_serif_optional
+tokens:
+  radius: 6
+  spacing: compact
+  primary: "#345F6B"
+  secondary: "#7A6F2A"
+  ink: "#1F2E33"
+  paper: "#F5F6F0"

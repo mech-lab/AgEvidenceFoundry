@@ -1,0 +1,3 @@
+id: treatment_event
+canonical_primitive: InterventionEvent
+description: Records field treatment application timing, material, rate, and operating context.

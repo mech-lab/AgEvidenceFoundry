@@ -1,0 +1,28 @@
+id: methaneproof
+company:
+  working_name: MethaneProof
+  status: formation
+  independence_model: standalone_spinout
+category:
+  descriptor: Neutral methane intervention evidence infrastructure
+buyer:
+  initial:
+    type: methane_technology_provider
+  reliance_party:
+    - processor
+    - corporate_buyer
+    - assurance_provider
+problem:
+  short: Operational methane intervention evidence is fragmented across delivery, measurement, modeling, and verification systems.
+reliance:
+  event: methane_claim_acceptance
+  artifact: methane_evidence_statement
+land_motion:
+  scope: One intervention, one production environment, one downstream reliance workflow.
+gtm:
+  primary_offer: evidence_to_reliance_sprint
+brand:
+  mode: independent_endorsed_brand
+agevidence:
+  endorsement: technical_only
+  protocol_required: true

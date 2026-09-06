@@ -2,6 +2,8 @@
 
 Startup recipes show how to turn the Rails reference app into a focused agriculture company without fragmenting the shared evidence layer.
 
+In Foundry, recipes are the human-readable companion to executable venture packs under `../../ventures/`. The first executable cohort is MethaneProof, FieldProof, AgLend, and SupplierEvidence.
+
 Use the same pattern for every vertical:
 
 - The business
@@ -21,6 +23,10 @@ Use the same pattern for every vertical:
 
 ## Recipes
 
+- [MethaneProof playbook](../venture-playbooks/methaneproof.md)
+- [FieldProof playbook](../venture-playbooks/fieldproof.md)
+- [AgLend playbook](../venture-playbooks/aglend.md)
+- [SupplierEvidence playbook](../venture-playbooks/supplierevidence.md)
 - [Build a Methane Evidence Startup](methane-mrv.md)
 - [Build an Agricultural Lending Evidence Startup](agricultural-lending.md)
 - [Build a Biological Input Evidence Startup](biological-inputs.md)

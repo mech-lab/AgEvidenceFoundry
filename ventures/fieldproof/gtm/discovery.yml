@@ -1,0 +1,16 @@
+discovery:
+  primary_question:
+    text: Which efficacy claim is blocking the largest commercial decision right now?
+  questions:
+    - id: q01
+      stage: problem
+      text: Which claim does the buyer keep asking you to substantiate?
+    - id: q02
+      stage: current_workflow
+      text: What trial evidence, observations, and analyses do you send today?
+    - id: q03
+      stage: reliance
+      text: What does the buyer need to inspect before using the claim?
+    - id: q04
+      stage: budget
+      text: What deal, distribution path, or investor process would a claim artifact unblock?

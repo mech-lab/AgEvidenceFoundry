@@ -1,0 +1,16 @@
+discovery:
+  primary_question:
+    text: Which supplier evidence problem is blocking the largest reporting or buyer acceptance decision right now?
+  questions:
+    - id: q01
+      stage: problem
+      text: Which supplier claim, reporting period, or buyer requirement is hardest to substantiate?
+    - id: q02
+      stage: current_workflow
+      text: How does evidence move from suppliers and agtech systems into corporate reporting today?
+    - id: q03
+      stage: reliance
+      text: What must an assurance provider or corporate reporter inspect before using the claim?
+    - id: q04
+      stage: budget
+      text: Which reporting deadline or buyer program would justify a paid passport sprint?

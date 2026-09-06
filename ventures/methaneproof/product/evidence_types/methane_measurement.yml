@@ -1,0 +1,3 @@
+id: methane_measurement
+canonical_primitive: Observation
+description: Records methane measurements from devices, chambers, GreenFeed systems, or lab-calibrated methods.

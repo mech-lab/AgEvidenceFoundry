@@ -1,0 +1,4 @@
+event: methane_claim_acceptance
+artifact: methane_evidence_statement
+relying_party: processor
+decision: methane_claim_acceptance

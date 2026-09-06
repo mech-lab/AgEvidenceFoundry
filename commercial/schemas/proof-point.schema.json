@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agevidence.dev/commercial/schemas/proof-point.schema.json",
+  "title": "Commercial Proof Point",
+  "type": "object",
+  "required": ["id", "statement", "evidence_class", "source", "checked_at"],
+  "properties": {
+    "id": { "type": "string" },
+    "statement": { "type": "string" },
+    "evidence_class": {
+      "type": "string",
+      "enum": ["verified_public_signal", "brief_derived", "supplied_research", "gtm_inference"]
+    },
+    "source": { "type": "string" },
+    "checked_at": {
+      "type": "string",
+      "format": "date"
+    },
+    "expires_after_days": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "external_use": { "type": "boolean" }
+  },
+  "additionalProperties": true
+}

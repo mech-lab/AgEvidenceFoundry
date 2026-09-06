@@ -1,0 +1,14 @@
+proof_points:
+  - id: p001
+    statement: Supplier evidence passports and buyer acceptance profiles are the core product objects.
+    evidence_class: brief_derived
+    source: src_branding_dossier
+    checked_at: 2026-09-06
+    expires_after_days: 90
+  - id: p002
+    statement: Supplier evidence acceptance is a GTM hypothesis to validate account by account.
+    evidence_class: gtm_inference
+    source: src_commercial_dossier
+    checked_at: 2026-09-06
+    expires_after_days: 45
+    external_use: false

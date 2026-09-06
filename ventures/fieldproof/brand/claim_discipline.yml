@@ -1,0 +1,23 @@
+allowed:
+  - efficacy evidence
+  - inspectable claim artifact
+  - bounded determination
+  - applicability conditions
+  - buyer-readable evidence package
+requires_qualification:
+  - proven
+  - verified
+  - superior
+  - statistically significant
+prohibited:
+  - guaranteed yield increase
+  - certified efficacy
+  - approved agronomic claim
+  - official trial certification
+  - warranty of performance
+regulated_roles:
+  company_is_not:
+    - certification_body
+    - regulator
+    - warranty_provider
+    - trial_operator

@@ -1,0 +1,17 @@
+contacts:
+  - id: contact_role_eb
+    role: EB
+    confidence: D
+    note: Role placeholder; revalidate named banking executive before outbound.
+  - id: contact_role_ch
+    role: CH
+    confidence: D
+    note: Role placeholder; identify product or sustainability owner.
+  - id: contact_role_tu
+    role: TU
+    confidence: D
+    note: Role placeholder; identify credit, data, or architecture evaluator.
+  - id: contact_role_bl
+    role: BL
+    confidence: D
+    note: Role placeholder; legal, credit risk, model risk, procurement, or operational assurance.

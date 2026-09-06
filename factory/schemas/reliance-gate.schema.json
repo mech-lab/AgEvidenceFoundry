@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agevidence.dev/factory/schemas/reliance-gate.schema.json",
+  "title": "AgEvidence Foundry Reliance Gate",
+  "type": "object",
+  "required": ["relying_party", "decision", "required", "success_event"],
+  "properties": {
+    "relying_party": {
+      "type": "string"
+    },
+    "decision": {
+      "type": "string"
+    },
+    "required": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "success_event": {
+      "type": "object",
+      "required": ["type"],
+      "properties": {
+        "type": { "type": "string" }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

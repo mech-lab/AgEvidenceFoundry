@@ -1,0 +1,18 @@
+project:
+  singular: supplier_case
+  plural: supplier_cases
+gap:
+  singular: buyer_requirement_gap
+  plural: buyer_requirement_gaps
+determination:
+  singular: supplier_claim_determination
+  plural: supplier_claim_determinations
+artifact:
+  singular: supplier_evidence_passport
+  plural: supplier_evidence_passports
+program_profile:
+  singular: supplier_program
+  plural: supplier_programs
+reliance_event:
+  singular: corporate_reliance
+  plural: corporate_reliance_events

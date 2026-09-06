@@ -5,6 +5,7 @@ ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 APP_DIR="$ROOT_DIR/apps/console"
 export RAILS_ENV=test
 export DATABASE_URL="${DATABASE_URL:-postgres://postgres:postgres@127.0.0.1:5432/agevidence_test}"
+export VENTURE_PACK="${VENTURE_PACK:-methaneproof}"
 
 cd "$APP_DIR"
 

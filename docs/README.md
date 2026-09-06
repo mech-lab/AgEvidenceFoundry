@@ -1,6 +1,24 @@
-# AgEvidence Documentation
+# AgEvidence Foundry Documentation
 
 This directory contains human-facing documentation for the monorepo.
+
+## Foundry
+
+- [Factory architecture](../FACTORY.md)
+- [Company formation](COMPANY-FORMATION.md)
+- [Branding](BRANDING.md)
+- [GTM](GTM.md)
+- [Pitching](PITCHING.md)
+- [Claim discipline](CLAIM-DISCIPLINE.md)
+- [Account research](ACCOUNT-RESEARCH.md)
+- [Spinout](SPINOUT.md)
+- [Upstream policy](../UPSTREAM.md)
+- [Foundry boundary](architecture/foundry-boundary.md)
+- [F0-F14 task tree](factory/task-tree.md)
+- [MethaneProof playbook](venture-playbooks/methaneproof.md)
+- [FieldProof playbook](venture-playbooks/fieldproof.md)
+- [AgLend playbook](venture-playbooks/aglend.md)
+- [SupplierEvidence playbook](venture-playbooks/supplierevidence.md)
 
 ## Startup Factory
 

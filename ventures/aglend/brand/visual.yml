@@ -1,0 +1,22 @@
+family: financial_decision_infrastructure
+principles:
+  - ledger_structures
+  - policy_thresholds
+  - facility_timelines
+  - versioned_evidence_cards
+avoid:
+  - dollar_signs
+  - rating_badges
+  - barns
+  - tractors
+  - faux_regulatory_seals
+typography:
+  interface: institutional_sans
+  document: lender_report_serif_optional
+tokens:
+  radius: 6
+  spacing: compact
+  primary: "#2D5F7B"
+  secondary: "#3F7C78"
+  ink: "#17324D"
+  paper: "#F2F4F1"

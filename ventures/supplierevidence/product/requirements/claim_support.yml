@@ -1,0 +1,5 @@
+id: claim_support
+name: Supplier Claim Support
+required_evidence_types:
+  - supplier_claim_model_run
+evaluation: claim_support_presence

@@ -1,0 +1,6 @@
+triggers:
+  - id: methane_commercialization_2026
+    date: 2026-09-06
+    type: commercialization_program
+    source: src_commercial_dossier
+    description: Methane intervention commercialization requires operational evidence that can move downstream.

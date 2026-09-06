@@ -1,0 +1,6 @@
+triggers:
+  - id: underwriting_evidence_2026
+    date: 2026-09-06
+    type: evidence_linked_finance
+    source: src_commercial_dossier
+    description: Agricultural finance products increasingly depend on non-financial evidence.

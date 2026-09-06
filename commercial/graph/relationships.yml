@@ -1,0 +1,16 @@
+relationships:
+  - from: sea_forest
+    to: methaneproof
+    type: intervention_supplier_to_evidence_company
+  - from: dit_agtech
+    to: methaneproof
+    type: delivery_telemetry_to_evidence_company
+  - from: synlait
+    to: supplierevidence
+    type: dairy_supplier_network_to_evidence_company
+  - from: nab
+    to: aglend
+    type: lender_to_evidence_company
+  - from: bioscout
+    to: fieldproof
+    type: agtech_vendor_to_efficacy_evidence_company

@@ -1,0 +1,5 @@
+sections:
+  - title: Substrate
+    body: AgEvidence supplies SourceRecord, Observation, InterventionEvent, OperationalEvent, ModelRun, artifact, verifier, and reliance semantics.
+  - title: Vertical Layer
+    body: MethaneProof configures methane intervention requirements, evidence types, artifact language, and processor reliance.

@@ -1,0 +1,22 @@
+problem:
+  one_sentence: Methane intervention evidence breaks across delivery, measurement, model, review, and buyer acceptance systems.
+why_now:
+  - methane_intervention_commercialization
+  - downstream_scope3_scrutiny
+first_buyer:
+  type: methane_technology_provider
+first_workflow:
+  description: Bind one intervention workflow into an inspectable methane evidence statement.
+reliance_event:
+  description: Processor accepts the bounded methane evidence statement.
+artifact:
+  description: Methane evidence statement.
+wedge:
+  description: One intervention, one production environment, one processor-facing reliance workflow.
+expansion:
+  - multi_intervention_profiles
+  - processor_acceptance_network
+moat:
+  - integration_network
+  - domain_models
+  - accumulated_reliance

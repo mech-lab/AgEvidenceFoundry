@@ -1,0 +1,14 @@
+proof_points:
+  - id: p001
+    statement: Agricultural lenders are the first-buyer class for the underwriting evidence company.
+    evidence_class: brief_derived
+    source: src_branding_dossier
+    checked_at: 2026-09-06
+    expires_after_days: 90
+  - id: p002
+    statement: Internal underwriting evidence workflows are hypotheses unless a public source verifies them.
+    evidence_class: gtm_inference
+    source: src_commercial_dossier
+    checked_at: 2026-09-06
+    expires_after_days: 45
+    external_use: false

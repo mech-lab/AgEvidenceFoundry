@@ -1,0 +1,185 @@
+accounts:
+  - id: nab
+    organization:
+      name: National Australia Bank
+      country: AU
+    venture_role:
+      aglend:
+        role: lender_reliance_endpoint
+    priority:
+      tier: 1
+      score: 96
+    trigger:
+      type: evidence_linked_finance
+      description: agribusiness finance products create a need for accepted farm evidence
+      date: 2026-09-06
+      source: src_commercial_dossier
+    buyer_map:
+      economic_buyer: contact_role_eb
+      economic_buyer_role: agribusiness banking product or credit leader
+      champion: contact_role_ch
+      technical_user: contact_role_tu
+      blocker: contact_role_bl
+    evidence_stack:
+      - farm_operational_records
+      - sustainability_evidence
+      - production_history
+      - policy_requirements
+    evidence_problem:
+      hypothesis: establish an inspectable evidence basis for lender-defined underwriting requirements
+    first_offer:
+      id: underwriting_evidence_sprint
+    expansion:
+      - portfolio_monitoring
+      - annual_review_artifacts
+    next_action:
+      action: founder_outreach
+      due: 2026-09-12
+    source_ledger:
+      - src_commercial_dossier
+      - src_branding_dossier
+    confidence: B
+    score_components:
+      live_reliance_event:
+        score: 20
+        evidence: src_commercial_dossier
+      identifiable_buyer:
+        score: 15
+        evidence: src_commercial_dossier
+      evidence_complexity:
+        score: 15
+        evidence: src_commercial_dossier
+      bounded_pilot:
+        score: 10
+        evidence: src_commercial_dossier
+      strategic_reference:
+        score: 10
+        evidence: src_commercial_dossier
+      integration_feasibility:
+        score: 9
+        evidence: src_commercial_dossier
+      current_trigger:
+        score: 17
+        evidence: src_commercial_dossier
+  - id: rabobank_anz
+    organization:
+      name: Rabobank Australia & New Zealand
+      country: AU_NZ
+    venture_role:
+      aglend:
+        role: lender_reliance_endpoint
+    priority:
+      tier: 1
+      score: 95
+    trigger:
+      type: sustainable_finance
+      description: rural banking products require evidence-linked sustainability and production review
+      date: 2026-09-06
+      source: src_commercial_dossier
+    buyer_map:
+      economic_buyer: contact_role_eb
+      economic_buyer_role: rural banking or sustainability finance leader
+      champion: contact_role_ch
+      technical_user: contact_role_tu
+      blocker: contact_role_bl
+    evidence_stack:
+      - sustainability_program_records
+      - farm_operational_records
+      - production_history
+      - assurance_requirements
+    evidence_problem:
+      hypothesis: reduce evidence assembly friction while preserving lender and verifier roles
+    first_offer:
+      id: underwriting_evidence_sprint
+    expansion:
+      - maintained_approval_artifacts
+      - multi_product_evidence_reuse
+    next_action:
+      action: validate_current_product_trigger
+      due: 2026-09-14
+    source_ledger:
+      - src_commercial_dossier
+    confidence: B
+    score_components:
+      live_reliance_event:
+        score: 20
+        evidence: src_commercial_dossier
+      identifiable_buyer:
+        score: 14
+        evidence: src_commercial_dossier
+      evidence_complexity:
+        score: 15
+        evidence: src_commercial_dossier
+      bounded_pilot:
+        score: 10
+        evidence: src_commercial_dossier
+      strategic_reference:
+        score: 10
+        evidence: src_commercial_dossier
+      integration_feasibility:
+        score: 9
+        evidence: src_commercial_dossier
+      current_trigger:
+        score: 17
+        evidence: src_commercial_dossier
+  - id: bnz
+    organization:
+      name: Bank of New Zealand
+      country: NZ
+    venture_role:
+      aglend:
+        role: lender_reliance_endpoint
+    priority:
+      tier: 1
+      score: 92
+    trigger:
+      type: sustainable_farm_loan
+      description: sustainable farm finance requires farm evidence that can be inspected and reviewed
+      date: 2026-09-06
+      source: src_commercial_dossier
+    buyer_map:
+      economic_buyer: contact_role_eb
+      economic_buyer_role: natural capital or agribusiness product owner
+      champion: contact_role_ch
+      technical_user: contact_role_tu
+      blocker: contact_role_bl
+    evidence_stack:
+      - farm_standard_records
+      - production_history
+      - annual_review_evidence
+      - assurance_evidence
+    evidence_problem:
+      hypothesis: package accepted sources for recurring sustainable finance review
+    first_offer:
+      id: underwriting_evidence_sprint
+    expansion:
+      - natural_capital_evidence_products
+      - annual_review_reliance
+    next_action:
+      action: map_sustainable_farm_standard_evidence
+      due: 2026-09-16
+    source_ledger:
+      - src_commercial_dossier
+    confidence: B
+    score_components:
+      live_reliance_event:
+        score: 19
+        evidence: src_commercial_dossier
+      identifiable_buyer:
+        score: 14
+        evidence: src_commercial_dossier
+      evidence_complexity:
+        score: 15
+        evidence: src_commercial_dossier
+      bounded_pilot:
+        score: 9
+        evidence: src_commercial_dossier
+      strategic_reference:
+        score: 10
+        evidence: src_commercial_dossier
+      integration_feasibility:
+        score: 8
+        evidence: src_commercial_dossier
+      current_trigger:
+        score: 17
+        evidence: src_commercial_dossier

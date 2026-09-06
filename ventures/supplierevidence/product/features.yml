@@ -1,0 +1,11 @@
+features:
+  source_records: true
+  observations: true
+  spatial_observations: true
+  intervention_events: true
+  operational_events: true
+  model_runs: true
+  reviewer_workflow: true
+  artifact_export: true
+  verification: true
+  reliance: true

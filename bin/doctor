@@ -5,6 +5,7 @@ ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 APP_DIR="$ROOT_DIR/apps/console"
 export RAILS_ENV="${RAILS_ENV:-development}"
 export DATABASE_URL="${DATABASE_URL:-postgres://postgres:postgres@127.0.0.1:5432/agevidence_development}"
+export VENTURE_PACK="${VENTURE_PACK:-methaneproof}"
 
 ok() {
   printf "OK %s\n" "$1"
@@ -34,6 +35,9 @@ if bundle check >/dev/null 2>&1; then
 else
   fail "Bundler dependencies are missing. Run bin/demo or cd apps/console && bundle install."
 fi
+
+"$ROOT_DIR/bin/factory" doctor "$VENTURE_PACK" >/dev/null
+ok "Venture pack $VENTURE_PACK"
 
 if command -v pg_isready >/dev/null 2>&1; then
   if pg_isready -h 127.0.0.1 -p 5432 -U postgres >/dev/null 2>&1; then

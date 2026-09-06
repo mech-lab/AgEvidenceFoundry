@@ -1,0 +1,6 @@
+product_terms:
+  submit: Bind intervention, measurement, and model-run evidence.
+  evaluate: Expose gaps, deviations, uncertainty, and claimability.
+  issue: Create a bounded reliance artifact.
+  verify: Reconstruct integrity and lineage.
+  methane_record: Versioned outcome record.

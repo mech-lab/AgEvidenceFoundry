@@ -1,0 +1,11 @@
+id: lender_evidence_package
+name: Lender Evidence Package
+artifact_kind: bounded_determination
+sections:
+  - borrower
+  - farm_entity
+  - financial_evidence
+  - production_evidence
+  - risk_conditions
+  - determination
+  - verification

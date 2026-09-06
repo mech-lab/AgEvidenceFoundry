@@ -1,0 +1,28 @@
+id: fieldproof
+company:
+  working_name: FieldProof
+  status: formation
+  independence_model: standalone_spinout
+category:
+  descriptor: Agricultural efficacy-claim infrastructure
+buyer:
+  initial:
+    type: funded_agtech_vendor
+  reliance_party:
+    - procurement_buyer
+    - distributor
+    - processor
+problem:
+  short: Commercial efficacy claims are hard for buyers to inspect, compare, request, and reuse.
+reliance:
+  event: efficacy_claim_use
+  artifact: field_efficacy_evidence_package
+land_motion:
+  scope: One vendor claim, one buyer-facing artifact, one consequential commercial opportunity.
+gtm:
+  primary_offer: evidence_to_claim_sprint
+brand:
+  mode: independent_endorsed_brand
+agevidence:
+  endorsement: technical_only
+  protocol_required: true

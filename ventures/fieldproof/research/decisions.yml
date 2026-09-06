@@ -1,0 +1,5 @@
+decisions:
+  - id: decision_001
+    date: 2026-09-06
+    decision: Keep FieldProof as the repo working brand while preserving EfficacyRail as the explicit efficacy naming option.
+    rationale: FieldProof is broader across agtech categories, while the category descriptor carries the efficacy-claim meaning.

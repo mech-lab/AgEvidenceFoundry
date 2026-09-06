@@ -1,0 +1,5 @@
+id: protocol_registration
+name: Protocol Registration
+required_evidence_types:
+  - trial_protocol
+evaluation: protocol_presence

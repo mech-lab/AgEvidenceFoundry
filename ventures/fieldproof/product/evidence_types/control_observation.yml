@@ -1,0 +1,3 @@
+id: control_observation
+canonical_primitive: SpatialObservation
+description: Records control plot observations and measurement provenance.

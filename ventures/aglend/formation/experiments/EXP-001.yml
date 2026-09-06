@@ -1,0 +1,13 @@
+id: EXP-001
+hypothesis:
+  text: Lenders respond better to evidence-basis language than to credit-grade or lending-platform language.
+test:
+  type: buyer_interview
+sample:
+  target: 8
+  completed: 0
+result:
+  status: pending
+decision:
+  action: pending
+date: 2026-09-06

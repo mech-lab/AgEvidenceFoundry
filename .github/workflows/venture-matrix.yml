@@ -1,0 +1,26 @@
+name: Venture Matrix
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  venture-pack:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        venture:
+          - methaneproof
+          - fieldproof
+          - aglend
+          - supplierevidence
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.4.10"
+      - run: bin/factory doctor ${{ matrix.venture }}
+      - run: bin/factory gtm validate ${{ matrix.venture }}
+      - run: bin/factory claims check ${{ matrix.venture }}
+      - run: bin/factory brand score ${{ matrix.venture }}

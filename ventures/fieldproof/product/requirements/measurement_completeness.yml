@@ -1,0 +1,5 @@
+id: measurement_completeness
+name: Measurement Completeness
+required_evidence_types:
+  - site_measurement
+evaluation: measurement_coverage

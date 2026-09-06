@@ -1,0 +1,5 @@
+id: financial_evidence
+name: Financial Evidence
+required_evidence_types:
+  - financial_statement
+evaluation: financial_source_presence

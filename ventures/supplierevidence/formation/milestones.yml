@@ -1,0 +1,9 @@
+milestones:
+  - id: m001
+    name: First supplier evidence passport
+    target_date: 2026-10-25
+    status: planned
+  - id: m002
+    name: First corporate reliance event
+    target_date: 2026-12-05
+    status: planned

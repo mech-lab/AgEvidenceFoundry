@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agevidence.dev/commercial/schemas/contact.schema.json",
+  "title": "Commercial Contact",
+  "type": "object",
+  "required": ["id", "role", "confidence"],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "role": {
+      "type": "string",
+      "enum": ["EB", "CH", "TU", "EX", "IN", "BL", "PA", "EV"]
+    },
+    "confidence": {
+      "type": "string",
+      "enum": ["A", "B", "C", "D"]
+    },
+    "verified_at": {
+      "type": "string",
+      "format": "date"
+    }
+  },
+  "additionalProperties": true
+}

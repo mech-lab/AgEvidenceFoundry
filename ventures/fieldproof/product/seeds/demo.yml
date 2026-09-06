@@ -1,0 +1,7 @@
+id: fieldproof_demo
+name: Buyer Efficacy Claim Demo
+scenario:
+  buyer: procurement_buyer
+  claim: field trial evidence supports a commercial efficacy threshold
+  program_profile: field_efficacy_v1
+  target_artifact: field_efficacy_evidence_package

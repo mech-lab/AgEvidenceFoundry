@@ -1,0 +1,3 @@
+id: site_measurement
+canonical_primitive: SpatialObservation
+description: Records site, season, and measurement values used to evaluate efficacy.

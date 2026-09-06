@@ -1,0 +1,34 @@
+tests:
+  buyer_recognition:
+    question: Does the first buyer recognize supplier evidence movement and acceptance before explanation?
+    score: 5
+    evidence:
+      - brand_dossier_sourcerelay_section
+  role_discipline:
+    question: Could the name imply carbon accounting, assurance, or traceability authority?
+    score: 5
+  land_motion_fit:
+    question: Does the name help sell one supplier program and one acceptance profile?
+    score: 5
+  expansion_permission:
+    question: Can the name expand beyond beef methane into dairy, grain, fertilizer, and field practices?
+    score: 5
+  investor_signal:
+    question: Does the name signal a network through which evidence moves across organizations?
+    score: 5
+territories:
+  institutional:
+    - SupplierEvidence
+    - Supplier Passport
+    - Source Evidence
+  infrastructure:
+    - SourceRelay
+    - SourceBridge
+    - EvidenceRelay
+  venture_brand:
+    - SupplyLine
+    - OriginRelay
+    - PassportWorks
+decision:
+  selected: SourceRelay
+  rationale: Better captures evidence movement and reuse than proof-only naming.

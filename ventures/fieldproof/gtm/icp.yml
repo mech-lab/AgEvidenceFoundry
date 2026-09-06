@@ -1,0 +1,14 @@
+icp:
+  primary:
+    - funded agtech vendors
+    - biological input companies
+    - robotics and precision agriculture companies
+  downstream_reliance:
+    - distributors
+    - processors
+    - procurement buyers
+    - investors
+  disqualifiers:
+    - only needs project-based trial writing
+    - wants FieldProof to guarantee field performance
+    - cannot identify a consequential buyer claim

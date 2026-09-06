@@ -1,0 +1,6 @@
+market:
+  category: field_trial_efficacy_evidence
+  geography:
+    - AU
+    - NZ
+  wedge: vendors with a claim blocking distribution, procurement, finance, or enterprise adoption.

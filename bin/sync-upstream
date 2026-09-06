@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+cd "$ROOT_DIR"
+
+UPSTREAM_URL="https://github.com/meronrudy/AgEvidence"
+
+if git remote get-url upstream >/dev/null 2>&1; then
+  git remote set-url upstream "$UPSTREAM_URL"
+else
+  git remote add upstream "$UPSTREAM_URL"
+fi
+
+git fetch upstream
+
+CURRENT_BRANCH="$(git branch --show-current)"
+if [ "$CURRENT_BRANCH" != "main" ]; then
+  printf "ERROR: sync-upstream must run from main; current branch is %s.\n" "$CURRENT_BRANCH" >&2
+  exit 1
+fi
+
+COUNTS="$(git rev-list --left-right --count main...upstream/main)"
+BEHIND="$(printf "%s" "$COUNTS" | awk '{print $2}')"
+AHEAD="$(printf "%s" "$COUNTS" | awk '{print $1}')"
+
+printf "main is %s commit(s) ahead and %s commit(s) behind upstream/main.\n" "$AHEAD" "$BEHIND"
+
+if [ "$BEHIND" = "0" ]; then
+  printf "OK main is current with upstream/main.\n"
+  exit 0
+fi
+
+if [ "$AHEAD" = "0" ]; then
+  git merge --ff-only upstream/main
+  printf "OK main fast-forwarded to upstream/main.\n"
+  exit 0
+fi
+
+printf "ERROR: main has diverged from upstream/main. Create an explicit sync branch and merge deliberately.\n" >&2
+exit 1

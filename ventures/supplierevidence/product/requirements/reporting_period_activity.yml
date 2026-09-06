@@ -1,0 +1,6 @@
+id: reporting_period_activity
+name: Reporting Period Activity
+required_evidence_types:
+  - operational_activity
+  - intervention_activity
+evaluation: reporting_period_coverage

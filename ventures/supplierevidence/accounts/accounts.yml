@@ -1,0 +1,185 @@
+accounts:
+  - id: synlait
+    organization:
+      name: Synlait Milk
+      country: NZ
+    venture_role:
+      supplierevidence:
+        role: supplier_network_operator
+    priority:
+      tier: 1
+      score: 98
+    trigger:
+      type: reporting_workflow
+      description: on-farm data verification and LCA handoff create supplier evidence acceptance needs
+      date: 2026-09-06
+      source: src_commercial_dossier
+    buyer_map:
+      economic_buyer: contact_role_eb
+      economic_buyer_role: sustainability or supplier program lead
+      champion: contact_role_ch
+      technical_user: contact_role_tu
+      blocker: contact_role_bl
+    evidence_stack:
+      - on_farm_data
+      - supplier_program_records
+      - lca_inputs
+      - assurance_exports
+    evidence_problem:
+      hypothesis: preserve supplier evidence so corporate reporters and assurance providers can reuse it
+    first_offer:
+      id: supplier_evidence_passport_sprint
+    expansion:
+      - dairy_supplier_network
+      - assurance_export_api
+    next_action:
+      action: founder_outreach
+      due: 2026-09-12
+    source_ledger:
+      - src_commercial_dossier
+      - src_branding_dossier
+    confidence: B
+    score_components:
+      live_reliance_event:
+        score: 20
+        evidence: src_commercial_dossier
+      identifiable_buyer:
+        score: 15
+        evidence: src_commercial_dossier
+      evidence_complexity:
+        score: 15
+        evidence: src_commercial_dossier
+      bounded_pilot:
+        score: 10
+        evidence: src_commercial_dossier
+      strategic_reference:
+        score: 10
+        evidence: src_commercial_dossier
+      integration_feasibility:
+        score: 10
+        evidence: src_commercial_dossier
+      current_trigger:
+        score: 18
+        evidence: src_commercial_dossier
+  - id: coles
+    organization:
+      name: Coles Group
+      country: AU
+    venture_role:
+      supplierevidence:
+        role: enterprise_buyer
+    priority:
+      tier: 1
+      score: 96
+    trigger:
+      type: supplier_engagement
+      description: FLAG and supplier engagement programs require reusable agricultural supplier evidence
+      date: 2026-09-06
+      source: src_commercial_dossier
+    buyer_map:
+      economic_buyer: contact_role_eb
+      economic_buyer_role: sustainability or procurement lead
+      champion: contact_role_ch
+      technical_user: contact_role_tu
+      blocker: contact_role_bl
+    evidence_stack:
+      - supplier_activity_records
+      - intervention_records
+      - emissions_factors
+      - assurance_workpapers
+    evidence_problem:
+      hypothesis: accept supplier evidence once and reuse it across reporting and assurance workflows
+    first_offer:
+      id: supplier_evidence_passport_sprint
+    expansion:
+      - category_rollout
+      - supplier_portal_replacement
+    next_action:
+      action: map_buyer_acceptance_profile
+      due: 2026-09-14
+    source_ledger:
+      - src_commercial_dossier
+    confidence: B
+    score_components:
+      live_reliance_event:
+        score: 20
+        evidence: src_commercial_dossier
+      identifiable_buyer:
+        score: 15
+        evidence: src_commercial_dossier
+      evidence_complexity:
+        score: 15
+        evidence: src_commercial_dossier
+      bounded_pilot:
+        score: 10
+        evidence: src_commercial_dossier
+      strategic_reference:
+        score: 10
+        evidence: src_commercial_dossier
+      integration_feasibility:
+        score: 9
+        evidence: src_commercial_dossier
+      current_trigger:
+        score: 17
+        evidence: src_commercial_dossier
+  - id: woolworths
+    organization:
+      name: Woolworths Group
+      country: AU
+    venture_role:
+      supplierevidence:
+        role: enterprise_buyer
+    priority:
+      tier: 1
+      score: 95
+    trigger:
+      type: agricultural_scope3
+      description: agricultural Scope 3 reporting creates supplier evidence requirements across categories
+      date: 2026-09-06
+      source: src_commercial_dossier
+    buyer_map:
+      economic_buyer: contact_role_eb
+      economic_buyer_role: sustainability or responsible sourcing lead
+      champion: contact_role_ch
+      technical_user: contact_role_tu
+      blocker: contact_role_bl
+    evidence_stack:
+      - supplier_records
+      - buyer_requirements
+      - reporting_period_activity
+      - assurance_exports
+    evidence_problem:
+      hypothesis: create portable supplier passports that support reporting and assurance without losing provenance
+    first_offer:
+      id: supplier_evidence_passport_sprint
+    expansion:
+      - cross_category_supplier_passports
+      - buyer_acceptance_network
+    next_action:
+      action: identify_first_supplier_category
+      due: 2026-09-16
+    source_ledger:
+      - src_commercial_dossier
+    confidence: B
+    score_components:
+      live_reliance_event:
+        score: 20
+        evidence: src_commercial_dossier
+      identifiable_buyer:
+        score: 15
+        evidence: src_commercial_dossier
+      evidence_complexity:
+        score: 15
+        evidence: src_commercial_dossier
+      bounded_pilot:
+        score: 9
+        evidence: src_commercial_dossier
+      strategic_reference:
+        score: 10
+        evidence: src_commercial_dossier
+      integration_feasibility:
+        score: 9
+        evidence: src_commercial_dossier
+      current_trigger:
+        score: 17
+        evidence: src_commercial_dossier

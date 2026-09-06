@@ -1,0 +1,7 @@
+relationships:
+  - from: sea_forest
+    to: processor
+    type: possible_downstream_reliance
+  - from: dit_agtech
+    to: sea_forest
+    type: possible_delivery_evidence_partner

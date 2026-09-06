@@ -1,0 +1,9 @@
+# <%= company_name %>
+
+Extracted from AgEvidence Foundry.
+
+## Provenance
+
+- AgEvidence base: see `AGEVIDENCE_BASE`
+- Foundry origin: see `FOUNDRY_ORIGIN`
+- Venture pack: `<%= venture_pack_id %>`

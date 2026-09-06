@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agevidence.dev/commercial/schemas/source.schema.json",
+  "title": "Commercial Source",
+  "type": "object",
+  "required": ["id", "type", "title", "accessed_at"],
+  "properties": {
+    "id": { "type": "string" },
+    "type": { "type": "string" },
+    "title": { "type": "string" },
+    "url": { "type": "string" },
+    "path": { "type": "string" },
+    "accessed_at": {
+      "type": "string",
+      "format": "date"
+    },
+    "evidence_class": {
+      "type": "string",
+      "enum": ["verified_public_signal", "brief_derived", "supplied_research", "gtm_inference"]
+    },
+    "external_use": { "type": "boolean" }
+  },
+  "additionalProperties": true
+}

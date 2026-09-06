@@ -1,0 +1,11 @@
+pricing:
+  hypothesis: paid evidence-to-claim sprint
+  currency: AUD
+  pilot_range:
+    minimum: 25000
+    maximum: 50000
+  expansion_units:
+    - claim_family
+    - crop
+    - geography
+    - buyer_portal

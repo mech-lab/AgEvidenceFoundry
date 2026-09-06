@@ -1,0 +1,17 @@
+contacts:
+  - id: contact_role_eb
+    role: EB
+    confidence: D
+    note: Role placeholder; revalidate named sustainability or procurement executive before outbound.
+  - id: contact_role_ch
+    role: CH
+    confidence: D
+    note: Role placeholder; identify supplier evidence workflow owner.
+  - id: contact_role_tu
+    role: TU
+    confidence: D
+    note: Role placeholder; identify reporting, data, or assurance user.
+  - id: contact_role_bl
+    role: BL
+    confidence: D
+    note: Role placeholder; legal, assurance, procurement, or reporting blocker.

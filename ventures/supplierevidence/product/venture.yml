@@ -1,0 +1,79 @@
+id: supplierevidence
+name: SupplierEvidence
+agevidence:
+  protocol_version: "1.x"
+  minimum_foundry_version: "0.1.0"
+market:
+  category: supplier_scope3_insetting_evidence
+  initial_buyer:
+    - corporate_reporter
+    - processor
+    - retailer
+    - assurance_provider
+reliance:
+  primary_event: supplier_claim_reliance
+  artifact: supplier_evidence_passport
+terminology:
+  project:
+    singular: supplier_case
+    plural: supplier_cases
+  gap:
+    singular: buyer_requirement_gap
+    plural: buyer_requirement_gaps
+  determination:
+    singular: supplier_claim_determination
+    plural: supplier_claim_determinations
+  artifact:
+    singular: supplier_evidence_passport
+    plural: supplier_evidence_passports
+  program_profile:
+    singular: supplier_program
+    plural: supplier_programs
+  reliance_event:
+    singular: corporate_reliance
+    plural: corporate_reliance_events
+features:
+  source_records: true
+  observations: true
+  spatial_observations: true
+  intervention_events: true
+  operational_events: true
+  model_runs: true
+  reviewer_workflow: true
+  artifact_export: true
+  verification: true
+  reliance: true
+program_profiles:
+  - supplier_scope3_v1
+integrations:
+  - farm_systems
+  - buyer_program
+  - assurance_export
+acceptance_gates:
+  - evidence_ingested
+  - evaluation_completed
+  - human_review_completed
+  - artifact_issued
+  - artifact_verified
+  - external_reliance_recorded
+reliance_gate:
+  relying_party: corporate_reporter
+  decision: supplier_claim_use
+  required:
+    - source_provenance
+    - accepted_evidence
+    - requirements_evaluated
+    - human_review
+    - bounded_determination
+    - immutable_artifact
+    - independent_verification
+  success_event:
+    type: external_reliance
+    name: corporate_reporter_uses_supplier_claim
+metrics:
+  venture_created_at: null
+  first_ingestion_at: null
+  first_complete_evaluation_at: null
+  first_artifact_at: null
+  first_verification_at: null
+  first_external_reliance_at: null

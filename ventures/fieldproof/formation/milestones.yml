@@ -1,0 +1,9 @@
+milestones:
+  - id: m001
+    name: First buyer-facing claim artifact
+    target_date: 2026-10-20
+    status: planned
+  - id: m002
+    name: First buyer reuse request
+    target_date: 2026-11-30
+    status: planned

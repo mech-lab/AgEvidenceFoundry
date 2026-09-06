@@ -1,0 +1,3 @@
+id: monitoring_model_run
+canonical_primitive: ModelRun
+description: Records monitoring model lineage without encoding a lending decision in AgEvidence.

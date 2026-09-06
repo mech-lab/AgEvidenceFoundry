@@ -1,0 +1,78 @@
+id: methaneproof
+name: MethaneProof
+agevidence:
+  protocol_version: "1.x"
+  minimum_foundry_version: "0.1.0"
+market:
+  category: methane_intervention_evidence
+  initial_buyer:
+    - feed_additive_company
+    - methane_device_company
+    - processor
+reliance:
+  primary_event: intervention_claim_reliance
+  artifact: methane_evidence_statement
+terminology:
+  project:
+    singular: evidence_case
+    plural: evidence_cases
+  gap:
+    singular: readiness_check
+    plural: readiness_checks
+  determination:
+    singular: methane_evidence_statement
+    plural: methane_evidence_statements
+  artifact:
+    singular: reliance_package
+    plural: reliance_packages
+  program_profile:
+    singular: methane_method_profile
+    plural: methane_method_profiles
+  reliance_event:
+    singular: processor_reliance
+    plural: processor_reliance_events
+features:
+  source_records: true
+  observations: true
+  spatial_observations: false
+  intervention_events: true
+  operational_events: true
+  model_runs: true
+  reviewer_workflow: true
+  artifact_export: true
+  verification: true
+  reliance: true
+program_profiles:
+  - methane_intervention_au_v1
+integrations:
+  - feed_delivery
+  - methane_measurement
+  - lab_assay
+acceptance_gates:
+  - evidence_ingested
+  - evaluation_completed
+  - human_review_completed
+  - artifact_issued
+  - artifact_verified
+  - external_reliance_recorded
+reliance_gate:
+  relying_party: processor
+  decision: methane_claim_acceptance
+  required:
+    - source_provenance
+    - accepted_evidence
+    - requirements_evaluated
+    - human_review
+    - bounded_determination
+    - immutable_artifact
+    - independent_verification
+  success_event:
+    type: external_reliance
+    name: processor_accepts_methane_claim
+metrics:
+  venture_created_at: null
+  first_ingestion_at: null
+  first_complete_evaluation_at: null
+  first_artifact_at: null
+  first_verification_at: null
+  first_external_reliance_at: null

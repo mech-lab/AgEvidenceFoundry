@@ -1,0 +1,3 @@
+id: supplier_claim_model_run
+canonical_primitive: ModelRun
+description: Records claim-calculation model lineage for supplier reporting without hiding the evidence basis.

@@ -1,0 +1,6 @@
+id: feed_delivery
+name: Feed Delivery System
+category: farm_operational_system
+evidence_types:
+  - feeding_event
+  - treatment_lot

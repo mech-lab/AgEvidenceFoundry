@@ -1,0 +1,7 @@
+sections:
+  - title: Current Workflow
+    body: Methane intervention records, measurements, model outputs, and methodology evidence often live in separate systems.
+  - title: Evidence Failure
+    body: Downstream parties cannot rely on a claim when they cannot inspect what happened, what was measured, and what assumptions bounded the result.
+  - title: First Paid Scope
+    body: Run one evidence-to-reliance sprint that produces a methane evidence statement and verifier-ready artifact.

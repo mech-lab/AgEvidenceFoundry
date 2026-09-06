@@ -1,0 +1,23 @@
+name: Upstream Sync Check
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 14 * * 1"
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - run: git remote add upstream https://github.com/meronrudy/AgEvidence
+      - run: git fetch upstream main
+      - run: |
+          set -euo pipefail
+          COUNTS="$(git rev-list --left-right --count HEAD...upstream/main)"
+          AHEAD="$(printf "%s" "$COUNTS" | awk '{print $1}')"
+          BEHIND="$(printf "%s" "$COUNTS" | awk '{print $2}')"
+          printf "HEAD is %s commit(s) ahead and %s commit(s) behind upstream/main.\n" "$AHEAD" "$BEHIND"
+          test "$BEHIND" = "0"

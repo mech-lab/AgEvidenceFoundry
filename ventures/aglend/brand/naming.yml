@@ -1,0 +1,36 @@
+tests:
+  buyer_recognition:
+    question: Does the first buyer recognize agricultural finance before explanation?
+    score: 5
+    evidence:
+      - brand_dossier_agbasis_section
+  role_discipline:
+    question: Could the name imply lending, scoring, approval, rating, or underwriting authority?
+    score: 3
+    evidence:
+      - aglend_role_boundary
+  land_motion_fit:
+    question: Does the name help sell one lender evidence workflow?
+    score: 4
+  expansion_permission:
+    question: Can the name survive beyond the initial lending wedge into insurance and linked finance?
+    score: 4
+  investor_signal:
+    question: Does the name signal infrastructure around institutional credit?
+    score: 4
+territories:
+  institutional:
+    - AgBasis
+    - RuralBasis
+    - FarmBasis
+  infrastructure:
+    - FieldLedger
+    - FieldBasis
+    - TerraBasis
+  venture_brand:
+    - AgLend
+    - Groundline
+    - AcreGrade
+decision:
+  selected: AgLend
+  rationale: Clear working cohort name; AgBasis remains the cleaner institutional brand candidate if buyer tests show AgLend implies lender status.

@@ -1,0 +1,5 @@
+decisions:
+  - id: decision_001
+    date: 2026-09-06
+    decision: Use SourceRelay as the customer-facing working brand for the SupplierEvidence pack.
+    rationale: The brand emphasizes evidence movement and acceptance across organizational boundaries.

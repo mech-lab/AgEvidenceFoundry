@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agevidence.dev/commercial/schemas/account.schema.json",
+  "title": "Commercial Account",
+  "type": "object",
+  "required": [
+    "id",
+    "organization",
+    "venture_role",
+    "priority",
+    "trigger",
+    "buyer_map",
+    "evidence_stack",
+    "evidence_problem",
+    "first_offer",
+    "expansion",
+    "next_action",
+    "source_ledger",
+    "confidence"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_]*$"
+    },
+    "organization": {
+      "type": "object",
+      "required": ["name", "country"]
+    },
+    "priority": {
+      "type": "object",
+      "required": ["tier", "score"],
+      "properties": {
+        "tier": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 5
+        },
+        "score": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        }
+      }
+    },
+    "trigger": {
+      "$ref": "trigger.schema.json"
+    },
+    "confidence": {
+      "type": "string",
+      "enum": ["A", "B", "C", "D"]
+    }
+  },
+  "additionalProperties": true
+}

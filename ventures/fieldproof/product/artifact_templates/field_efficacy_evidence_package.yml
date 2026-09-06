@@ -1,0 +1,11 @@
+id: field_efficacy_evidence_package
+name: Field Efficacy Evidence Package
+artifact_kind: bounded_determination
+sections:
+  - claim
+  - protocol
+  - site_and_season
+  - measurements
+  - efficacy_threshold
+  - determination
+  - verification

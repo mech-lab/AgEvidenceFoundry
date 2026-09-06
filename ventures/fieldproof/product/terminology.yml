@@ -1,0 +1,18 @@
+project:
+  singular: trial_case
+  plural: trial_cases
+gap:
+  singular: evidence_gap
+  plural: evidence_gaps
+determination:
+  singular: efficacy_determination
+  plural: efficacy_determinations
+artifact:
+  singular: field_evidence_package
+  plural: field_evidence_packages
+program_profile:
+  singular: trial_protocol
+  plural: trial_protocols
+reliance_event:
+  singular: buyer_reliance
+  plural: buyer_reliance_events

@@ -1,0 +1,5 @@
+id: accounting
+name: Accounting System
+category: financial_system
+evidence_types:
+  - financial_statement

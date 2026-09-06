@@ -1,0 +1,16 @@
+discovery:
+  primary_question:
+    text: Which evidence problem is blocking the largest agricultural finance decision right now?
+  questions:
+    - id: q01
+      stage: problem
+      text: Which financial product depends on farm evidence that is hard to collect or review?
+    - id: q02
+      stage: current_workflow
+      text: How are accepted sources, evidence age, and review conditions defined today?
+    - id: q03
+      stage: reliance
+      text: What must the credit or risk team inspect before relying on non-financial farm evidence?
+    - id: q04
+      stage: budget
+      text: What portfolio, facility, or annual review would justify a paid pilot?

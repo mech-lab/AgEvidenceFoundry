@@ -1,0 +1,5 @@
+id: methane_measurement
+name: Methane Measurement Evidence
+required_evidence_types:
+  - methane_measurement
+evaluation: measurement_presence

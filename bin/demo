@@ -5,6 +5,7 @@ ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 APP_DIR="$ROOT_DIR/apps/console"
 export RAILS_ENV=development
 export DATABASE_URL="${DATABASE_URL:-postgres://postgres:postgres@127.0.0.1:5432/agevidence_development}"
+export VENTURE_PACK="${VENTURE_PACK:-methaneproof}"
 REQUESTED_PORT="${PORT:-}"
 
 ok() {
@@ -74,6 +75,7 @@ ok "Demo evidence project"
 rm -f tmp/pids/server.pid
 
 printf "\nRails Console\n"
+printf "Venture Pack: %s\n" "$VENTURE_PACK"
 printf "http://127.0.0.1:%s\n" "$PORT"
 if [ -z "$REQUESTED_PORT" ] && [ "$PORT" != "3000" ]; then
   printf "Port 3000 was busy, so bin/demo selected %s.\n" "$PORT"

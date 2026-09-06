@@ -1,0 +1,10 @@
+id: supplier_scope3_v1
+name: Supplier Scope 3 Evidence Profile
+market: supplier_scope3_insetting_evidence
+requirements:
+  - supplier_identity
+  - buyer_requirement
+  - reporting_period_activity
+  - claim_support
+artifact_template: supplier_evidence_passport
+reliance_gate: supplier_claim_use

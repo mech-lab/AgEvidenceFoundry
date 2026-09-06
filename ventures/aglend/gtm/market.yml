@@ -1,0 +1,6 @@
+market:
+  category: agricultural_lending_evidence
+  geography:
+    - AU
+    - NZ
+  wedge: evidence-linked lending and finance products that require operational farm evidence.

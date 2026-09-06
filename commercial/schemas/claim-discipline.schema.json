@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agevidence.dev/commercial/schemas/claim-discipline.schema.json",
+  "title": "Company Claim Discipline",
+  "type": "object",
+  "required": ["allowed", "requires_qualification", "prohibited", "regulated_roles"],
+  "properties": {
+    "allowed": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "requires_qualification": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "prohibited": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "regulated_roles": {
+      "type": "object",
+      "required": ["company_is_not"]
+    }
+  },
+  "additionalProperties": true
+}

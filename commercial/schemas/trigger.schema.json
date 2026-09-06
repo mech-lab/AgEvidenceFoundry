@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agevidence.dev/commercial/schemas/trigger.schema.json",
+  "title": "Commercial Trigger",
+  "type": "object",
+  "required": ["type", "description", "date", "source"],
+  "properties": {
+    "type": { "type": "string" },
+    "description": { "type": "string" },
+    "date": {
+      "type": "string",
+      "format": "date"
+    },
+    "source": { "type": "string" }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,7 @@
+relationships:
+  - from: synlait
+    to: corporate_reporter
+    type: possible_supplier_claim_reliance
+  - from: coles
+    to: woolworths
+    type: comparable_enterprise_buyer_pattern

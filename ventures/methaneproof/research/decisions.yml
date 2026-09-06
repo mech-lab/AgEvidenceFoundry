@@ -1,0 +1,5 @@
+decisions:
+  - id: decision_001
+    date: 2026-09-06
+    decision: Keep MethaneProof as the working repo brand while recording MethaneEvidence as the literal naming territory.
+    rationale: MethaneProof is memorable, but the claim discipline file constrains overstatement.

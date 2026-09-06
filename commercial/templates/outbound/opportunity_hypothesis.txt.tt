@@ -1,0 +1,1 @@
+Because {{ account.name }} is currently {{ trigger.description }}, it must {{ evidence_need }}. {{ company.name }} can provide {{ artifact.name }}, initially sold to {{ buyer.role }} around {{ reliance_event }}.

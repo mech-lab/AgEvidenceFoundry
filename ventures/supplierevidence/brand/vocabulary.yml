@@ -1,0 +1,6 @@
+product_terms:
+  supplier_passport: Portable supplier evidence artifact.
+  buyer_acceptance_profile: Buyer-defined evidence requirements.
+  source_relay: Evidence movement across organizational boundaries.
+  assurance_export: Evidence package prepared for assurance review.
+  reporting_period: Bounded period for supplier claim use.

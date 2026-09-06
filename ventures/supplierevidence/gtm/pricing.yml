@@ -1,0 +1,11 @@
+pricing:
+  hypothesis: paid supplier evidence passport sprint
+  currency: AUD
+  pilot_range:
+    minimum: 50000
+    maximum: 125000
+  expansion_units:
+    - supplier_program
+    - reporting_period
+    - buyer_profile
+    - supplier_passport

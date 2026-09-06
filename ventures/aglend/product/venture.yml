@@ -1,0 +1,78 @@
+id: aglend
+name: AgLend
+agevidence:
+  protocol_version: "1.x"
+  minimum_foundry_version: "0.1.0"
+market:
+  category: agricultural_lending_evidence
+  initial_buyer:
+    - lender
+    - farm_credit_provider
+    - portfolio_monitor
+reliance:
+  primary_event: lender_evidence_reliance
+  artifact: lender_evidence_package
+terminology:
+  project:
+    singular: underwriting_case
+    plural: underwriting_cases
+  gap:
+    singular: underwriting_condition
+    plural: underwriting_conditions
+  determination:
+    singular: underwriting_evidence_statement
+    plural: underwriting_evidence_statements
+  artifact:
+    singular: lender_evidence_package
+    plural: lender_evidence_packages
+  program_profile:
+    singular: underwriting_profile
+    plural: underwriting_profiles
+  reliance_event:
+    singular: lender_reliance
+    plural: lender_reliance_events
+features:
+  source_records: true
+  observations: true
+  spatial_observations: true
+  intervention_events: false
+  operational_events: true
+  model_runs: true
+  reviewer_workflow: true
+  artifact_export: true
+  verification: true
+  reliance: true
+program_profiles:
+  - agricultural_underwriting_v1
+integrations:
+  - farm_management
+  - accounting
+  - production_history
+acceptance_gates:
+  - evidence_ingested
+  - evaluation_completed
+  - human_review_completed
+  - artifact_issued
+  - artifact_verified
+  - external_reliance_recorded
+reliance_gate:
+  relying_party: lender
+  decision: underwriting_use
+  required:
+    - source_provenance
+    - accepted_evidence
+    - requirements_evaluated
+    - human_review
+    - bounded_determination
+    - immutable_artifact
+    - independent_verification
+  success_event:
+    type: external_reliance
+    name: lender_uses_evidence_package
+metrics:
+  venture_created_at: null
+  first_ingestion_at: null
+  first_complete_evaluation_at: null
+  first_artifact_at: null
+  first_verification_at: null
+  first_external_reliance_at: null

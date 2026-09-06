@@ -1,0 +1,8 @@
+claims:
+  - id: trigger_001
+    statement: BioScout has a near-term need to make commercial efficacy claims inspectable by buyers.
+    classification: gtm_inference
+    source: src_commercial_dossier
+    last_checked: 2026-09-06
+    expires_after_days: 45
+    external_use: false

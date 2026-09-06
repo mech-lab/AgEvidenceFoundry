@@ -1,0 +1,4 @@
+event: efficacy_claim_use
+artifact: field_efficacy_evidence_package
+relying_party: procurement_buyer
+decision: efficacy_claim_use

@@ -1,0 +1,31 @@
+dimensions:
+  live_reliance_event:
+    weight: 20
+  identifiable_buyer:
+    weight: 15
+  evidence_complexity:
+    weight: 15
+  bounded_pilot:
+    weight: 10
+  strategic_reference:
+    weight: 10
+  integration_feasibility:
+    weight: 10
+  current_trigger:
+    weight: 20
+tiers:
+  tier_1:
+    label: Sell Now
+    minimum: 80
+  tier_2:
+    label: Design Partner
+    minimum: 65
+  tier_3:
+    label: Strategic Node
+    minimum: 50
+  tier_4:
+    label: Monitor
+    minimum: 35
+  tier_5:
+    label: Ecosystem
+    minimum: 0

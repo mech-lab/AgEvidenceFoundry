@@ -1,0 +1,15 @@
+dimensions:
+  live_reliance_event:
+    weight: 20
+  identifiable_buyer:
+    weight: 15
+  evidence_complexity:
+    weight: 15
+  bounded_pilot:
+    weight: 10
+  strategic_reference:
+    weight: 10
+  integration_feasibility:
+    weight: 10
+  current_trigger:
+    weight: 20

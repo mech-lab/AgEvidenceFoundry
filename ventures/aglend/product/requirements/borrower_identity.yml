@@ -1,0 +1,5 @@
+id: borrower_identity
+name: Borrower And Farm Entity Evidence
+required_evidence_types:
+  - farm_entity
+evaluation: entity_identity

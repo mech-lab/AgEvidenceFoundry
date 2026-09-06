@@ -1,0 +1,24 @@
+offers:
+  - id: evidence_to_claim_sprint
+    objective: convert_one_commercial_claim_into_an_inspectable_artifact
+    scope:
+      evidence_sources: 3-6
+      program_profiles: 1
+      artifact_types: 1
+      reliance_endpoints: 1
+    duration:
+      weeks: 6
+    outputs:
+      - claim_grammar
+      - field_efficacy_profile
+      - evidence_gap_report
+      - claim_passport
+      - buyer_review_packet
+      - verifier_reconstruction
+    success_gate:
+      external_party_can_evaluate_artifact: true
+    pricing:
+      currency: AUD
+      range:
+        minimum: 25000
+        maximum: 50000

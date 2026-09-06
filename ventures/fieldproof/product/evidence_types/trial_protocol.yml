@@ -1,0 +1,3 @@
+id: trial_protocol
+canonical_primitive: SourceRecord
+description: Registers trial design, crop, site, season, treatment, control, and claim context.

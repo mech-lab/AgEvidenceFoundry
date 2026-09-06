@@ -1,0 +1,3 @@
+id: operational_record
+canonical_primitive: OperationalEvent
+description: Records farm operational evidence relevant to lender conditions.

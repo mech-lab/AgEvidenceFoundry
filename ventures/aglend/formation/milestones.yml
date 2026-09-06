@@ -1,0 +1,9 @@
+milestones:
+  - id: m001
+    name: First lender evidence package
+    target_date: 2026-10-25
+    status: planned
+  - id: m002
+    name: First lender reliance event
+    target_date: 2026-12-01
+    status: planned

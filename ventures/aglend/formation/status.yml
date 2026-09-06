@@ -1,0 +1,26 @@
+stage: buyer_validation
+gates:
+  reliance_hypothesis:
+    status: passed
+  founder_identified:
+    status: pending
+  naming_screen:
+    status: active
+  trademark_clearance:
+    status: pending
+  buyer_language_test:
+    status: active
+  tier1_accounts:
+    status: active
+    required: 10
+    current: 3
+  design_partner:
+    status: pending
+  paid_pilot:
+    status: pending
+  artifact_issued:
+    status: pending
+  external_reliance:
+    status: pending
+  spinout:
+    status: locked

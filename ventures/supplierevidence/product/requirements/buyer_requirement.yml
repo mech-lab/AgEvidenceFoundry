@@ -1,0 +1,5 @@
+id: buyer_requirement
+name: Buyer Requirement Evidence
+required_evidence_types:
+  - buyer_requirement_record
+evaluation: buyer_requirement_mapping

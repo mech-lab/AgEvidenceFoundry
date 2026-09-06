@@ -1,0 +1,9 @@
+# <%= company_name %>
+
+<%= category_descriptor %>
+
+<%= gtm_proposition %>
+
+## First Scope
+
+<%= land_motion %>

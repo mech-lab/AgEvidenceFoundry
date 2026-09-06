@@ -1,0 +1,7 @@
+relationships:
+  - from: bioscout
+    to: procurement_buyer
+    type: possible_claim_reliance
+  - from: loam_bio
+    to: investor_or_distributor
+    type: possible_claim_reuse

@@ -1,0 +1,11 @@
+id: methane_intervention_au_v1
+name: AU Methane Intervention Profile
+market: methane_intervention_evidence
+jurisdiction: AU
+requirements:
+  - intervention_delivery
+  - treatment_continuity
+  - methane_measurement
+  - model_support
+artifact_template: methane_evidence_statement
+reliance_gate: methane_claim_acceptance

@@ -1,0 +1,18 @@
+project:
+  singular: underwriting_case
+  plural: underwriting_cases
+gap:
+  singular: underwriting_condition
+  plural: underwriting_conditions
+determination:
+  singular: underwriting_evidence_statement
+  plural: underwriting_evidence_statements
+artifact:
+  singular: lender_evidence_package
+  plural: lender_evidence_packages
+program_profile:
+  singular: underwriting_profile
+  plural: underwriting_profiles
+reliance_event:
+  singular: lender_reliance
+  plural: lender_reliance_events

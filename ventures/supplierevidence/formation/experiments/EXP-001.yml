@@ -1,0 +1,13 @@
+id: EXP-001
+hypothesis:
+  text: Buyers respond better to supplier evidence acceptance language than to generic Scope 3 reporting language.
+test:
+  type: buyer_interview
+sample:
+  target: 8
+  completed: 0
+result:
+  status: pending
+decision:
+  action: pending
+date: 2026-09-06

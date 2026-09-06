@@ -1,0 +1,3 @@
+id: supplier_record
+canonical_primitive: SourceRecord
+description: Records supplier identity, product category, and program enrollment evidence.

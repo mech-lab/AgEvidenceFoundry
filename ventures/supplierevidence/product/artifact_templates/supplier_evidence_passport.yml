@@ -1,0 +1,11 @@
+id: supplier_evidence_passport
+name: Supplier Evidence Passport
+artifact_kind: bounded_determination
+sections:
+  - supplier
+  - buyer_requirement
+  - reporting_period
+  - evidence_summary
+  - claim_determination
+  - assurance_export
+  - verification

@@ -1,0 +1,7 @@
+id: methaneproof_demo
+name: Processor Methane Claim Demo
+scenario:
+  buyer: processor
+  claim: feed intervention reduced enteric methane for a dairy cohort
+  program_profile: methane_intervention_au_v1
+  target_artifact: methane_evidence_statement

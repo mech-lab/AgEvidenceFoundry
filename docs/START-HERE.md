@@ -1,14 +1,18 @@
 # Start Here
 
-AgEvidence is a startup factory for evidence-native agriculture companies.
+AgEvidenceFoundry is a thin factory fork for evidence-native agriculture companies.
+
+AgEvidence owns the evidence substrate. Foundry owns company formation. Individual companies own their vertical differentiation.
 
 The fastest path is:
 
-1. Run the seeded reference app with `bin/demo`.
-2. Click through the DIT Production Evidence project.
-3. Study the route-to-business map in [screenshots/README.md](screenshots/README.md).
-4. Pick a vertical from [startup-recipes/README.md](startup-recipes/README.md).
-5. Use [STARTUP_MAP.md](STARTUP_MAP.md) to decide what to keep, configure, and replace.
+1. Sync the fork with upstream AgEvidence using `bin/sync-upstream`.
+2. List executable packs with `bin/factory list`.
+3. Validate the packs with `bin/factory doctor`.
+4. Inspect commercial readiness with `bin/factory doctor methaneproof --verbose`.
+5. Score accounts with `bin/factory gtm score methaneproof`.
+6. Run a vertical with `bin/factory demo methaneproof`.
+7. Study [FACTORY.md](../FACTORY.md), [STARTUP_MAP.md](STARTUP_MAP.md), and [docs/factory/task-tree.md](factory/task-tree.md).
 
 ## What You Are Looking At
 
@@ -39,8 +43,19 @@ Differentiate on distribution, workflow, proprietary data access, algorithms, do
 ## First Commands
 
 ```sh
+bin/sync-upstream
+bin/factory list
+bin/factory doctor
+bin/factory doctor methaneproof --verbose
+bin/factory brand score methaneproof
+bin/factory gtm validate methaneproof
+bin/factory gtm score methaneproof
+bin/factory gtm hypothesis methaneproof sea_forest
+bin/factory claims check methaneproof
+bin/factory research stale methaneproof
+bin/factory pitch customer methaneproof
+bin/factory demo methaneproof
 bin/doctor
-bin/demo
 ```
 
 Open `http://127.0.0.1:3000`.
@@ -53,6 +68,12 @@ Demo login:
 ## Next Documents
 
 - [STARTUP_MAP.md](STARTUP_MAP.md)
+- [../FACTORY.md](../FACTORY.md)
+- [factory/task-tree.md](factory/task-tree.md)
+- [venture-playbooks/methaneproof.md](venture-playbooks/methaneproof.md)
+- [venture-playbooks/fieldproof.md](venture-playbooks/fieldproof.md)
+- [venture-playbooks/aglend.md](venture-playbooks/aglend.md)
+- [venture-playbooks/supplierevidence.md](venture-playbooks/supplierevidence.md)
 - [startup-recipes/README.md](startup-recipes/README.md)
 - [screenshots/README.md](screenshots/README.md)
 - [../apps/console/README.md](../apps/console/README.md)

@@ -1,0 +1,13 @@
+icp:
+  primary:
+    - agribusiness banks
+    - rural lenders
+    - equipment financiers
+  downstream_reliance:
+    - credit_policy
+    - risk
+    - assurance
+  disqualifiers:
+    - wants outsourced credit decisions
+    - wants borrower acquisition software only
+    - cannot name an evidence-linked product

@@ -1,0 +1,35 @@
+name:
+  primary: MethaneProof
+  alternatives:
+    - MethaneEvidence
+    - MethaneRecord
+category:
+  descriptor: Neutral methane intervention evidence infrastructure
+primary_line:
+  text: Evidence that methane interventions actually happened.
+gtm_proposition:
+  text: Turn intervention delivery, measurement, and model records into evidence a downstream buyer can inspect.
+role:
+  is:
+    - evidence_infrastructure
+    - neutral_intervention_layer
+  is_not:
+    - methane_certifier
+    - carbon_registry
+    - additive_vendor
+    - assurance_firm
+audience:
+  first_buyer:
+    - methane_technology_company
+    - intervention_provider
+  downstream:
+    - processor
+    - retailer
+    - auditor
+agevidence_endorsement:
+  homepage_hero: hidden
+  main_logo: hidden
+  architecture: visible
+  developer_docs: visible
+  trust_page: visible
+  artifact: protocol_reference

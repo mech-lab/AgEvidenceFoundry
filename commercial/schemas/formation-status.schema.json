@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agevidence.dev/commercial/schemas/formation-status.schema.json",
+  "title": "Formation Status",
+  "type": "object",
+  "required": ["stage", "gates"],
+  "properties": {
+    "stage": { "type": "string" },
+    "gates": {
+      "type": "object",
+      "required": [
+        "reliance_hypothesis",
+        "founder_identified",
+        "naming_screen",
+        "trademark_clearance",
+        "buyer_language_test",
+        "tier1_accounts",
+        "design_partner",
+        "paid_pilot",
+        "artifact_issued",
+        "external_reliance",
+        "spinout"
+      ],
+      "additionalProperties": {
+        "type": "object",
+        "required": ["status"]
+      }
+    }
+  },
+  "additionalProperties": true
+}

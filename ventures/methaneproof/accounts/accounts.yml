@@ -1,0 +1,185 @@
+accounts:
+  - id: sea_forest
+    organization:
+      name: Sea Forest
+      country: AU
+    venture_role:
+      methaneproof:
+        role: intervention_provider
+    priority:
+      tier: 1
+      score: 94
+    trigger:
+      type: commercialization_program
+      description: scaling asparagopsis intervention evidence for commercial livestock customers
+      date: 2026-09-06
+      source: src_commercial_dossier
+    buyer_map:
+      economic_buyer: contact_role_eb
+      economic_buyer_role: commercialization or executive lead
+      champion: contact_role_ch
+      technical_user: contact_role_tu
+      blocker: contact_role_bl
+    evidence_stack:
+      - intervention_delivery_records
+      - additive_lot_records
+      - methane_measurements
+      - model_outputs
+    evidence_problem:
+      hypothesis: reconcile intervention delivery, measurement, and model evidence before a processor relies on a methane claim
+    first_offer:
+      id: evidence_to_reliance_sprint
+    expansion:
+      - processor_acceptance_api
+      - multi_customer_artifact_reuse
+    next_action:
+      action: founder_outreach
+      due: 2026-09-12
+    source_ledger:
+      - src_commercial_dossier
+      - src_branding_dossier
+    confidence: B
+    score_components:
+      live_reliance_event:
+        score: 20
+        evidence: src_commercial_dossier
+      identifiable_buyer:
+        score: 15
+        evidence: src_commercial_dossier
+      evidence_complexity:
+        score: 15
+        evidence: src_commercial_dossier
+      bounded_pilot:
+        score: 10
+        evidence: src_commercial_dossier
+      strategic_reference:
+        score: 10
+        evidence: src_commercial_dossier
+      integration_feasibility:
+        score: 9
+        evidence: src_commercial_dossier
+      current_trigger:
+        score: 15
+        evidence: src_commercial_dossier
+  - id: rumin8
+    organization:
+      name: Rumin8
+      country: AU
+    venture_role:
+      methaneproof:
+        role: intervention_provider
+    priority:
+      tier: 1
+      score: 91
+    trigger:
+      type: product_commercialization
+      description: commercializing synthetic methane-reduction bioactives across delivery formats
+      date: 2026-09-06
+      source: src_commercial_dossier
+    buyer_map:
+      economic_buyer: contact_role_eb
+      economic_buyer_role: product commercialization lead
+      champion: contact_role_ch
+      technical_user: contact_role_tu
+      blocker: contact_role_bl
+    evidence_stack:
+      - formulation_records
+      - delivery_records
+      - cohort_measurements
+      - methodology_outputs
+    evidence_problem:
+      hypothesis: preserve evidence across product formats and downstream buyer requirements
+    first_offer:
+      id: evidence_to_reliance_sprint
+    expansion:
+      - multi_format_evidence_model
+      - verifier_handoff
+    next_action:
+      action: validate_current_delivery_formats
+      due: 2026-09-14
+    source_ledger:
+      - src_commercial_dossier
+    confidence: B
+    score_components:
+      live_reliance_event:
+        score: 18
+        evidence: src_commercial_dossier
+      identifiable_buyer:
+        score: 14
+        evidence: src_commercial_dossier
+      evidence_complexity:
+        score: 15
+        evidence: src_commercial_dossier
+      bounded_pilot:
+        score: 10
+        evidence: src_commercial_dossier
+      strategic_reference:
+        score: 9
+        evidence: src_commercial_dossier
+      integration_feasibility:
+        score: 9
+        evidence: src_commercial_dossier
+      current_trigger:
+        score: 16
+        evidence: src_commercial_dossier
+  - id: dit_agtech
+    organization:
+      name: DIT AgTech
+      country: AU
+    venture_role:
+      methaneproof:
+        role: evidence_producer
+    priority:
+      tier: 1
+      score: 89
+    trigger:
+      type: telemetry_program
+      description: automated supplementation and water-delivery telemetry creates intervention evidence
+      date: 2026-09-06
+      source: src_commercial_dossier
+    buyer_map:
+      economic_buyer: contact_role_eb
+      economic_buyer_role: executive or product lead
+      champion: contact_role_ch
+      technical_user: contact_role_tu
+      blocker: contact_role_bl
+    evidence_stack:
+      - water_supplementation_telemetry
+      - mob_counts
+      - weather_records
+      - production_context
+    evidence_problem:
+      hypothesis: turn delivery telemetry into a processor-inspectable intervention evidence record
+    first_offer:
+      id: evidence_to_reliance_sprint
+    expansion:
+      - device_adapter
+      - processor_claim_workflow
+    next_action:
+      action: map_uHUB_fields_to_intervention_event
+      due: 2026-09-16
+    source_ledger:
+      - src_commercial_dossier
+    confidence: B
+    score_components:
+      live_reliance_event:
+        score: 17
+        evidence: src_commercial_dossier
+      identifiable_buyer:
+        score: 14
+        evidence: src_commercial_dossier
+      evidence_complexity:
+        score: 15
+        evidence: src_commercial_dossier
+      bounded_pilot:
+        score: 9
+        evidence: src_commercial_dossier
+      strategic_reference:
+        score: 9
+        evidence: src_commercial_dossier
+      integration_feasibility:
+        score: 10
+        evidence: src_commercial_dossier
+      current_trigger:
+        score: 15
+        evidence: src_commercial_dossier

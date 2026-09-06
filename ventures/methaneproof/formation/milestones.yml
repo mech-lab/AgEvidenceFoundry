@@ -1,0 +1,9 @@
+milestones:
+  - id: m001
+    name: First processor-facing evidence artifact
+    target_date: 2026-10-15
+    status: planned
+  - id: m002
+    name: First external reliance event
+    target_date: 2026-11-15
+    status: planned

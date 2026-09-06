@@ -1,0 +1,17 @@
+objections:
+  - id: already_have_esg_platform
+    objection: We already have an ESG reporting platform.
+    diagnosis:
+      misconception: reporting_system
+    response:
+      core: SourceRelay does not replace reporting; it preserves the supplier evidence that reporting and assurance workflows need to accept.
+    discovery_followups:
+      - Which supplier evidence fails to move cleanly from source systems into assurance-ready reporting?
+  - id: supplier_burden
+    objection: Suppliers cannot handle another portal.
+    diagnosis:
+      misconception: portal_requirement
+    response:
+      core: SourceRelay should reuse upstream integrations and produce portable passports rather than force a new manual portal.
+    discovery_followups:
+      - Which supplier data sources already exist but are not accepted downstream?

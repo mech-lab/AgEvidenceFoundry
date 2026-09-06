@@ -1,0 +1,7 @@
+id: supplierevidence_demo
+name: Corporate Supplier Claim Demo
+scenario:
+  buyer: corporate_reporter
+  claim: supplier evidence supports a reporting-period Scope 3 or insetting claim
+  program_profile: supplier_scope3_v1
+  target_artifact: supplier_evidence_passport

@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agevidence.dev/factory/schemas/venture-pack.schema.json",
+  "title": "AgEvidence Foundry Venture Pack",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "id",
+    "name",
+    "agevidence",
+    "market",
+    "reliance",
+    "terminology",
+    "features",
+    "program_profiles",
+    "integrations",
+    "acceptance_gates",
+    "reliance_gate"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_]*$"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "agevidence": {
+      "type": "object",
+      "required": ["protocol_version", "minimum_foundry_version"],
+      "properties": {
+        "protocol_version": { "type": "string" },
+        "minimum_foundry_version": { "type": "string" }
+      }
+    },
+    "market": {
+      "type": "object",
+      "required": ["category", "initial_buyer"],
+      "properties": {
+        "category": { "type": "string" },
+        "initial_buyer": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        }
+      }
+    },
+    "reliance": {
+      "type": "object",
+      "required": ["primary_event", "artifact"]
+    },
+    "terminology": {
+      "$ref": "terminology.schema.json"
+    },
+    "features": {
+      "type": "object",
+      "additionalProperties": { "type": "boolean" }
+    },
+    "program_profiles": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "integrations": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "acceptance_gates": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "reliance_gate": {
+      "$ref": "reliance-gate.schema.json"
+    }
+  }
+}

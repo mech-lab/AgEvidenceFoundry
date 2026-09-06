@@ -1,0 +1,3 @@
+id: operational_activity
+canonical_primitive: OperationalEvent
+description: Records farm or supplier operational activity during the reporting period.

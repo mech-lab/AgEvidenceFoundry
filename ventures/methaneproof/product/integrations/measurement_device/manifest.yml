@@ -1,0 +1,5 @@
+id: methane_measurement
+name: Methane Measurement Device
+category: measurement_system
+evidence_types:
+  - methane_measurement

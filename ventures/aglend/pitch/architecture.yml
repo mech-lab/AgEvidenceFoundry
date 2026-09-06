@@ -1,0 +1,5 @@
+sections:
+  - title: Substrate
+    body: AgEvidence supplies source records, observations, operational events, model runs, artifacts, verifier semantics, and reliance records.
+  - title: Vertical Layer
+    body: AgLend configures borrower evidence, underwriting profiles, financial and production evidence, and lender reliance.

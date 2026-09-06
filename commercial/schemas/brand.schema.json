@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agevidence.dev/commercial/schemas/brand.schema.json",
+  "title": "Company Brand",
+  "type": "object",
+  "required": ["name", "category", "primary_line", "gtm_proposition", "role", "audience"],
+  "properties": {
+    "name": {
+      "type": "object",
+      "required": ["primary"],
+      "properties": {
+        "primary": { "type": "string" },
+        "alternatives": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "category": {
+      "type": "object",
+      "required": ["descriptor"]
+    },
+    "primary_line": {
+      "type": "object",
+      "required": ["text"]
+    },
+    "gtm_proposition": {
+      "type": "object",
+      "required": ["text"]
+    },
+    "role": {
+      "type": "object",
+      "required": ["is", "is_not"],
+      "properties": {
+        "is": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "is_not": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "audience": {
+      "type": "object",
+      "required": ["first_buyer", "downstream"]
+    }
+  },
+  "additionalProperties": true
+}

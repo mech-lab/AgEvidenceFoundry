@@ -1,0 +1,29 @@
+id: supplierevidence
+company:
+  working_name: SourceRelay
+  status: formation
+  independence_model: standalone_spinout
+category:
+  descriptor: Supplier evidence acceptance network
+buyer:
+  initial:
+    type: enterprise_buyer_or_evidence_producing_vendor
+  reliance_party:
+    - corporate_reporter
+    - processor
+    - retailer
+    - assurance_provider
+problem:
+  short: Supplier evidence loses provenance and acceptance meaning as it moves from farms and technology vendors into enterprise reporting systems.
+reliance:
+  event: supplier_claim_use
+  artifact: supplier_evidence_passport
+land_motion:
+  scope: One supplier program, one reporting period, one buyer acceptance profile.
+gtm:
+  primary_offer: supplier_evidence_passport_sprint
+brand:
+  mode: independent_endorsed_brand
+agevidence:
+  endorsement: technical_only
+  protocol_required: true

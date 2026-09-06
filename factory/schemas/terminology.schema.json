@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agevidence.dev/factory/schemas/terminology.schema.json",
+  "title": "AgEvidence Foundry Terminology",
+  "type": "object",
+  "additionalProperties": {
+    "oneOf": [
+      { "type": "string" },
+      {
+        "type": "object",
+        "required": ["singular"],
+        "properties": {
+          "singular": { "type": "string" },
+          "plural": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+id: methane_evidence_statement
+name: Methane Evidence Statement
+artifact_kind: bounded_determination
+sections:
+  - claim
+  - evidence_summary
+  - requirements_evaluation
+  - reviewer_determination
+  - limitations
+  - verification

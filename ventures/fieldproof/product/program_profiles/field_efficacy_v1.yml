@@ -1,0 +1,10 @@
+id: field_efficacy_v1
+name: Field Efficacy Profile
+market: field_trial_efficacy_evidence
+requirements:
+  - protocol_registration
+  - treatment_control_design
+  - measurement_completeness
+  - efficacy_threshold
+artifact_template: field_efficacy_evidence_package
+reliance_gate: efficacy_claim_use

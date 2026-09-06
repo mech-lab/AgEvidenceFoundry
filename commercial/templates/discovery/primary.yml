@@ -1,0 +1,9 @@
+primary_question:
+  text: Which evidence problem is blocking the largest commercial decision right now?
+stages:
+  - problem
+  - current_workflow
+  - evidence_sources
+  - reliance
+  - budget
+  - next_step

@@ -1,0 +1,3 @@
+id: intervention_activity
+canonical_primitive: InterventionEvent
+description: Records supplier interventions that support an insetting or Scope 3 claim.

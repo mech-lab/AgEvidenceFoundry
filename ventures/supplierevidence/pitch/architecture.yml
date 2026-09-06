@@ -1,0 +1,5 @@
+sections:
+  - title: Substrate
+    body: AgEvidence supplies source records, observations, interventions, operational events, model runs, artifacts, verifier semantics, and reliance records.
+  - title: Vertical Layer
+    body: SourceRelay configures supplier programs, buyer requirements, reporting periods, passports, corporate packages, and assurance exports.

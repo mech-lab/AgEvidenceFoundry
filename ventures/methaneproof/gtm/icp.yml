@@ -1,0 +1,13 @@
+icp:
+  primary:
+    - methane intervention companies
+    - feed delivery channels
+    - portfolio operators
+  downstream_reliance:
+    - processors
+    - corporate buyers
+    - assurance providers
+  disqualifiers:
+    - wants a carbon registry
+    - wants guaranteed outcome claims
+    - needs only generic ESG reporting

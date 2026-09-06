@@ -1,0 +1,8 @@
+claims:
+  - id: trigger_001
+    statement: Sea Forest has a near-term commercial evidence need around processor reliance.
+    classification: gtm_inference
+    source: src_commercial_dossier
+    last_checked: 2026-09-06
+    expires_after_days: 45
+    external_use: false

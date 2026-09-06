@@ -1,0 +1,21 @@
+family: market_scientific_evidence
+principles:
+  - scientific_interface
+  - provenance_lines
+  - bounded_outcome_records
+  - measurement_lineage
+avoid:
+  - cow_icons
+  - methane_cloud_cartoons
+  - generic_net_zero_imagery
+  - faux_regulatory_seals
+typography:
+  interface: rigorous_sans
+  document: technical_serif_optional
+tokens:
+  radius: 6
+  spacing: compact
+  primary: "#247A70"
+  secondary: "#4D91A8"
+  ink: "#1E2928"
+  paper: "#F3F6F4"

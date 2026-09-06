@@ -1,0 +1,23 @@
+allowed:
+  - evidence basis
+  - lender evidence package
+  - underwriting evidence
+  - policy-ready evidence
+  - verification-compatible evidence
+requires_qualification:
+  - underwrite
+  - credit-ready
+  - risk
+  - verified
+prohibited:
+  - approved loan
+  - credit score
+  - guaranteed approval
+  - risk rating
+  - automated underwriting decision
+regulated_roles:
+  company_is_not:
+    - lender
+    - credit_rating_agency
+    - insurance_carrier
+    - regulated_adviser

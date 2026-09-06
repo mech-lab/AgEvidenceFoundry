@@ -1,0 +1,185 @@
+accounts:
+  - id: bioscout
+    organization:
+      name: BioScout
+      country: AU
+    venture_role:
+      fieldproof:
+        role: agtech_vendor
+    priority:
+      tier: 1
+      score: 96
+    trigger:
+      type: commercialization_program
+      description: commercial airborne disease surveillance and spray optimization claims require buyer-inspectable evidence
+      date: 2026-09-06
+      source: src_commercial_dossier
+    buyer_map:
+      economic_buyer: contact_role_eb
+      economic_buyer_role: commercialization or product lead
+      champion: contact_role_ch
+      technical_user: contact_role_tu
+      blocker: contact_role_bl
+    evidence_stack:
+      - disease_surveillance_data
+      - spray_recommendation_records
+      - field_observations
+      - claim_analysis
+    evidence_problem:
+      hypothesis: convert disease detection and spray optimization assertions into a reusable buyer claim artifact
+    first_offer:
+      id: evidence_to_claim_sprint
+    expansion:
+      - claims_registry
+      - distributor_buyer_portal
+    next_action:
+      action: founder_outreach
+      due: 2026-09-12
+    source_ledger:
+      - src_commercial_dossier
+      - src_branding_dossier
+    confidence: B
+    score_components:
+      live_reliance_event:
+        score: 20
+        evidence: src_commercial_dossier
+      identifiable_buyer:
+        score: 15
+        evidence: src_commercial_dossier
+      evidence_complexity:
+        score: 15
+        evidence: src_commercial_dossier
+      bounded_pilot:
+        score: 10
+        evidence: src_commercial_dossier
+      strategic_reference:
+        score: 10
+        evidence: src_commercial_dossier
+      integration_feasibility:
+        score: 10
+        evidence: src_commercial_dossier
+      current_trigger:
+        score: 16
+        evidence: src_commercial_dossier
+  - id: swarmfarm
+    organization:
+      name: SwarmFarm Robotics
+      country: AU
+    venture_role:
+      fieldproof:
+        role: agtech_vendor
+    priority:
+      tier: 1
+      score: 93
+    trigger:
+      type: deployment_growth
+      description: robotics and precision application deployments create field evidence buyers need to interpret
+      date: 2026-09-06
+      source: src_commercial_dossier
+    buyer_map:
+      economic_buyer: contact_role_eb
+      economic_buyer_role: executive or commercial lead
+      champion: contact_role_ch
+      technical_user: contact_role_tu
+      blocker: contact_role_bl
+    evidence_stack:
+      - robot_operation_logs
+      - application_records
+      - field_conditions
+      - efficacy_measurements
+    evidence_problem:
+      hypothesis: package field operation evidence into claims that buyers can compare and reuse
+    first_offer:
+      id: evidence_to_claim_sprint
+    expansion:
+      - machinery_claim_profiles
+      - buyer_comparison_portal
+    next_action:
+      action: map_claim_family
+      due: 2026-09-14
+    source_ledger:
+      - src_commercial_dossier
+    confidence: B
+    score_components:
+      live_reliance_event:
+        score: 19
+        evidence: src_commercial_dossier
+      identifiable_buyer:
+        score: 15
+        evidence: src_commercial_dossier
+      evidence_complexity:
+        score: 15
+        evidence: src_commercial_dossier
+      bounded_pilot:
+        score: 10
+        evidence: src_commercial_dossier
+      strategic_reference:
+        score: 10
+        evidence: src_commercial_dossier
+      integration_feasibility:
+        score: 9
+        evidence: src_commercial_dossier
+      current_trigger:
+        score: 15
+        evidence: src_commercial_dossier
+  - id: loam_bio
+    organization:
+      name: Loam Bio
+      country: AU
+    venture_role:
+      fieldproof:
+        role: biological_input_vendor
+    priority:
+      tier: 1
+      score: 92
+    trigger:
+      type: commercial_claim
+      description: microbial carbon and agronomic claims require applicability and evidence boundaries
+      date: 2026-09-06
+      source: src_commercial_dossier
+    buyer_map:
+      economic_buyer: contact_role_eb
+      economic_buyer_role: commercial or science lead
+      champion: contact_role_ch
+      technical_user: contact_role_tu
+      blocker: contact_role_bl
+    evidence_stack:
+      - trial_protocols
+      - treatment_records
+      - site_measurements
+      - analysis_outputs
+    evidence_problem:
+      hypothesis: represent biological response heterogeneity and claim support without overstating efficacy
+    first_offer:
+      id: evidence_to_claim_sprint
+    expansion:
+      - crop_specific_claims
+      - investor_diligence_artifacts
+    next_action:
+      action: identify_first_commercial_claim
+      due: 2026-09-15
+    source_ledger:
+      - src_commercial_dossier
+    confidence: B
+    score_components:
+      live_reliance_event:
+        score: 18
+        evidence: src_commercial_dossier
+      identifiable_buyer:
+        score: 14
+        evidence: src_commercial_dossier
+      evidence_complexity:
+        score: 15
+        evidence: src_commercial_dossier
+      bounded_pilot:
+        score: 10
+        evidence: src_commercial_dossier
+      strategic_reference:
+        score: 10
+        evidence: src_commercial_dossier
+      integration_feasibility:
+        score: 9
+        evidence: src_commercial_dossier
+      current_trigger:
+        score: 16
+        evidence: src_commercial_dossier

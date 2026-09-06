@@ -1,0 +1,23 @@
+problem:
+  one_sentence: Lenders need agricultural evidence they can inspect without handing over credit judgment to an external product.
+why_now:
+  - sustainable_finance_products
+  - evidence_linked_underwriting
+first_buyer:
+  type: agricultural_lender
+first_workflow:
+  description: Package farm and operational evidence against one lender-defined underwriting profile.
+reliance_event:
+  description: Lender uses the evidence package in underwriting or review.
+artifact:
+  description: Lender evidence package.
+wedge:
+  description: One financial product and one accepted evidence profile.
+expansion:
+  - portfolio_monitoring
+  - equipment_finance
+  - insurance_evidence
+moat:
+  - lender_relationships
+  - accepted_source_network
+  - accumulated_reliance

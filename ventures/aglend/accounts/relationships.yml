@@ -1,0 +1,7 @@
+relationships:
+  - from: nab
+    to: aglend
+    type: possible_lender_reliance
+  - from: bnz
+    to: supplierevidence
+    type: adjacent_supplier_evidence_interest

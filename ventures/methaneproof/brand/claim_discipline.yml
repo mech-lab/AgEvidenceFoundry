@@ -1,0 +1,22 @@
+allowed:
+  - evidence package
+  - inspectable evidence
+  - bounded methane evidence
+  - intervention evidence
+  - verification-compatible
+requires_qualification:
+  - verified
+  - validated
+  - compliant
+prohibited:
+  - certified methane reduction
+  - guaranteed methane reduction
+  - approved intervention
+  - official MRV
+  - regulator-approved
+regulated_roles:
+  company_is_not:
+    - auditor
+    - regulator
+    - registry
+    - certification_body

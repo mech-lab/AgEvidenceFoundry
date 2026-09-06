@@ -1,0 +1,6 @@
+id: trial_management
+name: Trial Management System
+category: trial_operations
+evidence_types:
+  - trial_protocol
+  - treatment_event

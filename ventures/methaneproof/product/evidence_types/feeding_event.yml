@@ -1,0 +1,3 @@
+id: feeding_event
+canonical_primitive: InterventionEvent
+description: Records delivery of a feed additive or ration intervention to an animal group.

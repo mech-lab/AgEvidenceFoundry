@@ -1,0 +1,6 @@
+id: farm_systems
+name: Farm Systems
+category: farm_operational_system
+evidence_types:
+  - operational_activity
+  - intervention_activity

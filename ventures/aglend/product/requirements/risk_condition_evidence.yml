@@ -1,0 +1,6 @@
+id: risk_condition_evidence
+name: Risk Condition Evidence
+required_evidence_types:
+  - operational_record
+  - monitoring_model_run
+evaluation: condition_evidence_presence

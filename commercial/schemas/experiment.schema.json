@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agevidence.dev/commercial/schemas/experiment.schema.json",
+  "title": "Formation Experiment",
+  "type": "object",
+  "required": ["id", "hypothesis", "test", "sample", "result", "decision", "date"],
+  "properties": {
+    "id": { "type": "string" },
+    "hypothesis": {
+      "type": "object",
+      "required": ["text"]
+    },
+    "test": {
+      "type": "object",
+      "required": ["type"]
+    },
+    "sample": { "type": "object" },
+    "result": { "type": "object" },
+    "decision": { "type": "object" },
+    "date": {
+      "type": "string",
+      "format": "date"
+    }
+  },
+  "additionalProperties": true
+}

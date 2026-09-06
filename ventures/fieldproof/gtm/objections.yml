@@ -1,0 +1,17 @@
+objections:
+  - id: existing_trial_system
+    objection: We already have trial-management software.
+    diagnosis:
+      misconception: product_category
+    response:
+      core: FieldProof does not replace trial management; it represents what the evidence supports in a form the next relying party can inspect.
+    discovery_followups:
+      - When a distributor challenges an efficacy claim, what does your team currently send?
+  - id: performance_varies
+    objection: Product performance varies across fields and seasons.
+    diagnosis:
+      misconception: variability_as_failure
+    response:
+      core: FieldProof makes applicability bounds explicit rather than hiding heterogeneity.
+    discovery_followups:
+      - Which bounds would make the claim commercially usable?

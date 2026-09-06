@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agevidence.dev/commercial/schemas/offer.schema.json",
+  "title": "Commercial Offer",
+  "type": "object",
+  "required": ["id", "objective", "scope", "duration", "outputs", "success_gate", "pricing"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_]*$"
+    },
+    "objective": { "type": "string" },
+    "scope": { "type": "object" },
+    "duration": { "type": "object" },
+    "outputs": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "success_gate": { "type": "object" },
+    "pricing": { "type": "object" }
+  },
+  "additionalProperties": true
+}

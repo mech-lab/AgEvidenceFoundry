@@ -1,0 +1,6 @@
+id: farm_management
+name: Farm Management System
+category: farm_operational_system
+evidence_types:
+  - production_history
+  - operational_record

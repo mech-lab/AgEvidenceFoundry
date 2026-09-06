@@ -1,0 +1,34 @@
+tests:
+  buyer_recognition:
+    question: Does the first buyer recognize field or efficacy claims before explanation?
+    score: 4
+    evidence:
+      - brand_dossier_efficacy_section
+  role_discipline:
+    question: Could the name imply warranty, certification, or agronomic endorsement?
+    score: 4
+  land_motion_fit:
+    question: Does the name help sell one consequential claim artifact?
+    score: 5
+  expansion_permission:
+    question: Can the name work across biologicals, machinery, irrigation, robotics, and AI agronomy?
+    score: 5
+  investor_signal:
+    question: Does the name signal repeatable claim infrastructure?
+    score: 4
+territories:
+  institutional:
+    - EfficacyRail
+    - Efficacy Network
+    - FieldClaim
+  infrastructure:
+    - ClaimRail
+    - ClaimGraph
+    - ClaimLedger
+  venture_brand:
+    - FieldProof
+    - ClaimBench
+    - EfficacyWorks
+decision:
+  selected: FieldProof
+  rationale: Broad and memorable for the repo cohort; keep EfficacyRail available if buyer tests favor explicit efficacy language.

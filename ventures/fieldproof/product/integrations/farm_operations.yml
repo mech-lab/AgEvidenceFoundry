@@ -1,0 +1,6 @@
+id: farm_operations
+name: Farm Operations System
+category: farm_operational_system
+evidence_types:
+  - treatment_event
+  - site_measurement

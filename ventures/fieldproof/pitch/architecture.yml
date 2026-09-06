@@ -1,0 +1,5 @@
+sections:
+  - title: Substrate
+    body: AgEvidence supplies the source, observation, intervention, model, artifact, verifier, and reliance grammar.
+  - title: Vertical Layer
+    body: FieldProof configures trial protocols, treatment/control design, measurements, efficacy thresholds, and claim artifacts.

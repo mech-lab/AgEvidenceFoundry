@@ -1,0 +1,5 @@
+id: supplier_identity
+name: Supplier Identity Evidence
+required_evidence_types:
+  - supplier_record
+evaluation: supplier_identity_presence

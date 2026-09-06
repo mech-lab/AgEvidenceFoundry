@@ -1,0 +1,4 @@
+event: underwriting_use
+artifact: lender_evidence_package
+relying_party: lender
+decision: underwriting_use

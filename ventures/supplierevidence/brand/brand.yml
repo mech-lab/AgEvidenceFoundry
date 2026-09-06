@@ -1,0 +1,38 @@
+name:
+  primary: SourceRelay
+  alternatives:
+    - SupplierEvidence
+    - SupplyProof
+    - SourcePass
+category:
+  descriptor: Supplier evidence acceptance network
+primary_line:
+  text: Make supplier evidence travel.
+gtm_proposition:
+  text: Move structured supplier evidence downstream without losing provenance, so one upstream integration can satisfy multiple buyer acceptance profiles.
+role:
+  is:
+    - supplier_evidence_network
+    - buyer_acceptance_layer
+  is_not:
+    - carbon_calculator
+    - esg_dashboard
+    - generic_traceability_portal
+    - assurance_firm
+audience:
+  first_buyer:
+    - processor
+    - retailer
+    - exporter
+    - evidence_producing_agtech_vendor
+  downstream:
+    - corporate_reporter
+    - assurance_provider
+    - procurement_team
+agevidence_endorsement:
+  homepage_hero: hidden
+  main_logo: hidden
+  architecture: visible
+  developer_docs: visible
+  trust_page: visible
+  artifact: protocol_reference

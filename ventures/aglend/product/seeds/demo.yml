@@ -1,0 +1,7 @@
+id: aglend_demo
+name: Lender Underwriting Use Demo
+scenario:
+  buyer: lender
+  claim: normalized farm evidence supports lender underwriting review
+  program_profile: agricultural_underwriting_v1
+  target_artifact: lender_evidence_package

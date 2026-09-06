@@ -1,0 +1,18 @@
+project:
+  singular: evidence_case
+  plural: evidence_cases
+gap:
+  singular: readiness_check
+  plural: readiness_checks
+determination:
+  singular: methane_evidence_statement
+  plural: methane_evidence_statements
+artifact:
+  singular: reliance_package
+  plural: reliance_packages
+program_profile:
+  singular: methane_method_profile
+  plural: methane_method_profiles
+reliance_event:
+  singular: processor_reliance
+  plural: processor_reliance_events

@@ -2,6 +2,15 @@
 
 Use this table to decide what to steal from AgEvidence and what to make your own.
 
+In Foundry, the executable boundary is:
+
+```text
+Generic -> upstream AgEvidence
+Factory-specific -> AgEvidenceFoundry
+Vertical -> ventures/<venture>
+Proprietary -> standalone company repo
+```
+
 | Layer | Reuse unchanged | Configure | Replace |
 | --- | --- | --- | --- |
 | Canonical evidence primitives | yes | no | no |

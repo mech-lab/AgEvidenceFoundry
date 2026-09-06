@@ -1,0 +1,28 @@
+id: aglend
+company:
+  working_name: AgLend
+  status: formation
+  independence_model: standalone_spinout
+category:
+  descriptor: Agricultural evidence infrastructure for institutional credit
+buyer:
+  initial:
+    type: agricultural_lender
+  reliance_party:
+    - bank
+    - insurer
+    - equipment_financier
+problem:
+  short: Agricultural lenders need inspectable non-financial evidence without outsourcing credit policy or borrower decisions.
+reliance:
+  event: underwriting_use
+  artifact: lender_evidence_package
+land_motion:
+  scope: One lender, one financial product, three to six evidence sources, and one underwriting evidence package.
+gtm:
+  primary_offer: underwriting_evidence_sprint
+brand:
+  mode: independent_endorsed_brand
+agevidence:
+  endorsement: technical_only
+  protocol_required: true

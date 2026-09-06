@@ -1,0 +1,8 @@
+claims:
+  - id: trigger_001
+    statement: Synlait has a near-term supplier evidence passport opportunity around on-farm evidence and LCA handoff.
+    classification: gtm_inference
+    source: src_commercial_dossier
+    last_checked: 2026-09-06
+    expires_after_days: 45
+    external_use: false

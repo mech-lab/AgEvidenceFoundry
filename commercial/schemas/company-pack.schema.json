@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agevidence.dev/commercial/schemas/company-pack.schema.json",
+  "title": "AgEvidence Foundry Company Pack",
+  "type": "object",
+  "required": ["id", "company", "category", "buyer", "problem", "reliance", "land_motion", "gtm", "brand", "agevidence"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_]*$"
+    },
+    "company": {
+      "type": "object",
+      "required": ["working_name", "status", "independence_model"],
+      "properties": {
+        "working_name": { "type": "string" },
+        "status": { "type": "string" },
+        "independence_model": { "type": "string" }
+      }
+    },
+    "category": {
+      "type": "object",
+      "required": ["descriptor"],
+      "properties": {
+        "descriptor": { "type": "string" }
+      }
+    },
+    "buyer": {
+      "type": "object",
+      "required": ["initial", "reliance_party"],
+      "properties": {
+        "initial": {
+          "type": "object",
+          "required": ["type"],
+          "properties": {
+            "type": { "type": "string" }
+          }
+        },
+        "reliance_party": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        }
+      }
+    },
+    "problem": {
+      "type": "object",
+      "required": ["short"]
+    },
+    "reliance": {
+      "type": "object",
+      "required": ["event", "artifact"]
+    },
+    "land_motion": {
+      "type": "object",
+      "required": ["scope"]
+    },
+    "gtm": {
+      "type": "object",
+      "required": ["primary_offer"]
+    },
+    "brand": {
+      "type": "object",
+      "required": ["mode"]
+    },
+    "agevidence": {
+      "type": "object",
+      "required": ["endorsement", "protocol_required"]
+    }
+  },
+  "additionalProperties": true
+}

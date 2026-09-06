@@ -1,0 +1,17 @@
+surfaces:
+  homepage_hero:
+    agevidence: hidden
+  main_logo:
+    agevidence: hidden
+  customer_sales_cover:
+    agevidence: usually_hidden
+  architecture:
+    agevidence: visible
+  developer_docs:
+    agevidence: visible
+  trust_page:
+    agevidence: visible
+  investor_architecture:
+    agevidence: visible
+  api_verifier:
+    agevidence: native_reference

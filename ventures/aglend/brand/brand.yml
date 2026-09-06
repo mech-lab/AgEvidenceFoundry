@@ -1,0 +1,37 @@
+name:
+  primary: AgLend
+  alternatives:
+    - AgBasis
+    - RuralBasis
+    - FieldLedger
+category:
+  descriptor: Agricultural evidence infrastructure for institutional credit
+primary_line:
+  text: The evidence basis for agricultural finance.
+gtm_proposition:
+  text: Give the lender an evidence basis it can inspect, verify, and apply its own underwriting policy against.
+role:
+  is:
+    - credit_evidence_infrastructure
+    - lender_policy_input_layer
+  is_not:
+    - lender
+    - credit_score
+    - underwriting_decision_engine
+    - insurance_carrier
+audience:
+  first_buyer:
+    - agricultural_bank
+    - rural_lender
+    - equipment_financier
+  downstream:
+    - credit_policy_team
+    - risk_team
+    - assurance_provider
+agevidence_endorsement:
+  homepage_hero: hidden
+  main_logo: hidden
+  architecture: visible
+  developer_docs: visible
+  trust_page: visible
+  artifact: protocol_reference

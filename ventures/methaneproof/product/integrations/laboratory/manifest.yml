@@ -1,0 +1,5 @@
+id: lab_assay
+name: Laboratory Assay
+category: laboratory
+evidence_types:
+  - treatment_lot

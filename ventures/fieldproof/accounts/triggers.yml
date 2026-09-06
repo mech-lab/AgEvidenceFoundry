@@ -1,0 +1,6 @@
+triggers:
+  - id: efficacy_commercialization_2026
+    date: 2026-09-06
+    type: commercial_claim
+    source: src_commercial_dossier
+    description: Funded agtech vendors need buyer-inspectable efficacy evidence for consequential claims.

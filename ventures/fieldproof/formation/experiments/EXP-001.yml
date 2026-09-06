@@ -1,0 +1,13 @@
+id: EXP-001
+hypothesis:
+  text: Vendors respond more strongly to portable claim artifacts than to another trial-management workflow.
+test:
+  type: buyer_interview
+sample:
+  target: 8
+  completed: 0
+result:
+  status: pending
+decision:
+  action: pending
+date: 2026-09-06

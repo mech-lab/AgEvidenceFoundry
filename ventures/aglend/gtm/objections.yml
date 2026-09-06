@@ -1,0 +1,17 @@
+objections:
+  - id: already_have_credit_models
+    objection: We already have credit models.
+    diagnosis:
+      misconception: decision_engine
+    response:
+      core: AgLend does not replace credit policy or risk models; it gives those systems an inspectable agricultural evidence basis.
+    discovery_followups:
+      - Which non-financial evidence do your teams struggle to trust or reuse today?
+  - id: verifier_role
+    objection: We need independent assurance, not another software vendor.
+    diagnosis:
+      misconception: assurance_boundary
+    response:
+      core: AgLend preserves verifier and lender authority while reducing evidence assembly friction.
+    discovery_followups:
+      - Which evidence fields must an external reviewer inspect before your policy team can use them?

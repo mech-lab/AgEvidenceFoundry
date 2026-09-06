@@ -1,0 +1,5 @@
+id: assurance_export
+name: Assurance Export
+category: assurance_system
+evidence_types:
+  - supplier_claim_model_run

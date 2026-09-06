@@ -1,0 +1,11 @@
+pricing:
+  hypothesis: paid reliance pilot
+  currency: AUD
+  pilot_range:
+    minimum: 25000
+    maximum: 50000
+  expansion_units:
+    - intervention
+    - production_environment
+    - artifact
+    - reliance_endpoint

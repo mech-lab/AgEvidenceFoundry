@@ -1,0 +1,10 @@
+id: agricultural_underwriting_v1
+name: Agricultural Underwriting Evidence Profile
+market: agricultural_lending_evidence
+requirements:
+  - borrower_identity
+  - financial_evidence
+  - production_evidence
+  - risk_condition_evidence
+artifact_template: lender_evidence_package
+reliance_gate: underwriting_use

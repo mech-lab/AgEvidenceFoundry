@@ -1,0 +1,23 @@
+problem:
+  one_sentence: Supplier evidence does not travel cleanly from source systems into buyer, reporter, and assurance workflows.
+why_now:
+  - corporate_scope3_reporting
+  - supplier_program_expansion
+first_buyer:
+  type: enterprise_buyer_or_evidence_producing_vendor
+first_workflow:
+  description: Create one supplier evidence passport for one buyer acceptance profile.
+reliance_event:
+  description: Corporate reporter uses the supplier claim package.
+artifact:
+  description: Supplier evidence passport.
+wedge:
+  description: One reporting period and one supplier program.
+expansion:
+  - category_rollouts
+  - assurance_exports
+  - buyer_acceptance_network
+moat:
+  - supplier_integration_network
+  - buyer_acceptance_profiles
+  - accumulated_reliance

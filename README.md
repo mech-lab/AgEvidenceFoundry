@@ -1,28 +1,932 @@
-# AgEvidence
+# AgEvidence Foundry
 
-Open evidence infrastructure for building agriculture companies.
+Build evidence-native agricultural companies faster.
 
-AgEvidence shows what an evidence-native agtech company can become, then gives founders a path to specialize that evidence layer into their own market. The Rails console is the complete reference business: projects, source records, normalized evidence, gaps, evaluations, review, determinations, artifacts, downloadable bundles, reliance, verification, ProgramProfiles, API keys, schemas, OpenAPI, logs, and webhooks.
+AgEvidence Foundry is a company-formation substrate for founders building businesses whose agricultural claims, decisions, or records must eventually be relied upon by another institution.
 
-Rails shows the company. `pip install agevidence` gives you the primitives. The repository teaches you how to specialize those primitives into a company.
+Bring:
 
-![AgEvidence evidence workspace overview](docs/screenshots/00-overview.png)
+- domain expertise
+- a buyer hypothesis
+- an evidence problem
+- a consequential reliance event
 
-## See -> Run -> Embed -> Fork -> Sell
+The Foundry supplies reusable infrastructure for:
 
-### See It
+- evidence provenance
+- schemas and typed evidence
+- requirements and ProgramProfiles
+- evaluation
+- review
+- determinations
+- portable artifacts
+- verification
+- APIs and SDKs
+- company configuration
+- branding
+- category definition
+- customer and investor pitching
+- account research
+- GTM scoring
+- discovery
+- pricing and first offers
+- formation experiments
+- eventual company extraction
 
-Inspect a complete evidence workspace in `apps/console`. It is seeded with a DIT Production Evidence project, an Australian methane intervention ProgramProfile, source records, SDK-produced evidence, intervention and operational events, measurement evidence, model runs, gaps, evaluation, review, determination, issued artifact, verification result, reliance event, API key, schemas, OpenAPI, logs, webhooks, and integrations.
+The objective is not to create ten modules of AgEvidence. The objective is to repeatedly create independent companies that share an interoperable evidence grammar.
 
-![AgEvidence project workspace](docs/screenshots/01-project.png)
+```text
+Domain + buyer + reliance hypothesis
+        |
+        v
+Product -> brand -> pitch -> GTM -> paid pilot -> external reliance -> independent company
+```
 
-The reference company is deliberately complete enough to show the operating surface of an evidence-native agtech business before you specialize it into your own vertical.
+## The Thesis
 
-### Run It
+Most founders building evidence-sensitive agricultural software should not spend their first 12 to 18 months rebuilding provenance, evidence identity, requirements engines, review workflows, artifacts, verification contracts, API infrastructure, and audit histories.
+
+Those are shared infrastructure.
+
+A founder should spend that time discovering:
+
+1. who has the consequential decision
+2. what evidence they need
+3. who will pay to make that evidence usable
+4. what workflow is unique to the market
+5. what proprietary advantage the company can accumulate
+
+AgEvidence provides the shared evidence substrate. AgEvidence Foundry adds the repeatable company-formation machinery around it.
+
+> AgEvidence is why the evidence is interoperable. The startup is why the buyer cares.
+
+## The Factory
+
+```text
+                         DOMAIN FOUNDER
+                              |
+                domain + buyer + hypothesis
+                              |
+                              v
+                    AGEVIDENCE FOUNDRY
+                              |
+        +---------------------+---------------------+
+        |                     |                     |
+        v                     v                     v
+ TRUST SUBSTRATE       COMPANY SUBSTRATE      COMMERCIAL SUBSTRATE
+        |                     |                     |
+ provenance                 brand                  ICP
+ evidence                   category               accounts
+ requirements               vocabulary             triggers
+ evaluation                 pitch                  offers
+ review                     visual system          pricing
+ artifacts                  claim discipline       discovery
+ verification               founder story          objections
+ reliance                   investor story         relationships
+        |                     |                     |
+        +---------------------+---------------------+
+                              |
+                              v
+                      VERTICAL COMPANY
+                              |
+                        design partner
+                              |
+                              v
+                           PAID PILOT
+                              |
+                              v
+                       ISSUED ARTIFACT
+                              |
+                              v
+                    EXTERNAL RELIANCE
+                              |
+                              v
+                   INDEPENDENT SPINOUT
+```
+
+External reliance is the unifying endpoint. A venture does not graduate because the app boots. It graduates when a real external institution is prepared to use the evidence.
+
+## What Comes Out
+
+A formed company should leave with more than source code.
+
+### Product
+
+- working vertical application
+- ProgramProfiles
+- requirements
+- domain vocabulary
+- evidence mappings
+- integrations
+- artifact definitions
+- verifier-compatible outputs
+
+### Brand
+
+- corporate identity
+- category descriptor
+- first-wedge proposition
+- product vocabulary
+- visual direction
+- AgEvidence endorsement rules
+- prohibited-claims boundaries
+
+### Commercial
+
+- ideal-customer profile
+- target-account universe
+- buyer-role map
+- account scoring
+- live commercial triggers
+- pricing hypothesis
+- first paid offer
+- discovery playbook
+- objection handling
+- relationship graph
+
+### Pitch
+
+- customer story
+- investor story
+- founder-recruitment story
+- architecture story
+- proof-point ledger
+
+### Formation
+
+- founder hypothesis
+- experiments
+- decision log
+- milestone gates
+- reliance target
+- spinout readiness
+
+## Ownership Boundaries
+
+The Foundry only works if the boundaries stay clean.
+
+### AgEvidence Owns The Shared Trust Grammar
+
+Examples:
+
+- SourceRecord
+- Observation
+- SpatialObservation
+- InterventionEvent
+- OperationalEvent
+- ModelRun
+- canonicalization
+- artifact contracts
+- verification contracts
+- bundle formats
+- reliance records
+- SDK interfaces
+- conformance fixtures
+
+If a capability should work identically for every evidence-native company, it probably belongs upstream in AgEvidence.
+
+### Foundry Owns Company-Formation Machinery
+
+Examples:
+
+- Company Pack schemas
+- venture generators
+- brand schemas
+- GTM schemas
+- account research structures
+- pitch generators
+- formation gates
+- cross-portfolio relationship intelligence
+- extraction tooling
+
+### Company Packs Own Vertical Configuration
+
+Examples:
+
+- underwriting requirements
+- methane intervention requirements
+- supplier acceptance profiles
+- field-trial claim semantics
+- company terminology
+- first offers
+- account interpretations
+- vertical demo scenarios
+
+### Independent Companies Own Proprietary Advantage
+
+Examples:
+
+- customer relationships
+- proprietary integrations
+- algorithms
+- unique datasets
+- pricing
+- private workflows
+- distribution
+- proprietary analytics
+- internal commercial data
+
+Memorize the rule:
+
+```text
+Generic     -> AgEvidence
+Formation   -> Foundry
+Vertical    -> Company Pack
+Proprietary -> Independent company
+```
+
+## Repository Map
+
+```text
+AgEvidenceFoundry/
+|
+├── protocol/                 shared AgEvidence trust contracts
+├── packages/                 SDKs and verifier implementations
+├── apps/console/             reference evidence application
+|
+├── factory/                  company-formation machinery
+│   ├── schemas/
+│   ├── generators/
+│   ├── loaders/
+│   ├── templates/
+│   └── conformance/
+|
+├── commercial/               shared commercial intelligence
+│   ├── schemas/
+│   ├── graph/
+│   ├── scoring/
+│   ├── templates/
+│   └── vocabulary/
+|
+├── ventures/                 executable Company Packs
+│   ├── methaneproof/
+│   ├── fieldproof/
+│   ├── aglend/
+│   └── supplierevidence/
+|
+├── docs/                     methodology and reference documentation
+├── research/                 reproducible scientific/research work
+├── generated/                disposable compiled artifacts
+|
+└── bin/
+    ├── doctor
+    ├── demo
+    ├── factory
+    └── sync-upstream
+```
+
+Mental model:
+
+> `protocol/` describes what evidence means.
+> `factory/` describes how companies are formed.
+> `commercial/` describes reusable market intelligence.
+> `ventures/` describes how each company differs.
+
+## Operating Commands
+
+| Goal | Command | Status |
+| --- | --- | --- |
+| Check repository | `bin/doctor` | implemented |
+| Run reference business | `bin/demo` | implemented |
+| List companies | `bin/factory list` | implemented |
+| Inspect company | `bin/factory show methaneproof` | implemented |
+| Validate company | `bin/factory doctor methaneproof` | implemented |
+| Inspect readiness | `bin/factory doctor methaneproof --verbose` | implemented |
+| Run company demo | `bin/factory demo methaneproof` | partial |
+| Run venture tests | `bin/factory test methaneproof` | partial |
+| Score brand | `bin/factory brand score methaneproof` | implemented |
+| Check generated claims | `bin/factory claims check methaneproof` | implemented |
+| Validate GTM | `bin/factory gtm validate methaneproof` | implemented |
+| Score accounts | `bin/factory gtm score methaneproof` | implemented |
+| Render opportunity hypothesis | `bin/factory gtm hypothesis methaneproof sea_forest` | implemented |
+| Check stale research | `bin/factory research stale methaneproof` | implemented |
+| Render customer pitch | `bin/factory pitch customer methaneproof` | implemented |
+| Render investor pitch | `bin/factory pitch investor methaneproof` | implemented |
+| Create company | `bin/factory new <name>` | planned |
+| Render website copy | `bin/factory render website <name>` | planned |
+| Extract company | `bin/factory extract <name> <path>` | planned |
+| Sync upstream | `bin/sync-upstream` | implemented |
+
+`partial` means the command exists and carries the active pack, but the full end-to-end venture-specific workflow is still being built.
+
+## The Company Pack
+
+Every incubating company is represented as a Company Pack.
+
+A Company Pack is the declarative definition of an evidence-native company. It is not merely deployment configuration. It is the company's current operating thesis expressed in a form that software, commercial research, branding, collateral generation, and formation tooling can all consume.
+
+```text
+ventures/<company>/
+|
+├── company.yml
+|
+├── product/
+│   ├── venture.yml
+│   ├── terminology.yml
+│   ├── features.yml
+│   ├── reliance.yml
+│   ├── program_profiles/
+│   ├── requirements/
+│   ├── artifact_templates/
+│   └── integrations/
+|
+├── brand/
+│   ├── brand.yml
+│   ├── naming.yml
+│   ├── vocabulary.yml
+│   ├── claim_discipline.yml
+│   ├── visual.yml
+│   └── assets/
+|
+├── pitch/
+├── gtm/
+├── accounts/
+├── research/
+├── formation/
+├── demos/
+├── tests/
+└── generated/
+```
+
+Example:
+
+```yaml
+id: methaneproof
+company:
+  working_name: MethaneProof
+category:
+  descriptor: Neutral methane intervention evidence infrastructure
+buyer:
+  initial:
+    type: methane_technology_provider
+reliance:
+  event: methane_claim_acceptance
+  artifact: methane_evidence_statement
+land_motion:
+  scope: One intervention, one production environment, one downstream reliance workflow.
+agevidence:
+  protocol_required: true
+  endorsement: technical_only
+```
+
+The product pack under `product/` remains the technical vertical definition. The root `company.yml` and neighboring folders turn that vertical product into a company formation object.
+
+## Branding
+
+Branding is part of the Company Pack.
+
+Every company is expected to have three separate language layers:
+
+1. Brand: who are you?
+2. Category descriptor: what are you?
+3. GTM proposition: why should the first buyer care now?
+
+Do not make the corporate name explain the entire architecture.
+
+Example:
+
+```text
+MethaneProof
+Brand
+
+Neutral methane intervention evidence infrastructure
+Category
+
+Turn fragmented intervention evidence into something your downstream buyer can inspect.
+First-wedge GTM proposition
+```
+
+### Five Naming Tests
+
+Every proposed brand must pass five tests:
+
+1. Buyer recognition: does the first buyer recognize the workflow?
+2. Role discipline: does the name avoid implying that the company is itself the lender, auditor, insurer, verifier, certifier, registry, or regulator?
+3. Land-motion fit: does the name make the first narrowly scoped engagement easier to sell?
+4. Expansion permission: can the name survive beyond the initial ANZ wedge?
+5. Investor signal: does it sound like repeatable infrastructure or software rather than project consulting?
+
+Run:
 
 ```sh
-git clone https://github.com/meronrudy/AgEvidence
-cd AgEvidence
+bin/factory brand score methaneproof
+```
+
+The scorecard lives at `ventures/<company>/brand/naming.yml`. It should retain the decision history, not only the final name.
+
+## Independent Brands, Shared Protocol
+
+Companies formed here are not intended to look like:
+
+- AgEvidence Methane
+- AgEvidence Finance
+- AgEvidence Scope 3
+- AgEvidence Claims
+
+They should become independent customer-facing brands. AgEvidence attribution becomes more visible as the conversation becomes more technical.
+
+| Surface | AgEvidence treatment |
+| --- | --- |
+| Homepage hero | generally absent |
+| Main company logo | absent |
+| Sales-deck cover | usually absent |
+| Technical architecture | visible |
+| Developer documentation | prominent |
+| Trust/provenance page | prominent |
+| Investor architecture | prominent |
+| Foundry recruitment | very prominent |
+| API metadata | protocol/version reference |
+| Issued artifacts | protocol/version reference |
+
+The company is the buyer-facing object. AgEvidence is the trust and interoperability layer.
+
+## GTM Is Not An Appendix
+
+A Company Pack is not ready merely because the app boots.
+
+Every company must define:
+
+- the relying institution
+- the decision being made
+- the evidence problem
+- the economic buyer
+- the first paid offer
+- the commercial trigger
+- the smallest workflow capable of producing external reliance
+
+Portfolio rule:
+
+> Sell to the reliance event, not merely to the data owner.
+
+Run:
+
+```sh
+bin/factory gtm validate methaneproof
+bin/factory gtm score methaneproof
+bin/factory gtm hypothesis methaneproof sea_forest
+```
+
+## Accounts Are Structured Data
+
+The Foundry uses one base account grammar across companies while preserving venture-specific commercial interpretations.
+
+Every target should eventually contain:
+
+- organization
+- legal or trading name
+- geography
+- ownership
+- financing context
+- relevant business unit
+- venture-specific role
+- priority tier
+- dated trigger
+- economic buyer
+- champion
+- technical user
+- blocker
+- evidence-producing systems
+- current evidence problem
+- first offer
+- expansion path
+- partner graph
+- next best action
+- source ledger
+- confidence grade
+
+### Shared Contact-Role Vocabulary
+
+| Code | Role | Meaning |
+| --- | --- | --- |
+| EB | Economic Buyer | Controls or can sponsor budget |
+| CH | Champion | Owns the operational pain |
+| TU | Technical User | Evaluates or operates the workflow |
+| EX | Executive Sponsor | Provides strategic air cover |
+| IN | Influencer | Shapes policy, channel, or procurement |
+| BL | Blocker | Legal, security, assurance, architecture, procurement, or model risk |
+| PA | Partner / Alliance | Routes evidence or distribution |
+| EV | Evidence Producer | Produces source data but may not pay |
+
+Shared vocabulary lives in `commercial/vocabulary/contact_roles.yml`.
+
+## A Logo Is Not An Opportunity
+
+Every Tier-1 sales opportunity requires a dated trigger.
+
+Examples:
+
+- financing
+- regulatory deadline
+- product launch
+- grant
+- field trial
+- distribution agreement
+- supplier program
+- reporting requirement
+- leadership change
+- commercial partnership
+
+A company with no live trigger belongs in the market map, not the active pipeline.
+
+`bin/factory gtm validate <company>` enforces this rule for Tier-1 accounts.
+
+## Opportunity Hypothesis
+
+Every active account should be reducible to:
+
+```text
+Because [organization] is currently running [specific program/event],
+it must establish or review [specific evidence].
+[company] can provide [specific artifact/workflow],
+initially sold to [buyer/team] around [live decision].
+```
+
+Render one:
+
+```sh
+bin/factory gtm hypothesis methaneproof sea_forest
+```
+
+This keeps outbound focused on a live decision, not a generic description of the product.
+
+## Commercial Evidence Discipline
+
+A Foundry company should not treat market research as untyped notes.
+
+Commercial statements should carry:
+
+- source
+- date observed
+- confidence
+- fact or inference classification
+- owner when known
+- refresh date
+
+Evidence classes:
+
+- `verified_public_signal`
+- `brief_derived`
+- `supplied_research`
+- `gtm_inference`
+
+GTM inferences guide discovery. They must not be represented externally as verified facts.
+
+Example external-use statement:
+
+```yaml
+statement:
+  text: Buyer operates a supplier evidence program.
+classification: verified_public_signal
+source: src_0042
+checked_at: 2026-09-06
+refresh_after_days: 90
+external_use: true
+```
+
+Example discovery-only hypothesis:
+
+```yaml
+statement:
+  text: Sustainability team probably reconstructs farm evidence manually.
+classification: gtm_inference
+source: src_0042
+external_use: false
+```
+
+Run:
+
+```sh
+bin/factory research stale methaneproof
+```
+
+This is AgEvidence discipline applied to company building.
+
+## Share Intelligence, Not Customer Ownership
+
+The same institution may participate in several evidence chains.
+
+For example, a processor could be:
+
+- a reliance endpoint for MethaneProof
+- a customer or evidence aggregator for SupplierEvidence
+- an acceptance node for FieldProof
+- an evidence source relevant to AgLend
+
+Therefore:
+
+1. organizations and people can be shared Foundry records
+2. venture-specific roles remain separate
+3. one executive account owner coordinates first touch
+4. independent companies retain separate commercial contracts
+5. evidence compatibility does not imply shared customer ownership
+
+Shared relationship structures live in `commercial/graph/`.
+
+## Initial Foundry Cohort
+
+The current 3+1 cohort exists to test whether the same evidence grammar can support materially different companies.
+
+```text
+                    AgEvidence
+                        |
+        +---------------+----------------+
+        v               v                v
+  MethaneProof      FieldProof         AgLend
+       |                |                |
+       +---------- SupplierEvidence ----+
+                        |
+                        v
+               reusable evidence economy
+```
+
+### MethaneProof
+
+Question: did the claimed methane intervention occur, and can the resulting evidence survive downstream reliance?
+
+Proves: fast vertical specialization.
+
+### FieldProof
+
+Question: can an agricultural technology company turn trials, telemetry, and models into a bounded commercial claim another institution can inspect?
+
+Proves: broad reuse across funded agtech companies.
+
+### AgLend
+
+Question: can agricultural operating evidence become usable inside institutional financial decision workflows?
+
+Proves: financial-grade reliance.
+
+### SupplierEvidence
+
+Question: can evidence produced across fragmented agricultural suppliers move downstream into enterprise reporting and assurance?
+
+Proves: networked evidence reuse and time-sensitive enterprise GTM.
+
+The stable pack id is `supplierevidence`; the current customer-facing brand file uses `SourceRelay`.
+
+## Founder Workflow
+
+### Step 1 - Define The Reliance Event
+
+Do not start with features.
+
+Answer:
+
+- Who eventually relies on the output?
+- What decision are they making?
+- What evidence must survive that decision?
+- What artifact could travel into their workflow?
+
+### Step 2 - Define The First Buyer
+
+The evidence producer, buyer, and relying institution may be different.
+
+Identify:
+
+- first payer
+- economic buyer
+- operational champion
+- technical user
+- blocker
+- downstream relying party
+
+### Step 3 - Create The Company Pack
+
+Planned:
+
+```sh
+bin/factory new <company>
+```
+
+Today, use the current packs under `ventures/` as examples.
+
+### Step 4 - Configure The Vertical
+
+Define:
+
+- ProgramProfiles
+- requirements
+- vocabulary
+- accepted evidence
+- artifact type
+- vertical integrations
+
+### Step 5 - Configure Company Identity
+
+Define:
+
+- brand candidates
+- category descriptor
+- GTM proposition
+- role boundaries
+- product vocabulary
+- visual direction
+
+### Step 6 - Build The Target Universe
+
+Identify accounts and score them.
+
+No Tier-1 account without a dated commercial trigger.
+
+### Step 7 - Define The First Paid Offer
+
+The smallest offer should attempt to complete one real reliance workflow.
+
+### Step 8 - Run Discovery
+
+Customer discovery should be allowed to change:
+
+- requirements
+- ProgramProfiles
+- positioning
+- terminology
+- offer
+- pricing
+- account score
+- company name
+
+### Step 9 - Issue An Artifact
+
+A successful pilot should produce something portable and inspectable.
+
+### Step 10 - Record External Reliance
+
+The goal is not a demo. The goal is a real external institution prepared to use the evidence.
+
+### Step 11 - Extract The Company
+
+Planned:
+
+```sh
+bin/factory extract <company> ../CompanyName
+```
+
+The venture becomes an independent company repository.
+
+## Formation Gates
+
+```text
+F0  company thesis
+ |
+ v
+F1  reliance event defined
+ |
+ v
+F2  founder attached
+ |
+ v
+F3  buyer/workflow hypothesis
+ |
+ v
+F4  brand/category/proposition tested
+ |
+ v
+F5  qualified target universe
+ |
+ v
+F6  design partner
+ |
+ v
+F7  paid pilot
+ |
+ v
+F8  artifact issued
+ |
+ v
+F9  external reliance
+ |
+ v
+F10 independent spinout
+```
+
+A venture does not graduate because the application is technically complete. It graduates when a real relying party validates the workflow strongly enough that the company should continue independently.
+
+Formation state lives in `ventures/<company>/formation/status.yml`.
+
+## Foundry Metrics
+
+The primary Foundry KPI is Time to First Reliance (TTFR): time from formation hypothesis to the first external institutional reliance event.
+
+Supporting metrics:
+
+- Time to Vertical Demo
+- Time to Credible Brand
+- Time to Qualified Target Universe
+- Time to First Buyer Conversation
+- Time to Design Partner
+- Time to Paid Pilot
+- Time to First Artifact
+- Time to First Verification
+- Time to First Reliance
+- shared-code ratio
+- Foundry-generated versus company-specific LOC
+
+If each cohort requires less generic engineering, less generic GTM design, less brand invention, and less company setup work than the cohort before it, the Foundry is working.
+
+## Feedback Loop
+
+```text
+BUYER RESEARCH
+      |
+      v
+COMMERCIAL HYPOTHESIS
+      |
+      v
+ProgramProfile / Requirements
+      |
+      v
+VERTICAL DEMO
+      |
+      v
+DISCOVERY
+      |
+      +---- positioning changes
+      +---- requirement changes
+      +---- terminology changes
+      +---- offer changes
+      +---- account-score changes
+      |
+      v
+PAID RELIANCE WORKFLOW
+```
+
+The commercial layer is not a disconnected sales folder. Discovery should feed back into ProgramProfiles, requirements, terminology, pricing, and demos.
+
+## One Truth, Multiple Pitches
+
+Do not maintain unrelated customer, investor, and founder decks.
+
+The Company Pack should compile into different narratives.
+
+### Customer
+
+current workflow -> evidence problem -> bounded intervention -> first offer
+
+### Investor
+
+structural bottleneck -> wedge -> market -> economics -> moat -> expansion
+
+### Founder
+
+problem -> company opportunity -> what Foundry supplies -> what founder must own
+
+### Technical Buyer
+
+sources -> evidence -> requirements -> artifact -> verifier -> integration
+
+Render pitches:
+
+```sh
+bin/factory pitch customer methaneproof
+bin/factory pitch investor methaneproof
+bin/factory pitch founder methaneproof
+```
+
+## Never Let Marketing Outrun The Evidence
+
+Every Company Pack must declare what the company:
+
+- does
+- does not do
+- can safely claim
+- must qualify
+- must not claim
+
+An evidence company should be particularly disciplined about words such as:
+
+- verified
+- certified
+- approved
+- guaranteed
+- compliant
+- scored
+- rated
+- insured
+- audited
+
+The company must not imply institutional authority it does not possess.
+
+Claim discipline lives at `ventures/<company>/brand/claim_discipline.yml`.
+
+Check generated copy:
+
+```sh
+bin/factory claims check methaneproof
+```
+
+Pass explicit paths to check draft copy outside `generated/`:
+
+```sh
+bin/factory claims check methaneproof path/to/homepage.md path/to/deck.md
+```
+
+## Technical Quick Start
+
+```sh
+git clone https://github.com/mech-lab/AgEvidenceFoundry
+cd AgEvidenceFoundry
+bin/doctor
 bin/demo
 ```
 
@@ -35,70 +939,40 @@ Demo login:
 - Email: `demo`
 - Password: `demo`
 
-### Embed It
-
-You liked what you saw in Rails. Now put the evidence layer inside your product.
+Run a specific company pack:
 
 ```sh
-pip install agevidence
+bin/factory demo methaneproof
+bin/factory demo fieldproof
+bin/factory demo aglend
+bin/factory demo supplierevidence
 ```
 
-```python
-from agevidence import Client
+## Rails Reference Company
 
-client = Client(base_url="http://localhost:3000", api_token="agev_test_demo_2a10")
+The Rails console in `apps/console` is the reference evidence business. It demonstrates:
 
-project = client.create_project(
-    account_name="Northstar Methane Systems Sandbox",
-    project_name="Enterprise dairy pilot",
-    target_claim="The intervention reduces enteric methane.",
-)
+- projects
+- source records
+- normalized evidence
+- gaps
+- evaluations
+- review
+- determinations
+- artifacts
+- downloadable bundles
+- reliance
+- verification
+- ProgramProfiles
+- API keys
+- schemas
+- OpenAPI
+- logs
+- webhooks
 
-source = client.submit_source_record(
-    project_id=project.id,
-    document_id="feeding-event-001",
-    evidence_type="agevidence.intervention_event.v1",
-    controlled_uri="evidence://feeding-event-001",
-    commitment="sha256:demo",
-)
-```
+![AgEvidence evidence workspace overview](docs/screenshots/00-overview.png)
 
-Your product generated something valuable. Make it attributable, bounded, versioned, portable, reviewable, and independently reconstructable.
-
-#### Capture the source
-
-Source records preserve where evidence came from, how it is identified, and the custody/provenance information needed downstream.
-
-![AgEvidence source records](docs/screenshots/02-source-records.png)
-
-#### Normalize the evidence
-
-Product telemetry becomes typed evidence rather than a loose collection of application records.
-
-![AgEvidence normalized evidence](docs/screenshots/03-evidence.png)
-
-### Fork It
-
-Choose a startup. Keep the evidence layer. Specialize the market.
-
-| Startup archetype | Initial buyer | Keep from AgEvidence | Specialize |
-| --- | --- | --- | --- |
-| Methane evidence API | Feed, additive, and device companies | Observations, interventions, model runs, artifacts | Livestock schemas and methods |
-| Input efficacy evidence network | Biological and input companies | Source records, trial observations, determinations | Field-trial workflows |
-| Agricultural lending evidence | Lenders | Artifacts, verification, reliance | Underwriting ProgramProfiles |
-| Agricultural insurance evidence | Insurers | Source records, events, verification | Loss and peril evidence |
-| Scope 3 and insetting evidence | Processors and retailers | Programs, evaluations, artifacts | Buyer requirements |
-| Independent MRV | Project developers | Evidence, review, determinations | Methodology modules |
-| Assurance operating system | Auditors and assurance providers | Review, gaps, artifacts | Reviewer workflows |
-| Agronomy claims verification | Agronomy and input startups | Observations, models, provenance | Agronomic models |
-| Farm-data portability layer | Farm software companies | Schemas, source records, bundles | Connectors |
-| Agricultural AI evidence firewall | Buyers of AI recommendations | Model runs, source records, evaluations | Model lineage and benchmarks |
-| Regulatory program engine | Government and program administrators | ProgramProfiles, requirements, evaluations | Jurisdiction modules |
-| Evidence marketplace | Buyers and agtech suppliers | Artifacts, verification, reliance | Discovery and commerce |
-
-### Sell It
-
-AgEvidence is strongest when many vertical companies share one evidence grammar. A methane company, lending company, assurance firm, input-efficacy network, model verifier, and data-portability layer can all have different brands, customers, workflows, models, and pricing while producing compatible source records, observations, intervention events, operational events, model runs, artifacts, verification results, and reliance events.
+The reference company is deliberately complete enough to show the operating surface of an evidence-native agtech business before a founder specializes it into a vertical company.
 
 ## From Telemetry To Reliance
 
@@ -143,205 +1017,228 @@ YOUR AGTECH PRODUCT
 
 You do not need to rebuild this because your startup happens to sell feed additives, pasture intelligence, robotics, methane measurement, farm software, crop models, biological inputs, agricultural finance, or assurance.
 
-### Find what is missing
+## Product Substrate Tour
+
+### Source Records
+
+Source records preserve where evidence came from, how it is identified, and the custody/provenance information needed downstream.
+
+![AgEvidence source records](docs/screenshots/02-source-records.png)
+
+### Evidence
+
+Product telemetry becomes typed evidence rather than a loose collection of application records.
+
+![AgEvidence normalized evidence](docs/screenshots/03-evidence.png)
+
+### Gaps
 
 The workspace can turn buyer, methodology, program, or assurance requirements into explicit evidence gaps.
 
 ![AgEvidence evidence gaps](docs/screenshots/04-gaps.png)
 
-### Evaluate against requirements
+### Evaluation
 
 Machine-readable evidence and ProgramProfiles provide a repeatable assessment surface before a human reviewer makes a determination.
 
 ![AgEvidence assessment](docs/screenshots/05-assessment.png)
 
-### Keep a human in the loop
+### Review
 
-Review remains explicit and inspectable rather than disappearing inside an opaque score or model response.
+Review keeps human judgment explicit and inspectable.
 
 ![AgEvidence review workflow](docs/screenshots/06-review.png)
 
-### Issue something portable
+### Artifacts
 
 The output is an artifact that can move beyond the application that produced it.
 
 ![AgEvidence issued artifact](docs/screenshots/07-artifact.png)
 
-### Record downstream reliance
+### Reliance
 
 A buyer, bank, insurer, auditor, processor, or other relying party can become part of the evidence chain instead of being an off-platform endpoint.
 
 ![AgEvidence reliance record](docs/screenshots/08-reliance.png)
 
-### Verify without joining the platform
+### Verification
 
 Public verification gives downstream users a narrow surface for checking an issued record without needing access to the originating workspace.
 
 ![AgEvidence public verification](docs/screenshots/09-verification.png)
 
-> Current Rails verifier results are AgEvidence placeholder records, not independent cryptographic verification. Do not claim independent verification until an external verifier exists.
+Current Rails verifier results are constrained by the verifier implementation available in this repo. Do not overstate independent verification in generated company copy.
 
-## ProgramProfiles Are The Verticalization Layer
+## ProgramProfiles
 
 AgEvidence primitives plus a ProgramProfile plus vertical UX becomes a new evidence company.
 
 ![AgEvidence ProgramProfiles](docs/screenshots/10-program-profile.png)
 
-Examples:
-
-- `AU Methane Intervention Profile` -> Dairy lending underwriting profile
-- `AU Methane Intervention Profile` -> Biological input efficacy profile
-- `AU Methane Intervention Profile` -> Processor Scope 3 supplier profile
-- `AU Methane Intervention Profile` -> Crop insurance loss evidence profile
-
 Use ProgramProfiles to encode requirements, evidence classes, evaluation modes, version impacts, limitation templates, and artifact policy. Keep the evidence identities, artifact structure, verification contract, and reliance records interoperable.
 
-## Build On It Like Infrastructure
+## Developer Surface
 
-The reference app includes the developer surfaces needed to embed the evidence layer in another product instead of forcing every company to use the Rails UI.
-
-### Developer workspace
-
-API keys, schemas, request surfaces, logs, and integration tooling are exposed as first-class product infrastructure.
+Developer workspace:
 
 ![AgEvidence developer workspace](docs/screenshots/11-developer.png)
 
-### Webhooks
-
-Push evidence workflow events into the rest of your startup's stack.
+Webhooks:
 
 ![AgEvidence webhooks](docs/screenshots/12-webhooks.png)
 
-### OpenAPI
-
-Treat the evidence contract as an interface that other products can build against.
+OpenAPI:
 
 ![AgEvidence OpenAPI](docs/screenshots/13-openapi.png)
 
-## What To Keep, Configure, And Replace
+The canonical machine-readable OpenAPI document lives at `protocol/openapi/agevidence-v1.yaml`.
 
-Founders should not need to understand every file before the clone stops looking like AgEvidence.
+## Embed The Evidence Layer
 
-Start here:
+You can embed the evidence layer inside another product with the SDKs under `packages/`.
 
-- [docs/START-HERE.md](docs/START-HERE.md)
-- [docs/STARTUP_MAP.md](docs/STARTUP_MAP.md)
-- [docs/startup-recipes/README.md](docs/startup-recipes/README.md)
-- [apps/console/README.md](apps/console/README.md)
-
-Short version:
-
-| Layer | Reuse unchanged | Configure | Replace |
-| --- | --- | --- | --- |
-| Canonical evidence primitives | yes | no | no |
-| Verification contracts | yes | no | no |
-| Bundle format | yes | no | no |
-| Provenance rules | yes | no | no |
-| Organization model | yes | no | no |
-| API authentication | yes | no | no |
-| ProgramProfiles | no | yes | no |
-| Requirements | no | yes | no |
-| Evidence vocabulary | no | yes | no |
-| UI terminology | no | yes | no |
-| Buyer workflow | no | yes | no |
-| Vertical integrations | no | no | yes |
-| Pricing | no | no | yes |
-| Customer-facing brand | no | no | yes |
-| Proprietary analytics | no | no | yes |
-| Domain-specific models | no | no | yes |
-
-## Product Tour Reference
-
-The seeded Rails app is designed to produce a deterministic screenshot suite. Regenerate it with:
+Python example:
 
 ```sh
-bin/screenshots
+pip install agevidence
 ```
 
-| Screenshot | Route | What you are looking at | What you could turn it into |
-| --- | --- | --- | --- |
-| `00-overview.png` | `/app` | Evidence command center | Any evidence SaaS |
-| `01-project.png` | `/app/projects/dit-production` | One commercial evidence case | Enterprise workflow |
-| `02-source-records.png` | `/app/projects/dit-production/source_records` | Provenance and custody | Traceability infrastructure |
-| `03-evidence.png` | `/app/projects/dit-production/evidence` | Normalized product telemetry | IoT or MRV infrastructure |
-| `04-gaps.png` | `/app/projects/dit-production/gaps` | Evidence readiness gaps | Compliance/readiness startup |
-| `05-assessment.png` | `/app/projects/dit-production/assessment` | Machine evaluation | Regulatory automation |
-| `06-review.png` | `/app/projects/dit-production/review` | Human-in-the-loop assurance | Assurance platform |
-| `07-artifact.png` | `/app/projects/dit-production/artifact` | Portable issued statement | Evidence exchange |
-| `08-reliance.png` | `/app/projects/dit-production/reliance` | Downstream use of evidence | Bank, buyer, or insurer workflow |
-| `09-verification.png` | `/verify/AE-AU-000184` | Verification without app access | Verification API |
-| `10-program-profile.png` | `/app/programs/profiles` | Market rules as configuration | Compliance startup |
-| `11-developer.png` | `/app/developer` | Developer platform surface | API company |
-| `12-webhooks.png` | `/app/developer/webhooks` | Integration delivery | Embedded infrastructure |
-| `13-openapi.png` | `/app/developer/openapi` | Stable contracts | Ecosystem platform |
+```python
+from agevidence import Client
 
-Each screenshot is now shown in context above; this table remains the route-level reference for developers regenerating or adapting the demo.
+client = Client(base_url="http://localhost:3000", api_token="agev_test_demo_2a10")
 
-## Developer Commands
+project = client.create_project(
+    account_name="Northstar Methane Systems Sandbox",
+    project_name="Enterprise dairy pilot",
+    target_claim="The intervention reduces enteric methane.",
+)
 
-Run these from the repository root:
+source = client.submit_source_record(
+    project_id=project.id,
+    document_id="feeding-event-001",
+    evidence_type="agevidence.intervention_event.v1",
+    controlled_uri="evidence://feeding-event-001",
+    commitment="sha256:demo",
+)
+```
+
+Ruby and Rust package work lives under `packages/ruby` and `packages/rust`.
+
+## Development
+
+Useful commands:
 
 ```sh
-bin/doctor       # check Ruby, Bundler, PostgreSQL, Rails boot, and demo seed
-bin/demo         # prepare and start the seeded Rails reference app
-bin/reset-demo   # reset development DB and reload deterministic seeds
-bin/test         # run the Rails test suite
-bin/screenshots  # capture docs screenshots from the seeded app
+bin/doctor
+bin/demo
+bin/test
+bin/factory doctor
+bin/factory doctor methaneproof --verbose
+bin/sync-upstream
 ```
 
-The scripts delegate into `apps/console` and default to:
+Rails app:
 
 ```sh
-DATABASE_URL=postgres://postgres:postgres@127.0.0.1:5432/agevidence_development
+cd apps/console
+bin/rails test
 ```
 
-## Repository Components
+Factory tests:
 
-| Component | Founder mental model |
-| --- | --- |
-| `protocol/` | The shared language |
-| `packages/python/` | Put evidence inside your product |
-| `packages/rust/` | Trust something without trusting a SaaS |
-| `apps/console/` | See a complete evidence company working |
-| `research/` | Prove that the system can reconstruct real science |
-| `docs/startup-recipes/` | Turn it into your company |
+```sh
+ruby factory/test/venture_pack_loader_test.rb
+```
 
-## Deeper Documentation
+Trust core:
 
-- [Documentation index](docs/README.md)
-- [Current API contract](docs/api/sdk-contract/README.md)
-- [Protocol guide](protocol/README.md)
-- [Console guide](apps/console/README.md)
-- [Python package guide](packages/python/README.md)
-- [Researcher guide](docs/researchers/index.md)
-
-## Common Commands
-
-```bash
+```sh
 bash protocol/conformance/scripts/agevidence_check_all.sh
-cd packages/rust && cargo run -p agevidence-cli -- conformance
-python3 -m pytest packages/python/tests
-cd packages/ruby && bundle exec rake
-python3 -m pytest research/tests
-python3 research/studies/kebreab/roque-2021/run.py
-python3 research/studies/kebreab/methane-database-2024/run.py
 cd packages/rust && cargo test
-cd apps/console && bin/rails test
+cd packages/ruby && bundle exec rake
+python -m pytest packages/python/tests
 ```
 
-For local researcher workflows, install the SDK from the repository root:
+Research examples live under `research/`.
 
-```bash
-python3 -m pip install -e "packages/python[research,test]"
+## Upstream Relationship
+
+Foundry is a thin fork of AgEvidence.
+
+```text
+upstream = https://github.com/meronrudy/AgEvidence
+origin   = https://github.com/mech-lab/AgEvidenceFoundry
 ```
 
-## Public Interfaces
+Run:
 
-- Current Rails API: `/api/v1`
-- Current OpenAPI: `protocol/openapi/agevidence-v1.yaml`
-- Legacy source-only OpenAPI: `protocol/openapi/legacy/athian-evidence-bazaar/agevidence.v1.yaml`
-- Python install/import: `pip install agevidence`, `import agevidence`
-- Local research install: `python3 -m pip install -e "packages/python[research,test]"`
-- Rust binary: `agevidence verify bundle.json`
+```sh
+bin/sync-upstream
+```
 
-Raw workbooks stay outside git under `research/.data/`; local generated research outputs stay ignored under `research/studies/**/output/`.
+Read [UPSTREAM.md](UPSTREAM.md) for source-of-truth rules.
+
+Do not maintain permanent product branches such as `methaneproof`, `fieldproof`, `aglend`, and `supplierevidence`. Long-lived branches create drifting copies of the Rails app, schemas, verifier, SDKs, and migrations.
+
+Use short-lived feature, venture, and sync branches that merge back into `main`.
+
+## Extraction Model
+
+During incubation, a venture lives inside `AgEvidenceFoundry`.
+
+At formation, the venture should become an independent repository:
+
+```sh
+bin/factory extract methaneproof ../MethaneProof
+```
+
+That command is planned. When implemented, extraction should produce an operating company, not only a cloned Rails app:
+
+```text
+CompanyName/
+├── product/
+├── app/
+├── protocol/
+├── company/
+├── sales/
+├── investor/
+├── design/
+├── research/
+└── AGEVIDENCE_ORIGIN
+```
+
+After extraction, the company should consume AgEvidence through versioned schemas, SDK packages, verifier releases, protocol releases, and conformance suites rather than repeatedly merging the whole Foundry repo.
+
+## What Success Looks Like
+
+AgEvidence Foundry is not successful because it contains many startup ideas. It is successful when independently led companies can repeatedly emerge from the same substrate while sharing less and less undifferentiated work.
+
+A founder should not need to invent:
+
+- evidence identity
+- provenance
+- requirements machinery
+- review infrastructure
+- artifact structures
+- verifier contracts
+- generic API infrastructure
+- basic account research grammar
+- basic buyer-role taxonomy
+- first-pitch structure
+- company-formation process
+
+They should need to invent the things that should actually make their company different:
+
+- domain insight
+- buyer relationships
+- vertical semantics
+- proprietary integrations
+- proprietary models
+- distribution
+- customer experience
+- market execution
+
+The long-term goal is not to build every evidence-native agriculture company. It is to make those companies dramatically cheaper and faster to build.
+
+> Start with the agricultural problem, not the evidence plumbing.

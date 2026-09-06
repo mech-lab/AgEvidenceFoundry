@@ -1,0 +1,24 @@
+allowed:
+  - supplier evidence
+  - evidence passport
+  - buyer acceptance profile
+  - assurance export
+  - verification-compatible package
+requires_qualification:
+  - accepted
+  - assured
+  - compliant
+  - reportable
+prohibited:
+  - guaranteed Scope 3 reduction
+  - certified supplier claim
+  - official assurance opinion
+  - regulator-approved report
+  - carbon credit issuance
+regulated_roles:
+  company_is_not:
+    - auditor
+    - regulator
+    - carbon_registry
+    - assurance_provider
+    - reporting_authority

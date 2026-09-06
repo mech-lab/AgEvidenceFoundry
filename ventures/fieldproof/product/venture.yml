@@ -1,0 +1,79 @@
+id: fieldproof
+name: FieldProof
+agevidence:
+  protocol_version: "1.x"
+  minimum_foundry_version: "0.1.0"
+market:
+  category: field_trial_efficacy_evidence
+  initial_buyer:
+    - biological_input_company
+    - fertilizer_company
+    - procurement_buyer
+    - ai_agronomy_company
+reliance:
+  primary_event: efficacy_claim_reliance
+  artifact: field_efficacy_evidence_package
+terminology:
+  project:
+    singular: trial_case
+    plural: trial_cases
+  gap:
+    singular: evidence_gap
+    plural: evidence_gaps
+  determination:
+    singular: efficacy_determination
+    plural: efficacy_determinations
+  artifact:
+    singular: field_evidence_package
+    plural: field_evidence_packages
+  program_profile:
+    singular: trial_protocol
+    plural: trial_protocols
+  reliance_event:
+    singular: buyer_reliance
+    plural: buyer_reliance_events
+features:
+  source_records: true
+  observations: true
+  spatial_observations: true
+  intervention_events: true
+  operational_events: true
+  model_runs: true
+  reviewer_workflow: true
+  artifact_export: true
+  verification: true
+  reliance: true
+program_profiles:
+  - field_efficacy_v1
+integrations:
+  - trial_management
+  - farm_operations
+  - remote_sensing
+acceptance_gates:
+  - evidence_ingested
+  - evaluation_completed
+  - human_review_completed
+  - artifact_issued
+  - artifact_verified
+  - external_reliance_recorded
+reliance_gate:
+  relying_party: procurement_buyer
+  decision: efficacy_claim_use
+  required:
+    - source_provenance
+    - accepted_evidence
+    - requirements_evaluated
+    - human_review
+    - bounded_determination
+    - immutable_artifact
+    - independent_verification
+  success_event:
+    type: external_reliance
+    name: buyer_uses_efficacy_claim
+metrics:
+  venture_created_at: null
+  first_ingestion_at: null
+  first_complete_evaluation_at: null
+  first_artifact_at: null
+  first_verification_at: null
+  first_external_reliance_at: null

@@ -1,0 +1,14 @@
+icp:
+  primary:
+    - processors
+    - retailers
+    - exporters
+    - funded evidence-producing agtech vendors
+  downstream_reliance:
+    - corporate reporters
+    - assurance providers
+    - procurement teams
+  disqualifiers:
+    - wants a carbon calculator only
+    - wants generic supply chain traceability
+    - cannot identify a buyer acceptance profile

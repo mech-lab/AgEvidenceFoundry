@@ -1,0 +1,3 @@
+id: efficacy_model_run
+canonical_primitive: ModelRun
+description: Records model or statistical analysis used to support an efficacy threshold.

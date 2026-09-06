@@ -1,0 +1,11 @@
+pricing:
+  hypothesis: paid underwriting evidence pilot
+  currency: AUD
+  pilot_range:
+    minimum: 75000
+    maximum: 200000
+  expansion_units:
+    - financial_product
+    - evidence_package
+    - portfolio
+    - annual_review

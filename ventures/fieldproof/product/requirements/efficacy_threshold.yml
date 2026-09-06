@@ -1,0 +1,5 @@
+id: efficacy_threshold
+name: Efficacy Threshold
+required_evidence_types:
+  - efficacy_model_run
+evaluation: threshold_support

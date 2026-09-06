@@ -1,0 +1,4 @@
+event: supplier_claim_use
+artifact: supplier_evidence_passport
+relying_party: corporate_reporter
+decision: supplier_claim_use

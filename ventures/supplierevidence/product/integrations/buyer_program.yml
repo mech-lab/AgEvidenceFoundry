@@ -1,0 +1,5 @@
+id: buyer_program
+name: Buyer Program
+category: buyer_requirement_system
+evidence_types:
+  - buyer_requirement_record

@@ -1,0 +1,6 @@
+id: remote_sensing
+name: Remote Sensing Provider
+category: geospatial_measurement
+evidence_types:
+  - control_observation
+  - site_measurement

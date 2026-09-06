@@ -1,0 +1,16 @@
+rules:
+  one_executive_account_owner: true
+  no_duplicate_first_touch: true
+  share_warm_path_intelligence: true
+  separate_commercial_contracts_by_venture: true
+collisions:
+  - organization: woolworths
+    ventures:
+      - methaneproof
+      - supplierevidence
+    rule: coordinate_before_outbound
+  - organization: coles
+    ventures:
+      - methaneproof
+      - supplierevidence
+    rule: coordinate_before_outbound

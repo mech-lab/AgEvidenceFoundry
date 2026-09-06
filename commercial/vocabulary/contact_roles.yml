@@ -1,0 +1,25 @@
+roles:
+  EB:
+    name: Economic Buyer
+    description: Controls or can sponsor budget.
+  CH:
+    name: Champion
+    description: Owns the operational pain and will carry the project internally.
+  TU:
+    name: Technical User
+    description: Evaluates or uses the evidence workflow.
+  EX:
+    name: Executive Sponsor
+    description: Provides strategic air cover.
+  IN:
+    name: Influencer
+    description: Shapes policy, channel access, or procurement.
+  BL:
+    name: Blocker
+    description: Legal, model risk, assurance, procurement, security, or architecture.
+  PA:
+    name: Partner / Alliance
+    description: Routes distribution or evidence.
+  EV:
+    name: Evidence Producer
+    description: Generates source data but may not pay.
