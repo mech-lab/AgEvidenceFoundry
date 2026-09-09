@@ -3,6 +3,65 @@ company:
   working_name: MethaneProof
   status: formation
   independence_model: standalone_spinout
+formation_architecture:
+  status: provisional
+  current_hypothesis: licensed_independent_newco
+  confidence: low
+  binding: false
+  decision_gate: F9A
+  architecture_code: N3
+  candidate_architectures:
+    - N2
+    - N3
+    - N5
+  trust_layer:
+    ownership: agevidence
+    access: open_neutral_verifier
+  application_ip:
+    ownership: parent
+    newco_rights: exclusive_field_license
+  integrations:
+    generic: parent
+    vertical_specific: newco_or_field_license
+  customer_architecture:
+    model: layered
+    parent:
+      owns:
+        - master_platform_agreement
+        - technical_integration
+    newco:
+      owns:
+        - vertical_sow
+        - domain_relationship
+  data:
+    raw_customer_data: contract_specific
+    vertical_operational_data: newco
+    cross_vertical_derived_intelligence: parent
+  improvements:
+    vertical_only: newco
+    reusable_cross_vertical: parent
+  founder_contribution:
+    technical_creation: low
+    domain_ip_creation: medium
+    customer_creation: high
+    capital_formation: high
+    operating_execution: high
+  ip_allocation:
+    generic_reusable: parent
+    vertical_specific: candidate_newco_asset
+    exclusivity: exclusive_field_license_if_financing_requires
+  corporate_form:
+    type: independent_licensee
+  parent_economics:
+    equity: true
+    platform_fee: true
+    royalty: false
+  extraction:
+    mode: licensed_company_repo
+  decision:
+    gate: F9A
+    locked_at: null
+    rationale: null
 category:
   descriptor: Neutral methane intervention evidence infrastructure
 buyer:

@@ -3,7 +3,7 @@
   "$id": "https://agevidence.dev/commercial/schemas/company-pack.schema.json",
   "title": "AgEvidence Foundry Company Pack",
   "type": "object",
-  "required": ["id", "company", "category", "buyer", "problem", "reliance", "land_motion", "gtm", "brand", "agevidence"],
+  "required": ["id", "company", "formation_architecture", "category", "buyer", "problem", "reliance", "land_motion", "gtm", "brand", "agevidence"],
   "properties": {
     "id": {
       "type": "string",
@@ -17,6 +17,9 @@
         "status": { "type": "string" },
         "independence_model": { "type": "string" }
       }
+    },
+    "formation_architecture": {
+      "$ref": "formation-architecture.schema.json"
     },
     "category": {
       "type": "object",

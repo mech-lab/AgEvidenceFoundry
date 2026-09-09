@@ -1,0 +1,178 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agevidence.dev/commercial/schemas/formation-architecture.schema.json",
+  "title": "Formation Architecture",
+  "type": "object",
+  "required": [
+    "status",
+    "current_hypothesis",
+    "confidence",
+    "binding",
+    "decision_gate",
+    "architecture_code",
+    "candidate_architectures",
+    "trust_layer",
+    "application_ip",
+    "customer_architecture",
+    "data",
+    "improvements",
+    "founder_contribution",
+    "ip_allocation",
+    "corporate_form",
+    "parent_economics",
+    "extraction",
+    "decision"
+  ],
+  "properties": {
+    "status": {
+      "type": "string",
+      "enum": ["provisional", "review", "locked"]
+    },
+    "current_hypothesis": { "type": "string" },
+    "confidence": {
+      "type": "string",
+      "enum": ["low", "medium", "high"]
+    },
+    "binding": { "type": "boolean" },
+    "decision_gate": { "type": "string" },
+    "architecture_code": {
+      "type": "string",
+      "enum": ["N1", "N2", "N3", "N4", "N5", "N6", "N7", "N8", "N9", "N10"]
+    },
+    "candidate_architectures": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["N1", "N2", "N3", "N4", "N5", "N6", "N7", "N8", "N9", "N10"]
+      },
+      "minItems": 1
+    },
+    "trust_layer": {
+      "type": "object",
+      "required": ["ownership", "access"],
+      "properties": {
+        "ownership": { "type": "string" },
+        "access": { "type": "string" }
+      },
+      "additionalProperties": true
+    },
+    "application_ip": {
+      "type": "object",
+      "required": ["ownership", "newco_rights"],
+      "properties": {
+        "ownership": { "type": "string" },
+        "newco_rights": { "type": "string" }
+      },
+      "additionalProperties": true
+    },
+    "customer_architecture": {
+      "type": "object",
+      "required": ["model"],
+      "properties": {
+        "model": {
+          "type": "string",
+          "enum": ["newco_owned", "layered", "parent_network", "parent_owned"]
+        },
+        "parent": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "newco": {
+          "type": "object",
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": true
+    },
+    "data": {
+      "type": "object",
+      "required": ["raw_customer_data", "vertical_operational_data", "cross_vertical_derived_intelligence"],
+      "additionalProperties": true
+    },
+    "improvements": {
+      "type": "object",
+      "required": ["vertical_only", "reusable_cross_vertical"],
+      "additionalProperties": true
+    },
+    "founder_contribution": {
+      "type": "object",
+      "required": [
+        "technical_creation",
+        "domain_ip_creation",
+        "customer_creation",
+        "capital_formation",
+        "operating_execution"
+      ],
+      "properties": {
+        "technical_creation": {
+          "type": "string",
+          "enum": ["low", "medium", "high"]
+        },
+        "domain_ip_creation": {
+          "type": "string",
+          "enum": ["low", "medium", "high"]
+        },
+        "customer_creation": {
+          "type": "string",
+          "enum": ["low", "medium", "high"]
+        },
+        "capital_formation": {
+          "type": "string",
+          "enum": ["low", "medium", "high"]
+        },
+        "operating_execution": {
+          "type": "string",
+          "enum": ["low", "medium", "high"]
+        }
+      },
+      "additionalProperties": true
+    },
+    "ip_allocation": {
+      "type": "object",
+      "required": ["generic_reusable", "vertical_specific", "exclusivity"],
+      "additionalProperties": true
+    },
+    "corporate_form": {
+      "type": "object",
+      "required": ["type"],
+      "properties": {
+        "type": { "type": "string" }
+      },
+      "additionalProperties": true
+    },
+    "parent_economics": {
+      "type": "object",
+      "required": ["equity", "platform_fee", "royalty"],
+      "properties": {
+        "equity": { "type": "boolean" },
+        "platform_fee": { "type": "boolean" },
+        "royalty": { "type": "boolean" }
+      },
+      "additionalProperties": true
+    },
+    "extraction": {
+      "type": "object",
+      "required": ["mode"],
+      "properties": {
+        "mode": { "type": "string" }
+      },
+      "additionalProperties": true
+    },
+    "decision": {
+      "type": "object",
+      "required": ["gate", "locked_at", "rationale"],
+      "properties": {
+        "gate": { "type": "string" },
+        "locked_at": {
+          "type": ["string", "null"],
+          "format": "date"
+        },
+        "rationale": {
+          "type": ["string", "null"]
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

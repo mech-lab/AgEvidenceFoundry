@@ -31,15 +31,18 @@ The Foundry supplies reusable infrastructure for:
 - discovery
 - pricing and first offers
 - formation experiments
-- eventual company extraction
+- architecture-aware extraction or retention
 
-The objective is not to create ten modules of AgEvidence. The objective is to repeatedly create independent companies that share an interoperable evidence grammar.
+The objective is not to create ten modules of AgEvidence. The objective is to repeatedly validate evidence-native companies or product lines that share an interoperable evidence grammar while choosing the right corporate boundary for each venture.
 
 ```text
 Domain + buyer + reliance hypothesis
         |
         v
-Product -> brand -> pitch -> GTM -> paid pilot -> external reliance -> independent company
+Company Pack -> paid pilot -> external reliance -> architecture decision
+                                                |
+                                                v
+             independent | licensed | thin NewCo | subsidiary | internal
 ```
 
 ## The Thesis
@@ -95,16 +98,21 @@ AgEvidence provides the shared evidence substrate. AgEvidence Foundry adds the r
                            PAID PILOT
                               |
                               v
-                       ISSUED ARTIFACT
+                      ISSUED ARTIFACT
                               |
                               v
                     EXTERNAL RELIANCE
                               |
                               v
-                   INDEPENDENT SPINOUT
+                   ARCHITECTURE DECISION
+                              |
+                              v
+            independent | licensed | thin NewCo | subsidiary | internal
 ```
 
-External reliance is the unifying endpoint. A venture does not graduate because the app boots. It graduates when a real external institution is prepared to use the evidence.
+External reliance is the unifying graduation test. Corporate architecture is not universal.
+
+A venture does not graduate because the app boots. It graduates when a real external institution is prepared to use the evidence. After that, Foundry decides whether the validated opportunity should become an independent company, a licensed NewCo, a thin operating company on parent IP, a controlled subsidiary, or an internal AgEvidence product line.
 
 ## What Comes Out
 
@@ -159,7 +167,8 @@ A formed company should leave with more than source code.
 - decision log
 - milestone gates
 - reliance target
-- spinout readiness
+- provisional formation architecture
+- architecture decision and execution state
 
 ## Ownership Boundaries
 
@@ -212,7 +221,7 @@ Examples:
 - account interpretations
 - vertical demo scenarios
 
-### Independent Companies Own Proprietary Advantage
+### Architecture Allocates Proprietary Advantage
 
 Examples:
 
@@ -226,13 +235,19 @@ Examples:
 - proprietary analytics
 - internal commercial data
 
+Generic and reusable IP defaults upstream or to the parent. Truly vertical proprietary advantage is allocated by the Company Pack architecture. Independent spinout is one possible outcome, not the universal endpoint.
+
 Memorize the rule:
 
 ```text
-Generic     -> AgEvidence
-Formation   -> Foundry
-Vertical    -> Company Pack
-Proprietary -> Independent company
+Generic / trust infrastructure                  -> AgEvidence
+Reusable formation machinery                    -> Foundry
+Vertical operating thesis                       -> Company Pack
+Reusable cross-vertical IP, integrations, data  -> presumptively Parent
+Truly vertical proprietary advantage            -> allocated by Company Pack architecture
+Customer / data / improvement rights            -> allocated venture by venture
+External reliance                               -> graduation test
+Independent spinout                             -> one possible graduation architecture
 ```
 
 ## Repository Map
@@ -308,7 +323,8 @@ Mental model:
 | Render founder pitch | `bin/factory pitch founder methaneproof` | implemented |
 | Create company | `bin/factory new <name>` | planned |
 | Render website copy | `bin/factory render website <name>` | planned |
-| Extract company | `bin/factory extract <name> <path>` | planned |
+| Extract company architecture | `bin/factory extract <name> --architecture licensed-newco <path>` | planned |
+| Retain internal architecture | `bin/factory retain <name> --architecture internal-product` | planned |
 | Sync upstream | `bin/sync-upstream` | implemented |
 
 `partial` means the command exists and carries the active pack, but the full end-to-end venture-specific workflow is still being built.
@@ -352,12 +368,43 @@ ventures/<company>/
 └── generated/
 ```
 
-Example:
+Abbreviated example:
 
 ```yaml
 id: methaneproof
 company:
   working_name: MethaneProof
+  status: formation
+  independence_model: standalone_spinout
+formation_architecture:
+  status: provisional
+  current_hypothesis: licensed_independent_newco
+  confidence: low
+  binding: false
+  decision_gate: F9A
+  architecture_code: N3
+  candidate_architectures:
+    - N2
+    - N3
+    - N5
+  trust_layer:
+    ownership: agevidence
+    access: open_neutral_verifier
+  application_ip:
+    ownership: parent
+    newco_rights: exclusive_field_license
+  customer_architecture:
+    model: layered
+  founder_contribution:
+    technical_creation: low
+    domain_ip_creation: medium
+    customer_creation: high
+    capital_formation: high
+    operating_execution: high
+  decision:
+    gate: F9A
+    locked_at: null
+    rationale: null
 category:
   descriptor: Neutral methane intervention evidence infrastructure
 buyer:
@@ -657,7 +704,7 @@ bin/factory research stale methaneproof
 
 This is AgEvidence discipline applied to company building.
 
-## Share Intelligence, Not Customer Ownership
+## Share Intelligence, Allocate Customer Ownership Deliberately
 
 The same institution may participate in several evidence chains.
 
@@ -673,14 +720,104 @@ Therefore:
 1. organizations and people can be shared Foundry records
 2. venture-specific roles remain separate
 3. one executive account owner coordinates first touch
-4. independent companies retain separate commercial contracts
-5. evidence compatibility does not imply shared customer ownership
+4. customer ownership is selected by venture architecture
+5. evidence compatibility does not imply that every NewCo should own a separate copy of the relationship
 
 Shared relationship structures live in `commercial/graph/`.
 
+Customer architecture is a Company Pack decision:
+
+```yaml
+customer_architecture:
+  model: layered
+  parent:
+    owns:
+      - master_platform_agreement
+      - technical_integration
+  newco:
+    owns:
+      - vertical_sow
+      - domain_relationship
+```
+
+Use `newco_owned` when a venture-specific relationship is the company. Use `layered` when the parent should retain the platform account and the NewCo should own the vertical statement of work. Use `parent_network` when institutional graph ownership is the strategic asset.
+
+## Formation Architecture
+
+Every current cohort pack still retains the compatibility field:
+
+```yaml
+company:
+  independence_model: standalone_spinout
+```
+
+That field is no longer doctrine. The active source of truth is `formation_architecture`, which makes property-right allocation part of the Company Pack beside buyer, reliance event, brand, pricing, and founder research.
+
+External reliance proves whether there is a company. It does not automatically decide where the assets should live.
+
+Architecture options are selected per venture:
+
+| Code | NewCo-specific outcome |
+| --- | --- |
+| N1 | Open commons / independent spinout |
+| N2 | Open core / independent NewCo |
+| N3 | Open protocol / parent-owned vertical IP |
+| N4 | Open verifier / parent platform |
+| N5 | Open verifier / parent-owned application |
+| N6 | Open verifier / parent-owned network |
+| N7 | Controlled venture group |
+| N8 | Integrated AgEvidence business unit |
+| N9 | Open standard / integrated parent |
+| N10 | Fully proprietary integrated product |
+
+The first cohort should test architecture hypotheses as well as venture hypotheses:
+
+| Venture | Current hypothesis | Candidate range | What it tests |
+| --- | --- | --- | --- |
+| MethaneProof | `licensed_independent_newco` | N2, N3, N5 | Can an external founder build a financeable methane vertical around parent technology? |
+| FieldProof | `parent_platform_thin_newco` | N3, N4, N6 | Can one parent technical estate support specialized independent GTM? |
+| AgLend | `parent_network_operating_vertical` | N4, N6, N8 | Does institutional account ownership compound across workflows? |
+| SupplierEvidence / SourceRelay | `parent_network_or_integrated_product` | N5, N6, N8 | Are network effects valuable enough that full spinout independence is counterproductive? |
+
+Architecture remains provisional before evidence. A founder candidate still needs to know the current hypothesis, alternatives, confidence, and whether the decision is binding:
+
+```yaml
+formation_architecture:
+  status: provisional
+  current_hypothesis: licensed_independent_newco
+  confidence: low
+  binding: false
+  decision_gate: F9A
+```
+
+The decision should consider founder contribution:
+
+```yaml
+founder_contribution:
+  technical_creation: low
+  domain_ip_creation: medium
+  customer_creation: high
+  capital_formation: high
+  operating_execution: high
+```
+
+If the founder creates most of the company, more independence is rational. If Foundry has already created product, IP, and initial customers, greater parent ownership is rational. If the founder contributes critical proprietary domain IP, a joint or independently owned structure becomes more compelling.
+
+IP allocation follows a reuse test:
+
+```text
+Could another AgEvidence venture plausibly reuse this?
+YES -> presumptively parent
+NO  -> candidate NewCo asset
+
+Does the vertical require exclusivity for financing?
+YES -> exclusive field license may be sufficient
+NO  -> retain centrally
+```
+
 ## Initial Foundry Cohort
 
-The current 3+1 cohort exists to test whether the same evidence grammar can support materially different companies.
+The current 3+1 cohort exists to test whether the same evidence grammar can support materially different companies and different corporate architectures.
 
 ```text
                     AgEvidence
@@ -736,7 +873,7 @@ Current cohort founder hypotheses:
 | AgLend | `candidate_needed` | agribusiness finance, bank risk workflows, agricultural data integration | Own lender access, credit workflow empathy, buyer language, and the first product wedge. | Avoid implying farm grading, borrower scoring, loan approval, or lender activity. |
 | SupplierEvidence / SourceRelay | `candidate_needed` | corporate sustainability, supplier programs, assurance or reporting workflows | Own buyer requirements, supplier workflows, assurance language, and the first reporting wedge. | Avoid sounding like an assurance firm, carbon calculator, or ESG reporting dashboard. |
 
-Founder research should change as discovery changes. When buyer interviews alter the reliance event, first paid offer, category language, or evidence boundary, update the founder profile and founder pitch alongside the GTM and formation files.
+Founder research should change as discovery changes. When buyer interviews alter the reliance event, first paid offer, category language, evidence boundary, or founder contribution profile, update the founder profile and founder pitch alongside the GTM, formation, and architecture files.
 
 ## Founder Workflow
 
@@ -827,15 +964,28 @@ A successful pilot should produce something portable and inspectable.
 
 The goal is not a demo. The goal is a real external institution prepared to use the evidence.
 
-### Step 11 - Extract The Company
+### Step 11 - Review Property Rights And Architecture
+
+External reliance should trigger a deliberate review of:
+
+- reusable parent IP
+- truly vertical IP
+- customer ownership
+- data rights
+- improvement obligations
+- founder contribution
+- financing requirements
+
+### Step 12 - Execute The Chosen Structure
 
 Planned:
 
 ```sh
-bin/factory extract <company> ../CompanyName
+bin/factory extract <company> --architecture licensed-newco ../CompanyName
+bin/factory retain <company> --architecture internal-product
 ```
 
-The venture becomes an independent company repository.
+The venture becomes an independent company, licensed NewCo, thin operating company, controlled subsidiary, or retained product line according to `formation_architecture`.
 
 ## Formation Gates
 
@@ -846,7 +996,7 @@ F0  company thesis
 F1  reliance event defined
  |
  v
-F2  founder attached
+F2  founder hypothesis
  |
  v
 F3  buyer/workflow hypothesis
@@ -870,12 +1020,15 @@ F8  artifact issued
 F9  external reliance
  |
  v
-F10 independent spinout
+F9A property-rights / architecture review
+ |
+ v
+F10 chosen structure executed
 ```
 
-A venture does not graduate because the application is technically complete. It graduates when a real relying party validates the workflow strongly enough that the company should continue independently.
+A venture does not graduate because the application is technically complete. It graduates when a real relying party validates the workflow strongly enough to justify choosing and executing the right corporate structure.
 
-Formation state lives in `ventures/<company>/formation/status.yml`.
+Formation state lives in `ventures/<company>/formation/status.yml`. Architecture state lives in `ventures/<company>/company.yml` under `formation_architecture`.
 
 ## Foundry Metrics
 
@@ -1260,13 +1413,30 @@ Use short-lived feature, venture, and sync branches that merge back into `main`.
 
 During incubation, a venture lives inside `AgEvidenceFoundry`.
 
-At formation, the venture should become an independent repository:
+After external reliance and architecture review, a venture should either be extracted or retained according to `formation_architecture`:
 
 ```sh
-bin/factory extract methaneproof ../MethaneProof
+bin/factory extract methaneproof --architecture independent ../MethaneProof
+bin/factory extract methaneproof --architecture licensed-newco ../MethaneProof
+bin/factory extract fieldproof --architecture parent-platform ../FieldProof
+bin/factory extract aglend --architecture controlled-subsidiary ../AgLend
+bin/factory retain supplierevidence --architecture internal-product
 ```
 
-That command is planned. When implemented, extraction should produce an operating company, not only a cloned Rails app:
+Those commands are planned. When implemented, the architecture compiler should decide which assets cross the boundary:
+
+- code
+- configurations
+- ProgramProfiles
+- integrations
+- customer records
+- data
+- brand
+- documentation
+- licenses
+- improvement obligations
+
+For an extracted company repo, the output should be an operating company, not only a cloned Rails app:
 
 ```text
 CompanyName/
@@ -1281,11 +1451,11 @@ CompanyName/
 └── AGEVIDENCE_ORIGIN
 ```
 
-After extraction, the company should consume AgEvidence through versioned schemas, SDK packages, verifier releases, protocol releases, and conformance suites rather than repeatedly merging the whole Foundry repo.
+After extraction, the company should consume AgEvidence through versioned schemas, SDK packages, verifier releases, protocol releases, and conformance suites rather than repeatedly merging the whole Foundry repo. If the chosen architecture is parent-owned or internal, the compiler should retain the venture inside the parent operating surface and record the rationale in `formation_architecture.decision`.
 
 ## What Success Looks Like
 
-AgEvidence Foundry is not successful because it contains many startup ideas. It is successful when independently led companies can repeatedly emerge from the same substrate while sharing less and less undifferentiated work.
+AgEvidence Foundry is not successful because it contains many startup ideas. It is successful when validated opportunities can repeatedly emerge from the same substrate while sharing less undifferentiated work and allocating ownership where the value actually develops.
 
 A founder should not need to invent:
 

@@ -39,6 +39,10 @@ module Factory
       data.fetch("company", {})
     end
 
+    def formation_architecture
+      data.fetch("formation_architecture", {})
+    end
+
     def category
       data.fetch("category", {})
     end
@@ -189,6 +193,7 @@ module Factory
         "name" => name,
         "product_name" => product_pack.name,
         "company" => company,
+        "formation_architecture" => formation_architecture,
         "category" => category,
         "buyer" => buyer,
         "brand" => {

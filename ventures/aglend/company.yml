@@ -3,6 +3,66 @@ company:
   working_name: AgLend
   status: formation
   independence_model: standalone_spinout
+formation_architecture:
+  status: provisional
+  current_hypothesis: parent_network_operating_vertical
+  confidence: low
+  binding: false
+  decision_gate: F9A
+  architecture_code: N6
+  candidate_architectures:
+    - N4
+    - N6
+    - N8
+  trust_layer:
+    ownership: agevidence
+    access: open_neutral_verifier
+  application_ip:
+    ownership: parent
+    newco_rights: operating_rights_by_vertical_scope
+  integrations:
+    generic: parent
+    vertical_specific: parent_or_controlled_vertical
+  customer_architecture:
+    model: parent_network
+    parent:
+      owns:
+        - institutional_graph
+        - master_platform_agreement
+        - technical_integration
+    newco:
+      owns:
+        - lending_workflow_sow
+        - domain_relationship
+  data:
+    raw_customer_data: contract_specific
+    vertical_operational_data: controlled_vertical
+    cross_vertical_derived_intelligence: parent
+  improvements:
+    vertical_only: controlled_vertical
+    reusable_cross_vertical: parent
+  founder_contribution:
+    technical_creation: low
+    domain_ip_creation: medium
+    customer_creation: high
+    capital_formation: medium
+    operating_execution: high
+  ip_allocation:
+    generic_reusable: parent
+    vertical_specific: controlled_vertical_asset
+    exclusivity: narrow_operating_scope_only
+  corporate_form:
+    type: controlled_operating_vertical
+  parent_economics:
+    equity: true
+    platform_fee: false
+    royalty: false
+  extraction:
+    mode: controlled_subsidiary_or_retained_module
+  decision:
+    gate: F9A
+    locked_at: null
+    rationale: null
 category:
   descriptor: Agricultural evidence infrastructure for institutional credit
 buyer:

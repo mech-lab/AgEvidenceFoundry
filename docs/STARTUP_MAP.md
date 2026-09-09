@@ -5,10 +5,12 @@ Use this table to decide what to steal from AgEvidence and what to make your own
 In Foundry, the executable boundary is:
 
 ```text
-Generic -> upstream AgEvidence
-Factory-specific -> AgEvidenceFoundry
-Vertical -> ventures/<venture>
-Proprietary -> standalone company repo
+Generic / trust infrastructure -> upstream AgEvidence
+Factory-specific machinery -> AgEvidenceFoundry
+Vertical operating thesis -> ventures/<venture>
+Reusable cross-vertical IP -> parent
+Truly vertical proprietary advantage -> allocated by formation_architecture
+Customer, data, and improvement rights -> allocated venture by venture
 ```
 
 | Layer | Reuse unchanged | Configure | Replace |
@@ -59,7 +61,7 @@ Configure the market layer:
 
 ## Replace
 
-Replace the company-specific layer:
+Replace or allocate the company-specific layer:
 
 - brand
 - positioning
@@ -70,6 +72,8 @@ Replace the company-specific layer:
 - onboarding
 - commercial analytics
 - sales motion
+
+Whether those assets move to an independent NewCo, stay parent-owned under a field license, sit inside a controlled subsidiary, or remain an internal product line is a Company Pack architecture decision. The compatibility field `company.independence_model` may still say `standalone_spinout`; the active architecture hypothesis lives in `formation_architecture`.
 
 ## White-Label Checklist
 

@@ -22,5 +22,7 @@ gates:
     status: pending
   external_reliance:
     status: pending
-  spinout:
+  architecture_review:
+    status: locked
+  architecture_executed:
     status: locked

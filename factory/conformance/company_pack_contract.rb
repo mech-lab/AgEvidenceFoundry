@@ -10,6 +10,7 @@ module Factory
     REQUIRED_COMPANY_KEYS = %w[
       id
       company
+      formation_architecture
       category
       buyer
       problem
@@ -50,7 +51,8 @@ module Factory
       paid_pilot
       artifact_issued
       external_reliance
-      spinout
+      architecture_review
+      architecture_executed
     ].freeze
 
     VALID_CONTACT_ROLES = %w[EB CH TU EX IN BL PA EV].freeze
@@ -68,6 +70,7 @@ module Factory
       errors.concat(validate_schemas)
       errors.concat(VenturePackContract.new(pack.product_pack).validate)
       errors.concat(validate_company_manifest)
+      errors.concat(validate_formation_architecture)
       errors.concat(validate_brand)
       errors.concat(validate_gtm)
       errors.concat(validate_phase_zero)
@@ -165,6 +168,22 @@ module Factory
       errors << "#{pack.id}: company.yml missing: #{missing.join(', ')}" if missing.any?
       errors << "#{pack.id}: company.yml id must match directory" unless pack.id == pack.path.basename.to_s
       errors << "#{pack.id}: company working_name must match brand primary name" if present?(pack.brand.dig("name", "primary")) && pack.name != pack.brand.dig("name", "primary")
+      errors
+    end
+
+    def validate_formation_architecture
+      errors = []
+      architecture = pack.formation_architecture
+      candidates = Array(architecture["candidate_architectures"])
+
+      errors << "#{pack.id}: formation_architecture architecture_code must be included in candidate_architectures" if present?(architecture["architecture_code"]) && !candidates.include?(architecture["architecture_code"])
+      errors << "#{pack.id}: formation_architecture decision_gate must be F9A" unless architecture["decision_gate"] == "F9A"
+      errors << "#{pack.id}: formation_architecture decision.gate must match decision_gate" if present?(architecture.dig("decision", "gate")) && architecture.dig("decision", "gate") != architecture["decision_gate"]
+
+      if architecture["binding"] == true && !present?(architecture.dig("decision", "locked_at"))
+        errors << "#{pack.id}: binding formation_architecture requires decision.locked_at"
+      end
+
       errors
     end
 
@@ -371,6 +390,7 @@ module Factory
       gates = status.fetch("gates", {})
       missing_gates = REQUIRED_FORMATION_GATES.reject { |gate| present?(gates[gate]) }
       errors << "#{pack.id}: formation/status.yml missing gates: #{missing_gates.join(', ')}" if missing_gates.any?
+      errors << "#{pack.id}: formation/status.yml uses legacy spinout gate; use architecture_review and architecture_executed" if gates.key?("spinout")
       gates.each do |gate_name, gate|
         errors << "#{pack.id}: formation gate #{gate_name} has unknown status #{gate['status']}" unless VALID_GATE_STATUSES.include?(gate["status"])
       end

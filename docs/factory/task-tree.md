@@ -4,11 +4,11 @@ This is the parent/child GitHub task tree for converting AgEvidenceFoundry into 
 
 ## Epic: Thin Factory Fork
 
-Goal: keep AgEvidence as the evidence substrate, Foundry as the company-formation layer, and venture/company repos as the vertical/proprietary layers.
+Goal: keep AgEvidence as the evidence substrate, Foundry as the company-formation layer, venture packs as the vertical operating thesis, and downstream asset ownership as an architecture decision.
 
 ## Epic: Company Operating System
 
-Goal: let a domain founder inherit product substrate, commercial substrate, company identity, research memory, formation state, and a path to an independent company.
+Goal: let a domain founder inherit product substrate, commercial substrate, company identity, research memory, formation state, and a provisional architecture path to the right company boundary.
 
 ### C0: Promote Venture Pack To Company Pack
 
@@ -108,6 +108,24 @@ Acceptance tests:
 - `bin/factory validation gate methaneproof` requires budget owner, budget source, buying unit, price tests, and one P3/P4/P5 signal.
 - `gtm/pricing.yml` contains current policy and points to `gtm/validation/pricing/hypothesis.yml` and `gtm/validation/pricing/synthesis.yml`.
 - `bin/factory doctor` fails if a Company Pack treats Phase 0 pricing assumptions as validated market fact.
+
+### C6: Add Formation Architecture
+
+Files:
+
+- `ventures/*/company.yml`
+- `ventures/*/formation/status.yml`
+- `commercial/schemas/formation-architecture.schema.json`
+- `commercial/schemas/company-pack.schema.json`
+- `factory/loaders/company_pack.rb`
+- `factory/conformance/company_pack_contract.rb`
+
+Acceptance tests:
+
+- Company Packs retain `company.independence_model` for compatibility.
+- Company Packs declare `formation_architecture` with status, current hypothesis, candidate architecture codes, customer architecture, IP allocation, founder contribution, parent economics, extraction mode, and decision gate.
+- `bin/factory doctor` fails if the selected architecture code is outside the candidate range.
+- Formation gates include `architecture_review` and `architecture_executed` after `external_reliance`.
 
 ### F0: Sync Foundry With AgEvidence
 
@@ -300,7 +318,7 @@ Acceptance tests:
 - `bin/factory new mycompany` creates `ventures/mycompany/`.
 - The generated pack passes `bin/factory doctor mycompany` after required placeholders are completed.
 
-### F13: Add `bin/factory extract`
+### F13: Add Architecture-Aware Extraction And Retention
 
 Files:
 
@@ -311,19 +329,20 @@ Files:
 
 Acceptance tests:
 
-- `bin/factory extract methaneproof ../MethaneProof` creates a standalone repo tree.
+- `bin/factory extract methaneproof --architecture licensed-newco ../MethaneProof` creates an architecture-specific repo tree.
+- `bin/factory retain supplierevidence --architecture internal-product` records a retained parent-owned architecture.
 - Output includes `AGEVIDENCE_BASE` and `FOUNDRY_ORIGIN`.
-- Output does not require remaining a perpetual Foundry fork.
+- Output does not assume every venture becomes a standalone spinout.
 
-### F14: Extract MethaneProof As First Company Repo
+### F14: Execute MethaneProof As First Architecture Decision
 
 Files:
 
-- `../MethaneProof/**`
+- `../MethaneProof/**` if extracted
 - Foundry release notes.
 
 Acceptance tests:
 
-- MethaneProof standalone repo boots independently.
+- MethaneProof selected architecture boots or is retained according to `formation_architecture`.
 - MethaneProof provenance names the AgEvidence base SHA, Foundry release, and venture pack version.
-- MethaneProof consumes future AgEvidence updates through versioned schemas, SDK packages, verifier releases, and conformance suites rather than permanent Foundry branch merging.
+- If extracted, MethaneProof consumes future AgEvidence updates through versioned schemas, SDK packages, verifier releases, and conformance suites rather than permanent Foundry branch merging.

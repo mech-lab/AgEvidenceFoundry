@@ -18,7 +18,7 @@ mech-lab/AgEvidenceFoundry
         +-- ventures/supplierevidence
 ```
 
-Foundry proves the thesis by letting one evidence grammar produce multiple independently financeable companies.
+Foundry proves the thesis by letting one evidence grammar produce multiple financeable or strategically retained companies. External reliance is the universal graduation test; corporate architecture is selected per venture.
 
 ## Repository Roles
 
@@ -37,6 +37,7 @@ Every company has `ventures/<venture>/company.yml`.
 The company pack declares:
 
 - company identity and independence model
+- provisional formation architecture
 - category descriptor
 - initial buyer and relying parties
 - problem
@@ -106,6 +107,9 @@ bin/factory validation pricing methaneproof
 bin/factory validation gate methaneproof
 bin/factory research stale methaneproof
 bin/factory pitch customer methaneproof
+bin/factory pitch investor methaneproof
+bin/factory pitch founder methaneproof
+bin/factory pitch architecture methaneproof
 bin/factory demo methaneproof
 bin/factory test methaneproof
 ```
@@ -114,10 +118,11 @@ Future commands:
 
 ```sh
 bin/factory new mycompany
-bin/factory extract methaneproof ../MethaneProof
+bin/factory extract methaneproof --architecture licensed-newco ../MethaneProof
+bin/factory retain supplierevidence --architecture internal-product
 ```
 
-Extraction should produce a standalone company repo with explicit provenance files such as `AGEVIDENCE_BASE` and `FOUNDRY_ORIGIN`.
+Extraction should produce the selected architecture with explicit provenance files such as `AGEVIDENCE_BASE` and `FOUNDRY_ORIGIN`. Some ventures may become standalone repos, some may become licensed NewCos, and some may remain parent-owned product lines.
 
 ## Reliance Gate
 
@@ -125,7 +130,7 @@ Every venture defines a formal reliance gate. A working demo is not enough. A ve
 
 ## Phase 0 Gate
 
-Phase 0 is not complete because customers are interested. It must show that the problem sits inside an economic system capable of supporting an independent company.
+Phase 0 is not complete because customers are interested. It must show that the problem sits inside an economic system capable of supporting a deliberate architecture decision.
 
 Each Company Pack must validate five tracks simultaneously:
 

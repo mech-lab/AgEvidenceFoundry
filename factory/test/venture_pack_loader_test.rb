@@ -65,6 +65,21 @@ class VenturePackLoaderTest < Minitest::Test
     assert_equal "Supplier evidence acceptance network", pack.brand.dig("category", "descriptor")
   end
 
+  def test_company_pack_declares_provisional_formation_architecture
+    methane = Factory::CompanyPackLoader.new(root: ROOT).load("methaneproof")
+    aglend = Factory::CompanyPackLoader.new(root: ROOT).load("aglend")
+
+    assert_equal "standalone_spinout", methane.company["independence_model"]
+    assert_equal "licensed_independent_newco", methane.formation_architecture["current_hypothesis"]
+    assert_equal "N3", methane.formation_architecture["architecture_code"]
+    assert_includes methane.formation_architecture["candidate_architectures"], "N5"
+    assert_equal "F9A", methane.formation_architecture["decision_gate"]
+    assert_equal "parent_network", aglend.formation_architecture.dig("customer_architecture", "model")
+    assert aglend.formation_status.fetch("gates").key?("architecture_review")
+    assert aglend.formation_status.fetch("gates").key?("architecture_executed")
+    refute aglend.formation_status.fetch("gates").key?("spinout")
+  end
+
   def test_brand_score_is_computed_from_naming_tests
     pack = Factory::CompanyPackLoader.new(root: ROOT).load("methaneproof")
     score = Factory::Operations::BrandScore.new(pack)

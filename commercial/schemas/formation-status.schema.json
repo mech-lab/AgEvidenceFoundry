@@ -19,7 +19,8 @@
         "paid_pilot",
         "artifact_issued",
         "external_reliance",
-        "spinout"
+        "architecture_review",
+        "architecture_executed"
       ],
       "additionalProperties": {
         "type": "object",

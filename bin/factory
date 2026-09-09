@@ -42,7 +42,8 @@ def usage
 
     Planned:
       bin/factory new <venture>
-      bin/factory extract <venture> <target-dir>
+      bin/factory extract <venture> --architecture <mode> <target-dir>
+      bin/factory retain <venture> --architecture <mode>
   TEXT
 end
 
@@ -80,6 +81,7 @@ def render_company_status(pack)
     "  Customer, investor, founder, and architecture pitches configured",
     "FORMATION",
     "  Stage: #{pack.formation_status['stage']}",
+    "  Architecture: #{pack.formation_architecture['current_hypothesis']} (#{pack.formation_architecture['architecture_code']}, #{pack.formation_architecture['status']})",
     "  Pending gates: #{pending_gates.join(', ')}"
   ].join("\n")
 end
@@ -105,6 +107,7 @@ begin
       puts "ProgramProfiles: #{pack.product_pack.program_profiles.join(', ')}"
       puts "Integrations: #{pack.product_pack.integrations.join(', ')}"
       puts "Reliance: #{pack.reliance['event']}"
+      puts "Architecture: #{pack.formation_architecture['current_hypothesis']} (#{pack.formation_architecture['architecture_code']})"
     end
   when "doctor"
     verbose = ARGV.delete("--verbose")
@@ -187,6 +190,8 @@ begin
     fail_with("bin/factory new is scheduled for phase F12")
   when "extract"
     fail_with("bin/factory extract is scheduled for phase F13")
+  when "retain"
+    fail_with("bin/factory retain is scheduled for phase F13")
   else
     puts usage
     exit(command ? 1 : 0)
