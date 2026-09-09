@@ -6,6 +6,7 @@ phase_zero:
     - buyer
     - product_artifact
     - pricing
+    - architecture
   problem:
     hypothesis: Enterprise buyers and evidence-producing vendors repeatedly reconstruct supplier evidence for reporting, procurement, and assurance acceptance.
   reliance:
@@ -16,3 +17,5 @@ phase_zero:
     hypothesis: A supplier evidence passport would enter reporting, buyer acceptance, assurance export, or procurement review.
   pricing:
     hypothesis: A paid supplier evidence passport sprint can land in reporting, procurement, or supplier-program budget and expand by supplier program, buyer profile, or enterprise license.
+  architecture:
+    hypothesis: SourceRelay should remain an AgEvidence product unless Phase 0 proves a distinct enterprise network, buyer, separation benefit, and standalone financing case strong enough to justify a spinout company.
