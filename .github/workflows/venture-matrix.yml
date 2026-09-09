@@ -22,5 +22,7 @@ jobs:
           ruby-version: "3.4.10"
       - run: bin/factory doctor ${{ matrix.venture }}
       - run: bin/factory gtm validate ${{ matrix.venture }}
+      - run: bin/factory validation pricing ${{ matrix.venture }}
+      - run: bin/factory validation gate ${{ matrix.venture }}
       - run: bin/factory claims check ${{ matrix.venture }}
       - run: bin/factory brand score ${{ matrix.venture }}

@@ -1,0 +1,36 @@
+phase_zero_gate:
+  problem:
+    distinct_organizations: 5
+    workflow_reconstructions: 3
+    repeated_problem_confirmations: 3
+  reliance:
+    relying_party_confirmations: 2
+    consequential_decision_confirmations: 2
+  buyer:
+    problem_owner_identified: true
+    economic_buyer_hypothesis_supported: true
+  artifact:
+    artifact_tests: 2
+    workflow_fit_confirmed: 1
+  pricing:
+    buying_unit_tested: true
+    budget_owner_identified: true
+    budget_source_identified: true
+    price_tests:
+      minimum_distinct_organizations: 3
+    minimum_evidence_level:
+      level: P2
+      organizations: 2
+    required_strong_signal:
+      one_of:
+        - P3
+        - P4
+        - P5
+    land_price_range_defined: true
+    expansion_model_hypothesis_defined: true
+  outcome:
+    allowed:
+      - PASS
+      - ITERATE
+      - FAIL
+    current: ITERATE

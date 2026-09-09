@@ -1,0 +1,41 @@
+discovery_questions:
+  economic_consequence:
+    prompt: What does the evidence reconstruction problem cost in staff time, delayed sales, diligence, launch risk, or commercial risk?
+  existing_spend:
+    prompt: What adjacent spend already covers consultants, assurance, scientific support, MRV services, data integration, or internal technical teams?
+  budget_owner:
+    prompt: Which role owns the budget and who can approve without escalation?
+  buying_unit:
+    prompt: What object does the customer think they are buying?
+  price_tolerance:
+    prompt: Which price points are easy, credible, approval-requiring, difficult, or impossible?
+  expansion_economics:
+    prompt: If the first workflow succeeds, what recurring or usage metric should scale with value?
+price_points:
+  - 15000
+  - 25000
+  - 40000
+  - 60000
+  - 100000
+metric_tests:
+  - metric: artifact
+    hypothesis: rejected
+    reason: Buyer is unlikely to perceive each artifact as a separate economic purchase.
+  - metric: intervention_program
+    hypothesis: promising
+    reason: Maps to a commercial program with its own budget and accountable owner.
+  - metric: production_environment
+    hypothesis: possible
+    reason: Operational complexity rises by deployment environment.
+  - metric: reliance_endpoint
+    hypothesis: promising
+    reason: Additional processor acceptance workflows create incremental value.
+procurement_thresholds:
+  - amount: 10000
+    hypothesis: team_discretionary
+  - amount: 25000
+    hypothesis: manager_or_director_approval
+  - amount: 50000
+    hypothesis: executive_approval
+  - amount: 100000
+    hypothesis: formal_business_case

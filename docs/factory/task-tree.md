@@ -91,6 +91,24 @@ Acceptance tests:
 - `bin/factory research stale methaneproof` reports current and stale commercial claims.
 - `bin/factory doctor methaneproof --verbose` shows product, brand, GTM, pitch, and formation status.
 
+### C5: Add Phase 0 Pricing Validation
+
+Files:
+
+- `ventures/*/gtm/validation/**`
+- `ventures/*/gtm/pricing.yml`
+- `commercial/schemas/pricing-*.schema.json`
+- `commercial/schemas/phase-zero-*.schema.json`
+- `factory/operations/validation_report.rb`
+
+Acceptance tests:
+
+- `bin/factory validation show methaneproof` reports problem, reliance, buyer, artifact, pricing, and result.
+- `bin/factory validation pricing methaneproof` shows the pricing evidence ladder.
+- `bin/factory validation gate methaneproof` requires budget owner, budget source, buying unit, price tests, and one P3/P4/P5 signal.
+- `gtm/pricing.yml` contains current policy and points to `gtm/validation/pricing/hypothesis.yml` and `gtm/validation/pricing/synthesis.yml`.
+- `bin/factory doctor` fails if a Company Pack treats Phase 0 pricing assumptions as validated market fact.
+
 ### F0: Sync Foundry With AgEvidence
 
 Files:

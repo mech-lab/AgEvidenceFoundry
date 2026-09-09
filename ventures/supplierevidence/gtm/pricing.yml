@@ -1,11 +1,30 @@
 pricing:
-  hypothesis: paid supplier evidence passport sprint
   currency: AUD
-  pilot_range:
-    minimum: 50000
-    maximum: 125000
-  expansion_units:
-    - supplier_program
-    - reporting_period
-    - buyer_profile
-    - supplier_passport
+  status: phase_zero_unvalidated
+  land:
+    offer: supplier_evidence_passport_sprint
+    scope:
+      - one_supplier_program
+      - one_reporting_period
+      - one_buyer_acceptance_profile
+    range:
+      minimum: 50000
+      target: 75000
+      maximum: 125000
+    confidence: low
+  expansion:
+    models:
+      - annual_enterprise_license
+      - per_supplier_program
+      - additional_buyer_profile
+    confidence: low
+  primary_value_metric: supplier_program
+  secondary_value_metric: reporting_entity
+  evidence:
+    hypothesis: validation/pricing/hypothesis.yml
+    synthesis: validation/pricing/synthesis.yml
+  next_validation:
+    - reporting_budget_owner
+    - buyer_acceptance_unit
+    - enterprise_license_pricing
+    - procurement_threshold

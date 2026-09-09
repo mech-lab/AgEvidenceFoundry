@@ -1,0 +1,21 @@
+objective: Track whether supplier evidence pain is recurrent and tied to consequential acceptance decisions.
+questions:
+  - id: s01
+    stage: problem_strength
+    text: Did the participant describe a specific recent supplier evidence workflow?
+  - id: s02
+    stage: recurrence
+    text: Did the workflow recur across suppliers, reporting periods, buyer profiles, or assurance requests?
+signals:
+  - id: workflow_reconstruction
+    description: Participant can describe a specific recent supplier evidence reconstruction.
+  - id: repeated_problem
+    description: Same evidence movement work recurs across supplier programs or buyer requests.
+  - id: commercial_delay
+    description: Evidence work delays reporting, procurement, assurance, customer acceptance, or supplier onboarding.
+  - id: external_reliance
+    description: A corporate reporter, buyer, processor, retailer, or assurance provider must inspect the output.
+current:
+  workflow_reconstructions: 0
+  repeated_problem_confirmations: 0
+  consequential_commercial_consequences: 0

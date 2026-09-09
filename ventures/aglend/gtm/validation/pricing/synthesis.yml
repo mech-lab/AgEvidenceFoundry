@@ -1,0 +1,47 @@
+status: active
+pricing_evidence_level: P0
+sample:
+  interviews: 0
+  organizations: 0
+  organizations_price_tested: 0
+buyer_evidence:
+  budget_owner_confirmed: 0
+  budget_source_confirmed: 0
+value:
+  dominant_consequence:
+    - delayed_origination
+    - credit_team_time
+    - portfolio_risk_review
+buying_unit:
+  leading_candidate: financial_product
+  confidence: low
+pilot:
+  tested_range:
+    minimum: 50000
+    maximum: 300000
+  emerging_range:
+    minimum: 75000
+    maximum: 200000
+  confidence: low
+  procurement_cliff:
+    amount: 125000
+    currency: AUD
+    confidence: low
+expansion:
+  leading_models:
+    - annual_facility_license
+    - portfolio_surveillance
+  confidence: low
+evidence:
+  P0: 1
+  P1: 0
+  P2: 0
+  P3: 0
+  P4: 0
+  P5: 0
+decision:
+  action: continue_testing
+open_questions:
+  - confirm credit product budget owner
+  - test facility-size value anchor
+  - validate annual portfolio surveillance pricing

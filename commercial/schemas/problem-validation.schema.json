@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agevidence.dev/commercial/schemas/problem-validation.schema.json",
+  "title": "Phase 0 Problem Validation",
+  "type": "object",
+  "required": ["objective", "questions"],
+  "properties": {
+    "objective": { "type": "string" },
+    "questions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "stage", "text"]
+      },
+      "minItems": 1
+    },
+    "signals": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "description"]
+      }
+    }
+  },
+  "additionalProperties": true
+}

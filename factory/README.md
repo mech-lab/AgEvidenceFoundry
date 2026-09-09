@@ -25,13 +25,17 @@ bin/factory claims check methaneproof
 bin/factory gtm validate methaneproof
 bin/factory gtm score methaneproof
 bin/factory gtm hypothesis methaneproof sea_forest
+bin/factory validation show methaneproof
+bin/factory validation interviews methaneproof
+bin/factory validation pricing methaneproof
+bin/factory validation gate methaneproof
 bin/factory research stale methaneproof
 bin/factory pitch customer methaneproof
 bin/factory demo methaneproof
 bin/factory test methaneproof
 ```
 
-`doctor` is intentionally dependency-light. It uses Ruby standard library YAML parsing and structural contracts so pack validation can run before Rails or PostgreSQL is available.
+`doctor` is intentionally dependency-light. It uses Ruby standard library YAML parsing, JSON schema subset validation, and structural contracts so pack validation can run before Rails or PostgreSQL is available.
 
 ## Boundary
 

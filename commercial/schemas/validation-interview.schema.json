@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agevidence.dev/commercial/schemas/validation-interview.schema.json",
+  "title": "Phase 0 Interview Record",
+  "type": "object",
+  "required": ["id", "status", "target_account", "sequence", "pricing"],
+  "properties": {
+    "id": { "type": "string" },
+    "status": {
+      "type": "string",
+      "enum": ["planned", "completed", "cancelled"]
+    },
+    "target_account": { "type": "string" },
+    "sequence": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 4
+    },
+    "pricing": {
+      "type": "object",
+      "required": ["asked_late", "budget", "current_spend", "buying_unit", "price_tests", "value_anchor", "willingness_signal", "pricing_evidence_level", "confidence"],
+      "properties": {
+        "asked_late": { "type": "boolean" },
+        "budget": {
+          "type": "object",
+          "required": ["owner_role", "source", "confirmed"]
+        },
+        "current_spend": { "type": "object" },
+        "buying_unit": { "type": "object" },
+        "price_tests": {
+          "type": "array",
+          "items": { "type": "object" }
+        },
+        "value_anchor": {
+          "type": "object",
+          "required": ["primary"]
+        },
+        "willingness_signal": {
+          "type": "object",
+          "required": ["type"]
+        },
+        "pricing_evidence_level": {
+          "type": "string",
+          "enum": ["P0", "P1", "P2", "P3", "P4", "P5"]
+        },
+        "confidence": {
+          "type": "string",
+          "enum": ["A", "B", "C", "D"]
+        }
+      }
+    }
+  },
+  "additionalProperties": true
+}

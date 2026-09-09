@@ -1,0 +1,21 @@
+objective: Track whether agricultural finance evidence pain is recurrent and tied to consequential lender decisions.
+questions:
+  - id: s01
+    stage: problem_strength
+    text: Did the participant describe a specific credit or portfolio workflow?
+  - id: s02
+    stage: recurrence
+    text: Did the evidence review recur across products, borrowers, facilities, or review cycles?
+signals:
+  - id: workflow_reconstruction
+    description: Participant can describe a specific recent farm-evidence review workflow.
+  - id: repeated_problem
+    description: Same evidence work recurs across borrowers, products, or portfolio reviews.
+  - id: commercial_delay
+    description: Evidence work delays origination, renewal, facility monitoring, insurance, or product launch.
+  - id: external_reliance
+    description: A credit, risk, insurance, or finance team must inspect the output.
+current:
+  workflow_reconstructions: 0
+  repeated_problem_confirmations: 0
+  consequential_commercial_consequences: 0

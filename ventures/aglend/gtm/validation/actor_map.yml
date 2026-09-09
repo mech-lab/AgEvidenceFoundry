@@ -1,0 +1,17 @@
+actors:
+  - role: EB
+    description: Credit product, portfolio, or executive sponsor accountable for evidence-linked financial decisions.
+  - role: CH
+    description: Risk, relationship, or innovation lead who feels repeated farm-evidence review pain.
+  - role: TU
+    description: Credit, data, or operations user who can map source records and underwriting conditions.
+  - role: BL
+    description: Credit policy, model risk, legal, procurement, or security reviewer.
+budget_hypothesis:
+  owner_role: EB
+  sources:
+    - credit_product
+    - portfolio_risk
+    - innovation
+    - implementation
+  procurement_owner: BL

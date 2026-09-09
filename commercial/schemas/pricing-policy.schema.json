@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agevidence.dev/commercial/schemas/pricing-policy.schema.json",
+  "title": "Current Commercial Pricing Policy",
+  "type": "object",
+  "required": ["pricing"],
+  "properties": {
+    "pricing": {
+      "type": "object",
+      "required": ["status", "currency", "land", "expansion", "primary_value_metric", "evidence", "next_validation"],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["phase_zero_unvalidated", "phase_zero_testing", "phase_zero_validated"]
+        },
+        "currency": { "type": "string" },
+        "land": {
+          "type": "object",
+          "required": ["offer", "scope", "range", "confidence"],
+          "properties": {
+            "offer": { "type": "string" },
+            "scope": {
+              "type": "array",
+              "items": { "type": "string" },
+              "minItems": 1
+            },
+            "range": {
+              "type": "object",
+              "required": ["minimum", "target", "maximum"],
+              "properties": {
+                "minimum": { "type": "integer", "minimum": 0 },
+                "target": { "type": "integer", "minimum": 0 },
+                "maximum": { "type": "integer", "minimum": 0 }
+              }
+            },
+            "confidence": {
+              "type": "string",
+              "enum": ["low", "medium", "high"]
+            }
+          }
+        },
+        "expansion": {
+          "type": "object",
+          "required": ["models", "confidence"],
+          "properties": {
+            "models": {
+              "type": "array",
+              "items": { "type": "string" },
+              "minItems": 1
+            },
+            "confidence": {
+              "type": "string",
+              "enum": ["low", "medium", "high"]
+            }
+          }
+        },
+        "primary_value_metric": { "type": "string" },
+        "secondary_value_metric": { "type": "string" },
+        "evidence": {
+          "type": "object",
+          "required": ["hypothesis", "synthesis"],
+          "properties": {
+            "hypothesis": { "type": "string" },
+            "synthesis": { "type": "string" }
+          }
+        },
+        "next_validation": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,47 @@
+status: active
+pricing_evidence_level: P0
+sample:
+  interviews: 0
+  organizations: 0
+  organizations_price_tested: 0
+buyer_evidence:
+  budget_owner_confirmed: 0
+  budget_source_confirmed: 0
+value:
+  dominant_consequence:
+    - procurement_delay
+    - technical_team_time
+    - distributor_diligence
+buying_unit:
+  leading_candidate: claim_family
+  confidence: low
+pilot:
+  tested_range:
+    minimum: 15000
+    maximum: 100000
+  emerging_range:
+    minimum: 25000
+    maximum: 50000
+  confidence: low
+  procurement_cliff:
+    amount: 50000
+    currency: AUD
+    confidence: low
+expansion:
+  leading_models:
+    - annual_claim_program
+    - buyer_acceptance_program
+  confidence: low
+evidence:
+  P0: 1
+  P1: 0
+  P2: 0
+  P3: 0
+  P4: 0
+  P5: 0
+decision:
+  action: continue_testing
+open_questions:
+  - confirm procurement threshold
+  - test annual claim program pricing
+  - validate distributor-side willingness to pay

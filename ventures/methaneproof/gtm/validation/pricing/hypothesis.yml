@@ -1,0 +1,42 @@
+status: unvalidated
+currency: AUD
+initial_hypothesis:
+  first_offer:
+    type: evidence_to_reliance_sprint
+  price_range:
+    minimum: 25000
+    maximum: 50000
+  billing_unit:
+    hypothesis: bounded_reliance_workflow
+  possible_expansion_units:
+    - intervention_program
+    - production_environment
+    - artifact
+    - reliance_endpoint
+  expected_budget_owner:
+    hypothesis: commercialization_team
+  expected_budget_source:
+    hypothesis:
+      - product_commercialization
+      - customer_success
+      - technical_services
+      - sustainability
+pricing_hypotheses:
+  land:
+    offer: evidence_to_reliance_sprint
+    range:
+      minimum: 25000
+      maximum: 50000
+    buying_unit: bounded_reliance_workflow
+  expand:
+    models_under_test:
+      - annual_program_license
+      - per_intervention_program
+      - per_reliance_endpoint
+      - metered_evidence_ingestion
+falsification_conditions:
+  - no_identifiable_budget
+  - customer_values_problem_below_delivery_cost
+  - buying_unit_is_incompatible_with_offer
+  - procurement_friction_exceeds_problem_value
+  - customer_only_accepts_free_pilot

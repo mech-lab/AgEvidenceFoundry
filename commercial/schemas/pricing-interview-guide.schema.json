@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agevidence.dev/commercial/schemas/pricing-interview-guide.schema.json",
+  "title": "Pricing Interview Guide",
+  "type": "object",
+  "required": ["sequence", "sections"],
+  "properties": {
+    "sequence": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 4
+    },
+    "sections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "stage", "questions"]
+      },
+      "minItems": 4
+    }
+  },
+  "additionalProperties": true
+}

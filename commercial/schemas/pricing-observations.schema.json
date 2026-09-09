@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agevidence.dev/commercial/schemas/pricing-observations.schema.json",
+  "title": "Pricing Observations",
+  "type": "object",
+  "required": ["observations"],
+  "properties": {
+    "observations": {
+      "type": "array",
+      "items": { "type": "object" }
+    }
+  },
+  "additionalProperties": true
+}

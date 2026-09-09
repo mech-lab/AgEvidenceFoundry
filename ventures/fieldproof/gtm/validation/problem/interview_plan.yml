@@ -1,0 +1,20 @@
+objective: Reconstruct real efficacy-claim behavior before asking about price.
+target_sample:
+  organizations: 8
+  roles:
+    - EB
+    - CH
+    - TU
+questions:
+  - id: p01
+    stage: real_behavior
+    text: Tell me about the last time a buyer, distributor, or investor asked you to substantiate a field performance claim.
+  - id: p02
+    stage: real_behavior
+    text: What trial evidence, observations, analyses, and caveats did the team actually have to assemble?
+  - id: p03
+    stage: consequence
+    text: Did that evidence process delay a sale, distribution agreement, procurement decision, investment process, or launch?
+  - id: p04
+    stage: recurrence
+    text: How often does this claim substantiation work recur across products, crops, regions, or buyers?

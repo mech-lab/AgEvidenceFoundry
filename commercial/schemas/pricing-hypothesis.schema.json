@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agevidence.dev/commercial/schemas/pricing-hypothesis.schema.json",
+  "title": "Phase 0 Pricing Hypothesis",
+  "type": "object",
+  "required": ["status", "currency", "initial_hypothesis", "pricing_hypotheses", "falsification_conditions"],
+  "properties": {
+    "status": {
+      "type": "string",
+      "enum": ["unvalidated", "active", "synthesized", "validated", "failed"]
+    },
+    "currency": { "type": "string" },
+    "initial_hypothesis": {
+      "type": "object",
+      "required": ["first_offer", "price_range", "billing_unit", "possible_expansion_units", "expected_budget_owner", "expected_budget_source"],
+      "properties": {
+        "first_offer": {
+          "type": "object",
+          "required": ["type"]
+        },
+        "price_range": {
+          "type": "object",
+          "required": ["minimum", "maximum"],
+          "properties": {
+            "minimum": { "type": "integer", "minimum": 0 },
+            "maximum": { "type": "integer", "minimum": 0 }
+          }
+        },
+        "billing_unit": {
+          "type": "object",
+          "required": ["hypothesis"]
+        },
+        "possible_expansion_units": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        },
+        "expected_budget_owner": {
+          "type": "object",
+          "required": ["hypothesis"]
+        },
+        "expected_budget_source": {
+          "type": "object",
+          "required": ["hypothesis"]
+        }
+      }
+    },
+    "pricing_hypotheses": {
+      "type": "object",
+      "required": ["land", "expand"]
+    },
+    "falsification_conditions": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    }
+  },
+  "additionalProperties": true
+}

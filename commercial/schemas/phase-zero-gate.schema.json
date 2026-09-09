@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agevidence.dev/commercial/schemas/phase-zero-gate.schema.json",
+  "title": "Phase 0 Gate",
+  "type": "object",
+  "required": ["phase_zero_gate"],
+  "properties": {
+    "phase_zero_gate": {
+      "type": "object",
+      "required": ["problem", "reliance", "buyer", "artifact", "pricing", "outcome"],
+      "properties": {
+        "problem": { "type": "object" },
+        "reliance": { "type": "object" },
+        "buyer": { "type": "object" },
+        "artifact": { "type": "object" },
+        "pricing": {
+          "type": "object",
+          "required": ["buying_unit_tested", "budget_owner_identified", "budget_source_identified", "price_tests", "minimum_evidence_level", "required_strong_signal", "land_price_range_defined", "expansion_model_hypothesis_defined"]
+        },
+        "outcome": {
+          "type": "object",
+          "required": ["allowed", "current"]
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

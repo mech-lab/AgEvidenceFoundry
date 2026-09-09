@@ -1,0 +1,9 @@
+artifact_tests:
+  - id: ART-001
+    artifact: supplier_evidence_passport
+    workflow_question: Would this output enter reporting, assurance, buyer acceptance, or procurement review without extra reconstruction?
+    status: planned
+  - id: ART-002
+    artifact: assurance_export
+    workflow_question: Can the reviewer inspect source provenance, buyer requirements, limitations, and acceptance status?
+    status: planned

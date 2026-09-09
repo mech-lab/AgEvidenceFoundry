@@ -1,0 +1,41 @@
+discovery_questions:
+  economic_consequence:
+    prompt: What does claim-evidence reconstruction cost in staff time, delayed sales, procurement failure, investor diligence, or launch delay?
+  existing_spend:
+    prompt: What adjacent spend already covers field trials, agronomic consultants, data analysis, assurance, or technical-services work?
+  budget_owner:
+    prompt: Which role owns the claim problem and who can approve a paid sprint?
+  buying_unit:
+    prompt: What object does the customer think they are buying?
+  price_tolerance:
+    prompt: Which price points are easy, credible, approval-requiring, difficult, or impossible?
+  expansion_economics:
+    prompt: If the first workflow succeeds, what recurring or usage metric should scale with value?
+price_points:
+  - 15000
+  - 25000
+  - 40000
+  - 60000
+  - 100000
+metric_tests:
+  - metric: artifact
+    hypothesis: rejected
+    reason: Buyer is unlikely to value each artifact as the main purchase unit.
+  - metric: claim_family
+    hypothesis: promising
+    reason: Maps to repeated commercial proof around a product or claim line.
+  - metric: trial_program
+    hypothesis: possible
+    reason: Evidence complexity scales with trial design and geography.
+  - metric: buyer_acceptance_program
+    hypothesis: promising
+    reason: Buyer review workflows create repeatable external reliance.
+procurement_thresholds:
+  - amount: 10000
+    hypothesis: team_discretionary
+  - amount: 25000
+    hypothesis: manager_or_director_approval
+  - amount: 50000
+    hypothesis: executive_approval
+  - amount: 100000
+    hypothesis: formal_business_case

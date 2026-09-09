@@ -1,0 +1,41 @@
+discovery_questions:
+  economic_consequence:
+    prompt: What does supplier-evidence reconstruction cost in staff time, delayed reporting, failed procurement, assurance work, customer acceptance, or churn risk?
+  existing_spend:
+    prompt: What adjacent spend already covers assurance providers, sustainability consultants, data integration, supplier portals, custom reporting, or internal teams?
+  budget_owner:
+    prompt: Which role owns the budget and who can approve without escalation?
+  buying_unit:
+    prompt: What object does the customer think they are buying?
+  price_tolerance:
+    prompt: Which price points are easy, credible, approval-requiring, difficult, or impossible?
+  expansion_economics:
+    prompt: If the first workflow succeeds, what recurring or usage metric should scale with value?
+price_points:
+  - 25000
+  - 50000
+  - 75000
+  - 125000
+  - 200000
+metric_tests:
+  - metric: supplier_passport
+    hypothesis: possible
+    reason: Clear output, but may underprice the acceptance workflow and reuse value.
+  - metric: supplier_program
+    hypothesis: promising
+    reason: Maps to a reporting or procurement program with a budget and owner.
+  - metric: reporting_period
+    hypothesis: possible
+    reason: Buyer value may recur with reporting cycles.
+  - metric: enterprise_license
+    hypothesis: promising
+    reason: Multiple suppliers and buyer profiles create portfolio-level reuse.
+procurement_thresholds:
+  - amount: 25000
+    hypothesis: team_discretionary
+  - amount: 50000
+    hypothesis: manager_or_director_approval
+  - amount: 125000
+    hypothesis: procurement_review
+  - amount: 200000
+    hypothesis: formal_business_case

@@ -1,0 +1,18 @@
+phase_zero:
+  status: active
+  tracks:
+    - problem
+    - reliance
+    - buyer
+    - product_artifact
+    - pricing
+  problem:
+    hypothesis: Enterprise buyers and evidence-producing vendors repeatedly reconstruct supplier evidence for reporting, procurement, and assurance acceptance.
+  reliance:
+    hypothesis: Corporate reporter, processor, retailer, or assurance use of a supplier claim is a consequential external decision.
+  buyer:
+    hypothesis: Sustainability, procurement, supply-chain, or commercial leaders own the problem and budget, depending on whether the buyer or supplier starts the workflow.
+  product_artifact:
+    hypothesis: A supplier evidence passport would enter reporting, buyer acceptance, assurance export, or procurement review.
+  pricing:
+    hypothesis: A paid supplier evidence passport sprint can land in reporting, procurement, or supplier-program budget and expand by supplier program, buyer profile, or enterprise license.

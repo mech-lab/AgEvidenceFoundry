@@ -1,0 +1,9 @@
+artifact_tests:
+  - id: ART-001
+    artifact: methane_evidence_statement
+    workflow_question: Would this output enter processor acceptance or assurance review without extra narrative reconstruction?
+    status: planned
+  - id: ART-002
+    artifact: verifier_reconstruction
+    workflow_question: Can the buyer or reviewer inspect source provenance, limitations, and bounded determination language?
+    status: planned

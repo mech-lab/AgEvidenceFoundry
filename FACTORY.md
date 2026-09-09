@@ -52,6 +52,8 @@ Under it:
 product/    technical Venture Pack
 brand/      naming, visual DNA, vocabulary, claim discipline
 gtm/        ICP, pricing, offers, channels, objections, discovery, scoring
+gtm/validation/
+            Phase 0 problem, reliance, buyer, artifact, and pricing evidence
 accounts/   account universe, contacts, relationships, triggers
 pitch/      audience-specific pitch facts and proof points
 research/   sources, hypotheses, decisions
@@ -98,6 +100,10 @@ bin/factory claims check methaneproof
 bin/factory gtm validate methaneproof
 bin/factory gtm score methaneproof
 bin/factory gtm hypothesis methaneproof sea_forest
+bin/factory validation show methaneproof
+bin/factory validation interviews methaneproof
+bin/factory validation pricing methaneproof
+bin/factory validation gate methaneproof
 bin/factory research stale methaneproof
 bin/factory pitch customer methaneproof
 bin/factory demo methaneproof
@@ -116,6 +122,20 @@ Extraction should produce a standalone company repo with explicit provenance fil
 ## Reliance Gate
 
 Every venture defines a formal reliance gate. A working demo is not enough. A venture must declare the relying party, decision, required evidence controls, and success event.
+
+## Phase 0 Gate
+
+Phase 0 is not complete because customers are interested. It must show that the problem sits inside an economic system capable of supporting an independent company.
+
+Each Company Pack must validate five tracks simultaneously:
+
+- problem
+- reliance
+- buyer
+- product/artifact
+- pricing
+
+Pricing is a first-class track. The speculative land and expand assumptions live under `gtm/validation/pricing/`; the current `gtm/pricing.yml` policy points back to that hypothesis and synthesis. The required pricing evidence ladder is `P0` through `P5`, from founder speculation to money received.
 
 This lets Foundry measure:
 

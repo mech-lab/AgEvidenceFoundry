@@ -51,6 +51,9 @@ bin/factory brand score methaneproof
 bin/factory gtm validate methaneproof
 bin/factory gtm score methaneproof
 bin/factory gtm hypothesis methaneproof sea_forest
+bin/factory validation show methaneproof
+bin/factory validation pricing methaneproof
+bin/factory validation gate methaneproof
 bin/factory claims check methaneproof
 bin/factory research stale methaneproof
 bin/factory pitch customer methaneproof

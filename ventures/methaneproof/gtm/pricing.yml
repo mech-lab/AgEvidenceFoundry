@@ -1,11 +1,30 @@
 pricing:
-  hypothesis: paid reliance pilot
   currency: AUD
-  pilot_range:
-    minimum: 25000
-    maximum: 50000
-  expansion_units:
-    - intervention
-    - production_environment
-    - artifact
-    - reliance_endpoint
+  status: phase_zero_unvalidated
+  land:
+    offer: evidence_to_reliance_sprint
+    scope:
+      - one_intervention
+      - one_production_environment
+      - one_downstream_reliance_workflow
+    range:
+      minimum: 25000
+      target: 40000
+      maximum: 50000
+    confidence: low
+  expansion:
+    models:
+      - annual_program_license
+      - additional_reliance_endpoint
+      - metered_evidence_ingestion
+    confidence: low
+  primary_value_metric: intervention_program
+  secondary_value_metric: reliance_endpoint
+  evidence:
+    hypothesis: validation/pricing/hypothesis.yml
+    synthesis: validation/pricing/synthesis.yml
+  next_validation:
+    - budget_owner_confirmation
+    - procurement_threshold
+    - annual_program_pricing
+    - processor_side_willingness_to_pay

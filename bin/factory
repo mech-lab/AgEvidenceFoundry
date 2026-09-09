@@ -18,6 +18,7 @@ require_relative "../factory/operations/gtm_validator"
 require_relative "../factory/operations/opportunity_hypothesis"
 require_relative "../factory/operations/pitch_renderer"
 require_relative "../factory/operations/research_staleness"
+require_relative "../factory/operations/validation_report"
 
 def usage
   <<~TEXT
@@ -30,6 +31,10 @@ def usage
       bin/factory gtm validate <venture>
       bin/factory gtm score <venture>
       bin/factory gtm hypothesis <venture> <account-id>
+      bin/factory validation show <venture>
+      bin/factory validation interviews <venture>
+      bin/factory validation pricing <venture>
+      bin/factory validation gate <venture>
       bin/factory research stale <venture>
       bin/factory pitch <customer|investor|founder|architecture> <venture>
       bin/factory demo <venture>
@@ -158,6 +163,12 @@ begin
 
     id = ARGV.shift || fail_with("venture id is required")
     puts Factory::Operations::ResearchStaleness.new(loader.load(id)).render
+  when "validation"
+    subcommand = ARGV.shift || fail_with("validation command is required")
+    fail_with("unknown validation command #{subcommand}") unless %w[show interviews pricing gate].include?(subcommand)
+
+    id = ARGV.shift || fail_with("venture id is required")
+    puts Factory::Operations::ValidationReport.new(loader.load(id)).render(subcommand)
   when "pitch"
     audience = ARGV.shift || fail_with("pitch audience is required")
     id = ARGV.shift || fail_with("venture id is required")

@@ -1,0 +1,37 @@
+sequence:
+  - real_behavior
+  - economic_consequence
+  - budget_architecture
+  - explicit_price_test
+  - expansion_economics
+sections:
+  - id: real_behavior
+    stage: problem
+    questions:
+      - Tell me about the last time a financial decision depended on farm evidence that was hard to inspect.
+      - What did your team actually have to collect, reconcile, review, or explain?
+      - Which teams got pulled in?
+  - id: economic_consequence
+    stage: value
+    questions:
+      - What happens commercially when this process takes an extra two or four weeks?
+      - Is this staff-effort pain, or can it hold up origination, renewal, risk review, insurance, or product launch?
+      - Have you hired outside people or built internal workarounds for this?
+  - id: budget_architecture
+    stage: budget
+    questions:
+      - Which team would normally pay for fixing this?
+      - What budget would it come from?
+      - Would this look internally like software, implementation, risk tooling, credit operations, or a commercial project?
+      - At what spend level does procurement materially change?
+  - id: explicit_price_test
+    stage: price
+    questions:
+      - If one sprint covered one lender, one financial product, and one underwriting evidence package, what would happen internally at A$75,000?
+      - At A$125,000, what changes internally?
+      - At A$200,000, what would the engagement have to include for that to be credible?
+  - id: expansion_economics
+    stage: expansion
+    questions:
+      - If the first workflow succeeds, what object should scale with customer value?
+      - Would expansion map better to facilities, AUM, financial products, origination events, ProgramProfiles, or portfolio surveillance?

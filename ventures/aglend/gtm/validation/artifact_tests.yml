@@ -1,0 +1,9 @@
+artifact_tests:
+  - id: ART-001
+    artifact: lender_evidence_package
+    workflow_question: Would this output enter underwriting, renewal, risk, insurance, or facility review without outsourcing credit decisions?
+    status: planned
+  - id: ART-002
+    artifact: verifier_reconstruction
+    workflow_question: Can credit or risk users inspect source provenance, conditions, and bounded evidence language?
+    status: planned

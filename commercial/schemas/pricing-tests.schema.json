@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agevidence.dev/commercial/schemas/pricing-tests.schema.json",
+  "title": "Pricing Validation Tests",
+  "type": "object",
+  "required": ["discovery_questions", "price_points", "metric_tests", "procurement_thresholds"],
+  "properties": {
+    "discovery_questions": {
+      "type": "object",
+      "required": ["economic_consequence", "existing_spend", "budget_owner", "buying_unit", "price_tolerance", "expansion_economics"]
+    },
+    "price_points": {
+      "type": "array",
+      "items": { "type": "integer" },
+      "minItems": 3
+    },
+    "metric_tests": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["metric", "hypothesis", "reason"]
+      },
+      "minItems": 2
+    },
+    "procurement_thresholds": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["amount", "hypothesis"]
+      },
+      "minItems": 1
+    }
+  },
+  "additionalProperties": true
+}

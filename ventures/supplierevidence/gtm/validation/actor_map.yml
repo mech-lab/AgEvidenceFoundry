@@ -1,0 +1,17 @@
+actors:
+  - role: EB
+    description: Sustainability, procurement, supply-chain, or commercial owner accountable for supplier evidence acceptance.
+  - role: CH
+    description: Reporting, supplier program, or customer lead who repeatedly coordinates evidence requests.
+  - role: TU
+    description: Data, farm systems, assurance, or program user who can map records and acceptance profiles.
+  - role: BL
+    description: Assurance, legal, procurement, customer, or information-security reviewer.
+budget_hypothesis:
+  owner_role: EB
+  sources:
+    - sustainability_reporting
+    - procurement
+    - supplier_program
+    - commercial_enablement
+  procurement_owner: BL

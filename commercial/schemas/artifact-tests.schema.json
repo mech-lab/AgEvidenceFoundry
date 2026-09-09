@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agevidence.dev/commercial/schemas/artifact-tests.schema.json",
+  "title": "Phase 0 Artifact Tests",
+  "type": "object",
+  "required": ["artifact_tests"],
+  "properties": {
+    "artifact_tests": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "artifact", "workflow_question", "status"]
+      }
+    }
+  },
+  "additionalProperties": true
+}

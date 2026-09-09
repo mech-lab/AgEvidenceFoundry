@@ -299,9 +299,13 @@ Mental model:
 | Validate GTM | `bin/factory gtm validate methaneproof` | implemented |
 | Score accounts | `bin/factory gtm score methaneproof` | implemented |
 | Render opportunity hypothesis | `bin/factory gtm hypothesis methaneproof sea_forest` | implemented |
+| Inspect Phase 0 validation | `bin/factory validation show methaneproof` | implemented |
+| Inspect pricing validation | `bin/factory validation pricing methaneproof` | implemented |
+| Inspect Phase 0 gate | `bin/factory validation gate methaneproof` | implemented |
 | Check stale research | `bin/factory research stale methaneproof` | implemented |
 | Render customer pitch | `bin/factory pitch customer methaneproof` | implemented |
 | Render investor pitch | `bin/factory pitch investor methaneproof` | implemented |
+| Render founder pitch | `bin/factory pitch founder methaneproof` | implemented |
 | Create company | `bin/factory new <name>` | planned |
 | Render website copy | `bin/factory render website <name>` | planned |
 | Extract company | `bin/factory extract <name> <path>` | planned |
@@ -466,7 +470,54 @@ Run:
 bin/factory gtm validate methaneproof
 bin/factory gtm score methaneproof
 bin/factory gtm hypothesis methaneproof sea_forest
+bin/factory validation show methaneproof
+bin/factory validation pricing methaneproof
+bin/factory validation gate methaneproof
 ```
+
+## Phase 0 Validates The Economic System
+
+Phase 0 is customer and commercial validation. It validates five things at once:
+
+1. Problem: is this painful and recurrent?
+2. Reliance: does a consequential external decision depend on it?
+3. Buyer: who owns the problem and budget?
+4. Product/artifact: what output would enter the real workflow?
+5. Pricing: what buying unit, budget source, entry price, and expansion model can support a company?
+
+The Phase 0 validation tree lives at:
+
+```text
+ventures/<venture>/gtm/validation/
+├── hypothesis.yml
+├── actor_map.yml
+├── problem/
+│   ├── interview_plan.yml
+│   └── signals.yml
+├── pricing/
+│   ├── hypothesis.yml
+│   ├── interview_guide.yml
+│   ├── tests.yml
+│   ├── observations.yml
+│   └── synthesis.yml
+├── interviews/
+├── artifact_tests.yml
+├── synthesis.yml
+└── gate.yml
+```
+
+Pricing assumptions start in `gtm/validation/pricing/hypothesis.yml`, interview evidence accumulates in the validation tree, and `gtm/pricing.yml` is the current commercial pricing policy produced from that evidence. Before evidence exists, `gtm/pricing.yml` must be explicit that the policy is still `phase_zero_unvalidated`.
+
+Pricing evidence uses a ladder:
+
+- `P0`: speculation.
+- `P1`: verbal tolerance.
+- `P2`: budget mechanics identified.
+- `P3`: concrete price/scope reaction.
+- `P4`: commercial advancement.
+- `P5`: money.
+
+Phase 0 should not leave `ITERATE` until pricing has at least budget mechanics from multiple organizations and one strong buying-process signal.
 
 ## Accounts Are Structured Data
 
@@ -669,6 +720,23 @@ Question: can evidence produced across fragmented agricultural suppliers move do
 Proves: networked evidence reuse and time-sensitive enterprise GTM.
 
 The stable pack id is `supplierevidence`; the current customer-facing brand file uses `SourceRelay`.
+
+## Founder Research
+
+Founder research is part of the Company Pack, not a separate recruiting note. Each venture keeps the current founder hypothesis in `ventures/<company>/formation/founder.yml` and the founder-facing narrative in `ventures/<company>/pitch/founder.yml`.
+
+The formation file answers who is still missing from the company. The pitch file answers why that person should care, what Foundry removes from the starting burden, and what formation risk they must own.
+
+Current cohort founder hypotheses:
+
+| Venture | Status | Desired founder profile | Founder job | Formation risk |
+| --- | --- | --- | --- | --- |
+| MethaneProof | `candidate_needed` | methane intervention commercialization, livestock systems, processor relationships | Own methane buyer relationships, intervention semantics, delivery integrations, and the commercial wedge. | Avoid implying certification, registry authority, or guaranteed reductions. |
+| FieldProof | `candidate_needed` | agtech commercialization, trial evidence, distributor or buyer relationships | Own buyer language, the first claim family, agronomic evidence semantics, and commercial relationships. | Avoid sounding like a warranty, trial operator, or certifier. |
+| AgLend | `candidate_needed` | agribusiness finance, bank risk workflows, agricultural data integration | Own lender access, credit workflow empathy, buyer language, and the first product wedge. | Avoid implying farm grading, borrower scoring, loan approval, or lender activity. |
+| SupplierEvidence / SourceRelay | `candidate_needed` | corporate sustainability, supplier programs, assurance or reporting workflows | Own buyer requirements, supplier workflows, assurance language, and the first reporting wedge. | Avoid sounding like an assurance firm, carbon calculator, or ESG reporting dashboard. |
+
+Founder research should change as discovery changes. When buyer interviews alter the reliance event, first paid offer, category language, or evidence boundary, update the founder profile and founder pitch alongside the GTM and formation files.
 
 ## Founder Workflow
 

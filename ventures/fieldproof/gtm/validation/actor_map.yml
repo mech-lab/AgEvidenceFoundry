@@ -1,0 +1,17 @@
+actors:
+  - role: EB
+    description: Commercial, product, or executive owner accountable for a blocked buyer claim.
+  - role: CH
+    description: Agronomy, trials, or sales enablement lead who feels evidence reconstruction pain.
+  - role: TU
+    description: Field trial, data, or product user who can map observations and analyses.
+  - role: BL
+    description: Procurement, legal, technical, or agronomic reviewer who can reject claim language.
+budget_hypothesis:
+  owner_role: EB
+  sources:
+    - product_commercialization
+    - field_trials
+    - sales_enablement
+    - technical_services
+  procurement_owner: BL

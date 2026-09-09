@@ -1,0 +1,42 @@
+status: unvalidated
+currency: AUD
+initial_hypothesis:
+  first_offer:
+    type: underwriting_evidence_sprint
+  price_range:
+    minimum: 75000
+    maximum: 200000
+  billing_unit:
+    hypothesis: bounded_underwriting_evidence_workflow
+  possible_expansion_units:
+    - financial_product
+    - facility
+    - origination_event
+    - portfolio
+  expected_budget_owner:
+    hypothesis: credit_product_or_portfolio_leader
+  expected_budget_source:
+    hypothesis:
+      - credit_product
+      - portfolio_risk
+      - innovation
+      - implementation
+pricing_hypotheses:
+  land:
+    offer: underwriting_evidence_sprint
+    range:
+      minimum: 75000
+      maximum: 200000
+    buying_unit: bounded_underwriting_evidence_workflow
+  expand:
+    models_under_test:
+      - annual_facility_license
+      - per_financial_product
+      - per_origination_event
+      - portfolio_surveillance
+falsification_conditions:
+  - no_identifiable_budget
+  - customer_values_problem_below_delivery_cost
+  - buying_unit_is_incompatible_with_offer
+  - procurement_friction_exceeds_problem_value
+  - customer_only_accepts_free_pilot

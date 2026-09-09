@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agevidence.dev/commercial/schemas/validation-actor-map.schema.json",
+  "title": "Phase 0 Actor Map",
+  "type": "object",
+  "required": ["actors", "budget_hypothesis"],
+  "properties": {
+    "actors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["role", "description"]
+      },
+      "minItems": 3
+    },
+    "budget_hypothesis": {
+      "type": "object",
+      "required": ["owner_role", "sources"]
+    }
+  },
+  "additionalProperties": true
+}

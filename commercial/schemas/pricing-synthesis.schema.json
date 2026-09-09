@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agevidence.dev/commercial/schemas/pricing-synthesis.schema.json",
+  "title": "Pricing Synthesis",
+  "type": "object",
+  "required": ["status", "pricing_evidence_level", "sample", "buyer_evidence", "value", "buying_unit", "pilot", "expansion", "evidence", "decision", "open_questions"],
+  "properties": {
+    "status": {
+      "type": "string",
+      "enum": ["unvalidated", "active", "synthesized", "validated", "failed"]
+    },
+    "pricing_evidence_level": {
+      "type": "string",
+      "enum": ["P0", "P1", "P2", "P3", "P4", "P5"]
+    },
+    "sample": {
+      "type": "object",
+      "required": ["interviews", "organizations"]
+    },
+    "buyer_evidence": {
+      "type": "object",
+      "required": ["budget_owner_confirmed", "budget_source_confirmed"]
+    },
+    "value": {
+      "type": "object",
+      "required": ["dominant_consequence"]
+    },
+    "buying_unit": {
+      "type": "object",
+      "required": ["leading_candidate", "confidence"]
+    },
+    "pilot": {
+      "type": "object",
+      "required": ["tested_range", "emerging_range", "confidence"]
+    },
+    "expansion": {
+      "type": "object",
+      "required": ["leading_models", "confidence"]
+    },
+    "evidence": {
+      "type": "object",
+      "required": ["P0", "P1", "P2", "P3", "P4", "P5"]
+    },
+    "decision": {
+      "type": "object",
+      "required": ["action"]
+    },
+    "open_questions": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  },
+  "additionalProperties": true
+}

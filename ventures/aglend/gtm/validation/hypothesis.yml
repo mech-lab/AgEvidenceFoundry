@@ -1,0 +1,18 @@
+phase_zero:
+  status: active
+  tracks:
+    - problem
+    - reliance
+    - buyer
+    - product_artifact
+    - pricing
+  problem:
+    hypothesis: Agricultural lenders repeatedly reconstruct non-financial farm evidence for underwriting, monitoring, and renewal decisions.
+  reliance:
+    hypothesis: Credit, risk, insurance, or equipment finance use of operational farm evidence is a consequential external decision.
+  buyer:
+    hypothesis: Product, credit, or portfolio leaders own the problem and can sponsor an evidence workflow without outsourcing credit policy.
+  product_artifact:
+    hypothesis: A lender evidence package would enter underwriting, facility review, or portfolio surveillance workflows.
+  pricing:
+    hypothesis: A paid underwriting evidence sprint can land in credit innovation, portfolio risk, or product budget and expand by financial product, facility, or portfolio.

@@ -1,0 +1,42 @@
+status: unvalidated
+currency: AUD
+initial_hypothesis:
+  first_offer:
+    type: evidence_to_claim_sprint
+  price_range:
+    minimum: 25000
+    maximum: 50000
+  billing_unit:
+    hypothesis: bounded_claim_acceptance_workflow
+  possible_expansion_units:
+    - claim_family
+    - product
+    - trial_program
+    - buyer_acceptance_program
+  expected_budget_owner:
+    hypothesis: commercial_or_product_team
+  expected_budget_source:
+    hypothesis:
+      - product_commercialization
+      - field_trials
+      - sales_enablement
+      - technical_services
+pricing_hypotheses:
+  land:
+    offer: evidence_to_claim_sprint
+    range:
+      minimum: 25000
+      maximum: 50000
+    buying_unit: bounded_claim_acceptance_workflow
+  expand:
+    models_under_test:
+      - annual_claim_program
+      - per_product_claim_family
+      - buyer_acceptance_portal
+      - vendor_portfolio
+falsification_conditions:
+  - no_identifiable_budget
+  - customer_values_problem_below_delivery_cost
+  - buying_unit_is_incompatible_with_offer
+  - procurement_friction_exceeds_problem_value
+  - customer_only_accepts_free_pilot

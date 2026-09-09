@@ -1,0 +1,20 @@
+objective: Reconstruct real methane claim acceptance behavior before asking about price.
+target_sample:
+  organizations: 8
+  roles:
+    - EB
+    - CH
+    - TU
+questions:
+  - id: p01
+    stage: real_behavior
+    text: Tell me about the last time a downstream customer asked you to substantiate a methane intervention claim.
+  - id: p02
+    stage: real_behavior
+    text: What did the team actually have to collect, reconcile, review, and resend?
+  - id: p03
+    stage: consequence
+    text: Did that process delay a customer, contract, assurance decision, product launch, or financing event?
+  - id: p04
+    stage: recurrence
+    text: How often does this evidence reconstruction happen across customers, interventions, or production environments?

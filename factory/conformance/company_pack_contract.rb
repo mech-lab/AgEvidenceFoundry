@@ -24,6 +24,20 @@ module Factory
     REQUIRED_NAMING_TESTS = %w[buyer_recognition role_discipline land_motion_fit expansion_permission investor_signal].freeze
     REQUIRED_CLAIM_KEYS = %w[allowed requires_qualification prohibited regulated_roles].freeze
     REQUIRED_GTM_FILES = %w[market icp pricing offers channels objections discovery scoring].freeze
+    REQUIRED_VALIDATION_FILES = %w[
+      hypothesis
+      actor_map
+      problem/interview_plan
+      problem/signals
+      pricing/hypothesis
+      pricing/interview_guide
+      pricing/tests
+      pricing/observations
+      pricing/synthesis
+      artifact_tests
+      synthesis
+      gate
+    ].freeze
     REQUIRED_PITCH_FILES = %w[thesis customer investor founder architecture proof_points].freeze
     REQUIRED_FORMATION_GATES = %w[
       reliance_hypothesis
@@ -56,6 +70,7 @@ module Factory
       errors.concat(validate_company_manifest)
       errors.concat(validate_brand)
       errors.concat(validate_gtm)
+      errors.concat(validate_phase_zero)
       errors.concat(validate_accounts)
       errors.concat(validate_contacts)
       errors.concat(validate_pitch)
@@ -82,6 +97,19 @@ module Factory
       errors.concat(validator.validate(pack.naming, schema_path: "commercial/schemas/naming.schema.json", label: "#{pack.id}: brand/naming.yml"))
       errors.concat(validator.validate(pack.claim_discipline, schema_path: "commercial/schemas/claim-discipline.schema.json", label: "#{pack.id}: brand/claim_discipline.yml"))
       errors.concat(validator.validate(pack.formation_status, schema_path: "commercial/schemas/formation-status.schema.json", label: "#{pack.id}: formation/status.yml"))
+      errors.concat(validator.validate(pack.read_yaml("gtm/pricing.yml"), schema_path: "commercial/schemas/pricing-policy.schema.json", label: "#{pack.id}: gtm/pricing.yml"))
+      errors.concat(validator.validate(pack.validation_hypothesis, schema_path: "commercial/schemas/phase-zero-hypothesis.schema.json", label: "#{pack.id}: gtm/validation/hypothesis.yml"))
+      errors.concat(validator.validate(pack.validation_actor_map, schema_path: "commercial/schemas/validation-actor-map.schema.json", label: "#{pack.id}: gtm/validation/actor_map.yml"))
+      errors.concat(validator.validate(pack.problem_interview_plan, schema_path: "commercial/schemas/problem-validation.schema.json", label: "#{pack.id}: gtm/validation/problem/interview_plan.yml"))
+      errors.concat(validator.validate(pack.problem_signals, schema_path: "commercial/schemas/problem-validation.schema.json", label: "#{pack.id}: gtm/validation/problem/signals.yml"))
+      errors.concat(validator.validate(pack.pricing_hypothesis, schema_path: "commercial/schemas/pricing-hypothesis.schema.json", label: "#{pack.id}: gtm/validation/pricing/hypothesis.yml"))
+      errors.concat(validator.validate(pack.pricing_interview_guide, schema_path: "commercial/schemas/pricing-interview-guide.schema.json", label: "#{pack.id}: gtm/validation/pricing/interview_guide.yml"))
+      errors.concat(validator.validate(pack.pricing_tests, schema_path: "commercial/schemas/pricing-tests.schema.json", label: "#{pack.id}: gtm/validation/pricing/tests.yml"))
+      errors.concat(validator.validate(pack.pricing_observations, schema_path: "commercial/schemas/pricing-observations.schema.json", label: "#{pack.id}: gtm/validation/pricing/observations.yml"))
+      errors.concat(validator.validate(pack.pricing_synthesis, schema_path: "commercial/schemas/pricing-synthesis.schema.json", label: "#{pack.id}: gtm/validation/pricing/synthesis.yml"))
+      errors.concat(validator.validate(pack.artifact_tests, schema_path: "commercial/schemas/artifact-tests.schema.json", label: "#{pack.id}: gtm/validation/artifact_tests.yml"))
+      errors.concat(validator.validate(pack.validation_synthesis, schema_path: "commercial/schemas/validation-synthesis.schema.json", label: "#{pack.id}: gtm/validation/synthesis.yml"))
+      errors.concat(validator.validate(pack.validation_gate, schema_path: "commercial/schemas/phase-zero-gate.schema.json", label: "#{pack.id}: gtm/validation/gate.yml"))
 
       pack.accounts.each_with_index do |account, index|
         account_id = account["id"] || index
@@ -120,6 +148,12 @@ module Factory
       pack.pitch("proof_points").fetch("proof_points", []).each_with_index do |proof_point, index|
         proof_id = proof_point["id"] || index
         errors.concat(validator.validate(proof_point, schema_path: "commercial/schemas/proof-point.schema.json", label: "#{pack.id}: pitch/proof_points.yml proof point #{proof_id}"))
+      end
+
+      pack.validation_interviews.each_with_index do |interview, index|
+        interview_id = interview["id"] || index
+        data = interview.reject { |key, _value| key == "source_path" }
+        errors.concat(validator.validate(data, schema_path: "commercial/schemas/validation-interview.schema.json", label: "#{pack.id}: #{interview['source_path'] || "gtm/validation/interviews/#{interview_id}.yml"}"))
       end
 
       errors
@@ -172,15 +206,73 @@ module Factory
         errors << "#{pack.id}: missing gtm/#{name}.yml" unless pack.path.join("gtm", "#{name}.yml").file?
       end
 
+      REQUIRED_VALIDATION_FILES.each do |name|
+        errors << "#{pack.id}: missing gtm/validation/#{name}.yml" unless pack.path.join("gtm", "validation", "#{name}.yml").file?
+      end
+
       dimensions = pack.scoring.fetch("dimensions", {})
       total_weight = dimensions.values.map { |dimension| dimension["weight"].to_i }.reduce(0, :+)
       errors << "#{pack.id}: gtm/scoring.yml weights must total 100" unless total_weight == 100
+
+      pricing = pack.pricing_policy
+      %w[hypothesis pilot_range expansion_units].each do |legacy_key|
+        errors << "#{pack.id}: gtm/pricing.yml uses legacy #{legacy_key}; move assumptions to gtm/validation/pricing/hypothesis.yml" if present?(pricing[legacy_key])
+      end
+      errors << "#{pack.id}: gtm/pricing.yml must reference pricing hypothesis" unless pack.pricing_policy.dig("evidence", "hypothesis") == "validation/pricing/hypothesis.yml"
+      errors << "#{pack.id}: gtm/pricing.yml must reference pricing synthesis" unless pack.pricing_policy.dig("evidence", "synthesis") == "validation/pricing/synthesis.yml"
 
       pack.offers.each do |offer|
         %w[id objective scope duration outputs success_gate pricing].each do |key|
           errors << "#{pack.id}: offer missing #{key}" unless present?(offer[key])
         end
       end
+      errors
+    end
+
+    def validate_phase_zero
+      errors = []
+      expected_tracks = %w[problem reliance buyer product_artifact pricing]
+      tracks = Array(pack.validation_hypothesis.dig("phase_zero", "tracks"))
+      missing_tracks = expected_tracks - tracks
+      errors << "#{pack.id}: Phase 0 hypothesis missing tracks: #{missing_tracks.join(', ')}" if missing_tracks.any?
+
+      sequence = Array(pack.pricing_interview_guide["sequence"])
+      pricing_index = sequence.index("explicit_price_test")
+      behavior_index = sequence.index("real_behavior")
+      budget_index = sequence.index("budget_architecture")
+      if pricing_index.nil?
+        errors << "#{pack.id}: pricing interview guide must include explicit_price_test"
+      elsif behavior_index && pricing_index < behavior_index
+        errors << "#{pack.id}: explicit price tests must follow real behavior reconstruction"
+      elsif budget_index && pricing_index < budget_index
+        errors << "#{pack.id}: explicit price tests must follow budget architecture discovery"
+      end
+
+      expected_questions = %w[economic_consequence existing_spend budget_owner buying_unit price_tolerance expansion_economics]
+      questions = pack.pricing_tests.fetch("discovery_questions", {})
+      missing_questions = expected_questions.reject { |key| present?(questions[key]) }
+      errors << "#{pack.id}: pricing tests missing discovery questions: #{missing_questions.join(', ')}" if missing_questions.any?
+      errors << "#{pack.id}: pricing tests require at least three price points" if Array(pack.pricing_tests["price_points"]).length < 3
+      errors << "#{pack.id}: pricing tests require metric_tests" if Array(pack.pricing_tests["metric_tests"]).empty?
+
+      synthesis = pack.pricing_synthesis
+      errors << "#{pack.id}: pricing synthesis has invalid evidence level #{synthesis['pricing_evidence_level']}" unless %w[P0 P1 P2 P3 P4 P5].include?(synthesis["pricing_evidence_level"])
+      evidence = synthesis.fetch("evidence", {})
+      %w[P0 P1 P2 P3 P4 P5].each do |level|
+        errors << "#{pack.id}: pricing synthesis evidence.#{level} must be numeric" unless evidence[level].is_a?(Numeric)
+      end
+
+      gate_pricing = pack.validation_gate.dig("phase_zero_gate", "pricing") || {}
+      errors << "#{pack.id}: Phase 0 gate must require buying unit testing" unless gate_pricing["buying_unit_tested"] == true
+      errors << "#{pack.id}: Phase 0 gate must require budget owner identification" unless gate_pricing["budget_owner_identified"] == true
+      errors << "#{pack.id}: Phase 0 gate must require budget source identification" unless gate_pricing["budget_source_identified"] == true
+      strong_signals = Array(gate_pricing.dig("required_strong_signal", "one_of"))
+      errors << "#{pack.id}: Phase 0 gate must require a P3, P4, or P5 pricing signal" if (strong_signals & %w[P3 P4 P5]).empty?
+
+      pack.validation_interviews.each do |interview|
+        errors << "#{pack.id}: #{interview['id']} must ask pricing late" unless interview.dig("pricing", "asked_late") == true
+      end
+
       errors
     end
 

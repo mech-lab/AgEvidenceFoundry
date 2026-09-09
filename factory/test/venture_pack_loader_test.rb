@@ -13,6 +13,7 @@ require_relative "../operations/claims_checker"
 require_relative "../operations/opportunity_hypothesis"
 require_relative "../operations/pitch_renderer"
 require_relative "../operations/research_staleness"
+require_relative "../operations/validation_report"
 
 class VenturePackLoaderTest < Minitest::Test
   ROOT = File.expand_path("../..", __dir__)
@@ -79,6 +80,26 @@ class VenturePackLoaderTest < Minitest::Test
     assert_equal "sea_forest", rows.first["id"]
     assert_equal 94, rows.first["computed_score"]
     assert_empty Factory::Operations::GtmValidator.new(pack).errors
+  end
+
+  def test_pricing_policy_is_separate_from_phase_zero_hypothesis
+    pack = Factory::CompanyPackLoader.new(root: ROOT).load("methaneproof")
+
+    assert_equal "phase_zero_unvalidated", pack.pricing_policy["status"]
+    assert_equal "validation/pricing/hypothesis.yml", pack.pricing_policy.dig("evidence", "hypothesis")
+    assert_equal "unvalidated", pack.pricing_hypothesis["status"]
+    assert_equal 25_000, pack.pricing_hypothesis.dig("initial_hypothesis", "price_range", "minimum")
+    refute_includes pack.pricing_policy.keys, "hypothesis"
+    refute_includes pack.pricing_policy.keys, "pilot_range"
+  end
+
+  def test_validation_report_keeps_phase_zero_pricing_at_p0_until_evidence_exists
+    pack = Factory::CompanyPackLoader.new(root: ROOT).load("methaneproof")
+    report = Factory::Operations::ValidationReport.new(pack)
+
+    assert_equal "ITERATE", report.gate_result
+    assert_includes report.render("pricing"), "Evidence ladder: P0=1 P1=0 P2=0 P3=0 P4=0 P5=0"
+    assert_includes report.render("show"), "RESULT\n  ITERATE -> continue_phase_zero"
   end
 
   def test_opportunity_hypothesis_uses_account_and_company_data

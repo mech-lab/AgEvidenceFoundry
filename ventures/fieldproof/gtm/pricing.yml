@@ -1,11 +1,30 @@
 pricing:
-  hypothesis: paid evidence-to-claim sprint
   currency: AUD
-  pilot_range:
-    minimum: 25000
-    maximum: 50000
-  expansion_units:
-    - claim_family
-    - crop
-    - geography
-    - buyer_portal
+  status: phase_zero_unvalidated
+  land:
+    offer: evidence_to_claim_sprint
+    scope:
+      - one_vendor_claim
+      - one_buyer_facing_artifact
+      - one_commercial_acceptance_workflow
+    range:
+      minimum: 25000
+      target: 40000
+      maximum: 50000
+    confidence: low
+  expansion:
+    models:
+      - annual_claim_program
+      - per_product_claim_family
+      - buyer_acceptance_portal
+    confidence: low
+  primary_value_metric: claim_family
+  secondary_value_metric: buyer_acceptance_program
+  evidence:
+    hypothesis: validation/pricing/hypothesis.yml
+    synthesis: validation/pricing/synthesis.yml
+  next_validation:
+    - buyer_claim_budget
+    - distributor_acceptance_value
+    - annual_claim_program_pricing
+    - procurement_threshold

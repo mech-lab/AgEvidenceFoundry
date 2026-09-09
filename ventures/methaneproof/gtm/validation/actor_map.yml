@@ -1,0 +1,17 @@
+actors:
+  - role: EB
+    description: Commercialization or executive owner accountable for downstream customer acceptance.
+  - role: CH
+    description: Technical-services or customer-success lead who repeatedly assembles support evidence.
+  - role: TU
+    description: Product, science, data, or operations user who can map source systems and assumptions.
+  - role: BL
+    description: Legal, assurance, or procurement reviewer who controls reliance language and buying friction.
+budget_hypothesis:
+  owner_role: EB
+  sources:
+    - product_commercialization
+    - customer_success
+    - technical_services
+    - sustainability
+  procurement_owner: BL

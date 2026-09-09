@@ -15,4 +15,6 @@ jobs:
       - run: ruby factory/test/venture_pack_loader_test.rb
       - run: bin/factory doctor
       - run: bin/factory gtm validate methaneproof
+      - run: bin/factory validation pricing methaneproof
+      - run: bin/factory validation gate methaneproof
       - run: bin/factory claims check methaneproof

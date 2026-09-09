@@ -1,0 +1,18 @@
+phase_zero:
+  status: active
+  tracks:
+    - problem
+    - reliance
+    - buyer
+    - product_artifact
+    - pricing
+  problem:
+    hypothesis: Commercialization teams at methane intervention companies repeatedly reconstruct delivery, measurement, and model evidence for downstream acceptance.
+  reliance:
+    hypothesis: Processor, corporate buyer, or assurance acceptance is a consequential external decision, not a generic reporting preference.
+  buyer:
+    hypothesis: The commercialization owner feels the delay, while technical services and customer success help assemble the evidence.
+  product_artifact:
+    hypothesis: A methane evidence statement and verifier-ready reliance package would enter the real processor acceptance workflow.
+  pricing:
+    hypothesis: A paid evidence-to-reliance sprint can land inside commercialization or technical-services budget and expand by intervention program or reliance endpoint.

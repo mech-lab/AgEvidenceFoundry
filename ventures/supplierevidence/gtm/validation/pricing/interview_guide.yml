@@ -1,0 +1,37 @@
+sequence:
+  - real_behavior
+  - economic_consequence
+  - budget_architecture
+  - explicit_price_test
+  - expansion_economics
+sections:
+  - id: real_behavior
+    stage: problem
+    questions:
+      - Tell me about the last time supplier evidence had to move into a buyer, reporter, or assurance workflow.
+      - What did your team actually have to collect, normalize, review, or resend?
+      - Which teams got pulled in?
+  - id: economic_consequence
+    stage: value
+    questions:
+      - What happens commercially when this process takes an extra two or four weeks?
+      - Is this staff-effort pain, or can it hold up reporting, assurance, procurement, supplier onboarding, or customer acceptance?
+      - Have you paid outside parties or built internal workarounds for this?
+  - id: budget_architecture
+    stage: budget
+    questions:
+      - Which team would normally pay for fixing this?
+      - What budget would it come from?
+      - Would this look internally like software, assurance, implementation, supplier-program, reporting, or procurement work?
+      - At what spend level does procurement materially change?
+  - id: explicit_price_test
+    stage: price
+    questions:
+      - If one sprint covered one supplier program, one reporting period, and one buyer acceptance profile, what would happen internally at A$50,000?
+      - At A$75,000, what changes internally?
+      - At A$125,000, what would the engagement have to include for that to be credible?
+  - id: expansion_economics
+    stage: expansion
+    questions:
+      - If the first workflow succeeds, what object should scale with customer value?
+      - Would expansion map better to suppliers, passports, programs, reporting periods, buyer profiles, or an enterprise license?

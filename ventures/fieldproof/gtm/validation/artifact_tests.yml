@@ -1,0 +1,9 @@
+artifact_tests:
+  - id: ART-001
+    artifact: field_efficacy_evidence_package
+    workflow_question: Would this output enter buyer, distributor, or investor claim review without extra narrative reconstruction?
+    status: planned
+  - id: ART-002
+    artifact: verifier_reconstruction
+    workflow_question: Can the reviewer inspect source provenance, trial boundaries, limitations, and claim conditions?
+    status: planned

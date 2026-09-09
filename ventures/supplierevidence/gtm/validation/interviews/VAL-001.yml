@@ -1,0 +1,30 @@
+id: VAL-001
+status: planned
+target_account: synlait
+interview_type: phase_zero_customer
+sequence:
+  - real_behavior
+  - economic_consequence
+  - budget_architecture
+  - explicit_price_test
+  - expansion_economics
+pricing:
+  asked_late: true
+  budget:
+    owner_role: EB
+    source: unknown
+    confirmed: false
+  current_spend:
+    adjacent_services:
+      amount: unknown
+      notes: Ask about assurance, sustainability consulting, supplier portals, data integration, reporting tools, and internal supplier-program effort.
+  buying_unit:
+    preferred: []
+    rejected: []
+  price_tests: []
+  value_anchor:
+    primary: unknown
+  willingness_signal:
+    type: none_recorded
+  pricing_evidence_level: P0
+  confidence: D

@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agevidence.dev/commercial/schemas/phase-zero-hypothesis.schema.json",
+  "title": "Phase 0 Validation Hypothesis",
+  "type": "object",
+  "required": ["phase_zero"],
+  "properties": {
+    "phase_zero": {
+      "type": "object",
+      "required": ["status", "tracks", "problem", "reliance", "buyer", "product_artifact", "pricing"],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["unvalidated", "active", "synthesized", "passed", "failed"]
+        },
+        "tracks": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 5
+        },
+        "problem": {
+          "type": "object",
+          "required": ["hypothesis"]
+        },
+        "reliance": {
+          "type": "object",
+          "required": ["hypothesis"]
+        },
+        "buyer": {
+          "type": "object",
+          "required": ["hypothesis"]
+        },
+        "product_artifact": {
+          "type": "object",
+          "required": ["hypothesis"]
+        },
+        "pricing": {
+          "type": "object",
+          "required": ["hypothesis"]
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

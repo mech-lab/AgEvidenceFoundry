@@ -1,0 +1,20 @@
+objective: Reconstruct real supplier evidence acceptance behavior before asking about price.
+target_sample:
+  organizations: 8
+  roles:
+    - EB
+    - CH
+    - TU
+questions:
+  - id: p01
+    stage: real_behavior
+    text: Tell me about the last time a buyer, reporter, or assurance provider asked for supplier evidence that was hard to move or reuse.
+  - id: p02
+    stage: real_behavior
+    text: What supplier records, interventions, operational data, buyer requirements, and exports did the team actually reconcile?
+  - id: p03
+    stage: consequence
+    text: Did that process delay reporting, procurement, assurance, customer acceptance, supplier onboarding, or a commercial program?
+  - id: p04
+    stage: recurrence
+    text: How often does this evidence movement problem recur across suppliers, reporting periods, buyer profiles, or customers?

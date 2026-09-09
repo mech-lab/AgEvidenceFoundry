@@ -96,6 +96,71 @@ module Factory
       read_yaml("gtm/scoring.yml")
     end
 
+    def pricing_policy
+      read_yaml("gtm/pricing.yml").fetch("pricing", {})
+    end
+
+    def validation_file(relative_path)
+      read_yaml("gtm/validation/#{relative_path}.yml")
+    end
+
+    def validation_hypothesis
+      validation_file("hypothesis")
+    end
+
+    def validation_actor_map
+      validation_file("actor_map")
+    end
+
+    def problem_interview_plan
+      validation_file("problem/interview_plan")
+    end
+
+    def problem_signals
+      validation_file("problem/signals")
+    end
+
+    def pricing_hypothesis
+      validation_file("pricing/hypothesis")
+    end
+
+    def pricing_interview_guide
+      validation_file("pricing/interview_guide")
+    end
+
+    def pricing_tests
+      validation_file("pricing/tests")
+    end
+
+    def pricing_observations
+      validation_file("pricing/observations")
+    end
+
+    def pricing_synthesis
+      validation_file("pricing/synthesis")
+    end
+
+    def validation_synthesis
+      validation_file("synthesis")
+    end
+
+    def validation_gate
+      validation_file("gate")
+    end
+
+    def artifact_tests
+      validation_file("artifact_tests")
+    end
+
+    def validation_interviews
+      dir = path.join("gtm/validation/interviews")
+      return [] unless dir.directory?
+
+      dir.children(false).select { |file| %w[.yml .yaml].include?(file.extname) }.sort.map do |file|
+        read_yaml("gtm/validation/interviews/#{file}").merge("source_path" => "gtm/validation/interviews/#{file}")
+      end
+    end
+
     def accounts
       read_yaml("accounts/accounts.yml").fetch("accounts", [])
     end

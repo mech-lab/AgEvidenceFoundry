@@ -1,0 +1,47 @@
+status: active
+pricing_evidence_level: P0
+sample:
+  interviews: 0
+  organizations: 0
+  organizations_price_tested: 0
+buyer_evidence:
+  budget_owner_confirmed: 0
+  budget_source_confirmed: 0
+value:
+  dominant_consequence:
+    - reporting_delay
+    - assurance_rework
+    - procurement_friction
+buying_unit:
+  leading_candidate: supplier_program
+  confidence: low
+pilot:
+  tested_range:
+    minimum: 25000
+    maximum: 200000
+  emerging_range:
+    minimum: 50000
+    maximum: 125000
+  confidence: low
+  procurement_cliff:
+    amount: 125000
+    currency: AUD
+    confidence: low
+expansion:
+  leading_models:
+    - annual_enterprise_license
+    - per_supplier_program
+  confidence: low
+evidence:
+  P0: 1
+  P1: 0
+  P2: 0
+  P3: 0
+  P4: 0
+  P5: 0
+decision:
+  action: continue_testing
+open_questions:
+  - confirm whether buyer or supplier funds the first workflow
+  - test enterprise license pricing
+  - validate reporting-period pricing

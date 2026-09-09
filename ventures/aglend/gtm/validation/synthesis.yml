@@ -1,0 +1,24 @@
+phase_zero:
+  status: active
+  sample:
+    interviews: 0
+    organizations: 0
+  problem:
+    distinct_organizations: 0
+    workflow_reconstructions: 0
+    repeated_problem_confirmations: 0
+  reliance:
+    relying_party_confirmations: 0
+    consequential_decision_confirmations: 0
+  buyer:
+    problem_owner_identified: false
+    economic_buyer_hypothesis_supported: false
+  artifact:
+    artifact_tests: 0
+    workflow_fit_confirmed: 0
+  pricing:
+    pricing_evidence_level: P0
+    synthesis: pricing/synthesis.yml
+  decision:
+    action: continue_testing
+    next_phase: continue_phase_zero

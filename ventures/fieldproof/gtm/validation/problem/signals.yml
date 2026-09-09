@@ -1,0 +1,21 @@
+objective: Track whether efficacy-claim evidence pain is recurrent and tied to consequential buyer decisions.
+questions:
+  - id: s01
+    stage: problem_strength
+    text: Did the participant describe a specific recent buyer claim challenge?
+  - id: s02
+    stage: recurrence
+    text: Did the claim evidence work repeat across products, crops, buyers, or regions?
+signals:
+  - id: workflow_reconstruction
+    description: Participant can describe a specific recent claim-evidence reconstruction.
+  - id: repeated_problem
+    description: Same proof work recurs across buyer or distributor opportunities.
+  - id: commercial_delay
+    description: Evidence work delays procurement, distribution, launch, investment, or sales progression.
+  - id: external_reliance
+    description: A buyer, distributor, processor, or investor must inspect the output.
+current:
+  workflow_reconstructions: 0
+  repeated_problem_confirmations: 0
+  consequential_commercial_consequences: 0

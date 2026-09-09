@@ -1,0 +1,42 @@
+status: unvalidated
+currency: AUD
+initial_hypothesis:
+  first_offer:
+    type: supplier_evidence_passport_sprint
+  price_range:
+    minimum: 50000
+    maximum: 125000
+  billing_unit:
+    hypothesis: supplier_program_acceptance_workflow
+  possible_expansion_units:
+    - supplier_program
+    - reporting_period
+    - buyer_profile
+    - enterprise_license
+  expected_budget_owner:
+    hypothesis: sustainability_or_procurement_leader
+  expected_budget_source:
+    hypothesis:
+      - sustainability_reporting
+      - procurement
+      - supplier_program
+      - commercial_enablement
+pricing_hypotheses:
+  land:
+    offer: supplier_evidence_passport_sprint
+    range:
+      minimum: 50000
+      maximum: 125000
+    buying_unit: supplier_program_acceptance_workflow
+  expand:
+    models_under_test:
+      - annual_enterprise_license
+      - per_supplier_program
+      - per_reporting_period
+      - additional_buyer_profile
+falsification_conditions:
+  - no_identifiable_budget
+  - customer_values_problem_below_delivery_cost
+  - buying_unit_is_incompatible_with_offer
+  - procurement_friction_exceeds_problem_value
+  - customer_only_accepts_free_pilot

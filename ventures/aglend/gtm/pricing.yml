@@ -1,11 +1,30 @@
 pricing:
-  hypothesis: paid underwriting evidence pilot
   currency: AUD
-  pilot_range:
-    minimum: 75000
-    maximum: 200000
-  expansion_units:
-    - financial_product
-    - evidence_package
-    - portfolio
-    - annual_review
+  status: phase_zero_unvalidated
+  land:
+    offer: underwriting_evidence_sprint
+    scope:
+      - one_lender
+      - one_financial_product
+      - one_underwriting_evidence_package
+    range:
+      minimum: 75000
+      target: 125000
+      maximum: 200000
+    confidence: low
+  expansion:
+    models:
+      - annual_facility_license
+      - portfolio_surveillance
+      - per_origination_event
+    confidence: low
+  primary_value_metric: financial_product
+  secondary_value_metric: portfolio
+  evidence:
+    hypothesis: validation/pricing/hypothesis.yml
+    synthesis: validation/pricing/synthesis.yml
+  next_validation:
+    - credit_policy_budget_owner
+    - facility_size_value_anchor
+    - annual_portfolio_surveillance_pricing
+    - procurement_threshold

@@ -1,0 +1,20 @@
+objective: Reconstruct real agricultural lending evidence behavior before asking about price.
+target_sample:
+  organizations: 8
+  roles:
+    - EB
+    - CH
+    - TU
+questions:
+  - id: p01
+    stage: real_behavior
+    text: Tell me about the last time a facility, product, or underwriting case depended on farm evidence that was hard to inspect.
+  - id: p02
+    stage: real_behavior
+    text: What non-financial records, conditions, and review steps did the team actually have to reconcile?
+  - id: p03
+    stage: consequence
+    text: Did that process delay origination, renewal, insurance, pricing, portfolio review, or customer service?
+  - id: p04
+    stage: recurrence
+    text: How often does this evidence problem recur across facilities, borrowers, products, or review cycles?
