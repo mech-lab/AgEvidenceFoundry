@@ -44,6 +44,10 @@ phase_zero_architecture:
     - Is there enough vertical product and GTM work for an independent roadmap and team?
     - Would independent financing materially accelerate the opportunity?
     - What value is lost if methane customer and network data remain inside AgEvidence?
+  decision_record:
+    rationale: null
+    counterfactual: null
+    evidence_refs: []
   lock_requirements:
     rationale_recorded: true
     counterfactual_recorded: true
