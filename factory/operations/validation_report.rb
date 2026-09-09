@@ -28,9 +28,10 @@ module Factory
 
       def gate_result
         declared = pack.validation_gate.dig("phase_zero_gate", "outcome", "current")
-        return declared if declared
+        return "FAIL" if declared == "FAIL"
+        return "ITERATE" unless gate_passes?
 
-        gate_passes? ? "PASS" : "ITERATE"
+        declared == "PASS" ? "PASS" : "ITERATE"
       end
 
       private
@@ -38,6 +39,7 @@ module Factory
       def render_show
         synthesis = pack.validation_synthesis.fetch("phase_zero", {})
         pricing = pack.pricing_synthesis
+        architecture = architecture_decision
         [
           "#{pack.name} - Phase 0",
           "PROBLEM",
@@ -54,6 +56,10 @@ module Factory
           "  Price-tested organizations: #{pricing.dig('sample', 'organizations_price_tested').to_i}",
           "  Budget owner confirmations: #{pricing.dig('buyer_evidence', 'budget_owner_confirmed').to_i}",
           "  Strongest signal: #{strongest_pricing_signal}",
+          "ARCHITECTURE",
+          "  Recommendation: #{architecture['recommended_disposition'] || 'unset'} (#{architecture['recommendation_confidence'] || 'unknown'} confidence)",
+          "  Final disposition: #{architecture['final_disposition'] || 'undecided'}",
+          "  Locked: #{yes_no(architecture['final_disposition_locked'])}",
           "RESULT",
           "  #{gate_result} -> #{synthesis.dig('decision', 'next_phase') || 'continue_validation'}"
         ].join("\n")
@@ -95,6 +101,8 @@ module Factory
       def render_gate
         gate = pack.validation_gate.fetch("phase_zero_gate", {})
         pricing = gate.fetch("pricing", {})
+        architecture_gate = gate.fetch("architecture", {})
+        architecture = architecture_decision
         [
           "#{pack.name} Phase 0 gate",
           "Problem organizations required: #{gate.dig('problem', 'distinct_organizations')}",
@@ -102,6 +110,9 @@ module Factory
           "Artifact tests required: #{gate.dig('artifact', 'artifact_tests')}",
           "Pricing evidence required: #{pricing.dig('minimum_evidence_level', 'level')} from #{pricing.dig('minimum_evidence_level', 'organizations')} organizations",
           "Strong pricing signal required: #{Array(pricing.dig('required_strong_signal', 'one_of')).join(' or ')}",
+          "Architecture disposition required: #{Array(architecture_gate['allowed_dispositions']).join(' or ')}",
+          "Architecture recommendation: #{architecture['recommended_disposition'] || 'unset'}",
+          "Architecture final: #{architecture['final_disposition'] || 'undecided'} (locked=#{yes_no(architecture['final_disposition_locked'])})",
           "Current result: #{gate_result}"
         ].join("\n")
       end
@@ -120,7 +131,27 @@ module Factory
           synthesis.dig("reliance", "relying_party_confirmations").to_i >= gate.dig("reliance", "relying_party_confirmations").to_i &&
           synthesis.dig("artifact", "artifact_tests").to_i >= gate.dig("artifact", "artifact_tests").to_i &&
           evidence_at_or_above(min_level) >= min_orgs &&
-          strong_signals.any? { |level| pricing.dig("evidence", level).to_i.positive? }
+          strong_signals.any? { |level| pricing.dig("evidence", level).to_i.positive? } &&
+          architecture_passes?(gate.fetch("architecture", {}))
+      end
+
+      def architecture_decision
+        pack.validation_file("architecture").fetch("phase_zero_architecture", {})
+      end
+
+      def architecture_passes?(architecture_gate)
+        return true unless architecture_gate["disposition_required"] == true
+
+        architecture = architecture_decision
+        allowed = Array(architecture_gate["allowed_dispositions"])
+        return false unless allowed.include?(architecture["final_disposition"])
+        return false if architecture_gate["final_disposition_locked"] == true && architecture["final_disposition_locked"] != true
+
+        record = architecture.fetch("decision_record", {})
+        return false if architecture_gate["rationale_required"] == true && blank?(record["rationale"])
+        return false if architecture_gate["counterfactual_required"] == true && blank?(record["counterfactual"])
+
+        true
       end
 
       def evidence_at_or_above(level)
@@ -134,6 +165,10 @@ module Factory
 
       def yes_no(value)
         value == true ? "yes" : "no"
+      end
+
+      def blank?(value)
+        value.nil? || (value.respond_to?(:empty?) && value.empty?)
       end
     end
   end
