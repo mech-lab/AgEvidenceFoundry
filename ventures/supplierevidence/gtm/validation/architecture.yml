@@ -1,0 +1,51 @@
+phase_zero_architecture:
+  question: Should SourceRelay graduate as an independent spinout company or remain an AgEvidence product?
+  status: hypothesis
+  allowed_dispositions:
+    - spinout_company
+    - agevidence_product
+  recommended_disposition: agevidence_product
+  recommendation_confidence: medium
+  final_disposition: undecided
+  final_disposition_locked: false
+  rationale: >-
+    SourceRelay currently depends heavily on the parent institutional graph, master platform agreement,
+    technical integration layer, network acceptance profiles, and cross-vertical derived intelligence.
+    Those are core AgEvidence network assets, so the initial hypothesis is to retain SourceRelay as an
+    AgEvidence product. Phase 0 should reverse that conclusion if supplier-program distribution or enterprise
+    acceptance develops into a genuinely independent network and financing thesis.
+  spinout_signals:
+    distinct_economic_buyer: unproven
+    standalone_budget_and_pricing: unproven
+    regulatory_or_liability_boundary: unproven
+    independent_distribution_or_network: unproven
+    separable_vertical_ip_and_roadmap: hypothesis_negative
+    independent_financing_case: hypothesis_negative
+  product_signals:
+    same_buyer_as_agevidence_core: hypothesis_positive
+    reusable_cross_vertical_workflow_dominates: hypothesis_positive
+    parent_network_effects_dominate: hypothesis_positive
+    vertical_differentiation_is_thin: hypothesis_positive
+  decision_rule:
+    spinout_company:
+      minimum_confirmed_spinout_signals: 3
+      must_include_one_of:
+        - independent_financing_case
+        - independent_distribution_or_network
+        - regulatory_or_liability_boundary
+    agevidence_product:
+      use_when: >-
+        Supplier acceptance depends primarily on AgEvidence's shared institutional graph, reusable acceptance
+        profiles, common integrations, and cross-vertical network effects, with no strong liability or financing
+        reason to create a separate company.
+  phase_zero_questions:
+    - Is there a SourceRelay-specific economic buyer and budget distinct from broader AgEvidence enterprise procurement?
+    - Does the supplier acceptance network become more valuable when kept inside the shared AgEvidence graph?
+    - Can a separate company own customer relationships without fragmenting network acceptance profiles or technical integrations?
+    - Is there meaningful SourceRelay-specific IP or is the application mostly configuration of reusable substrate?
+    - Does separation create a strategic financing, neutrality, liability, or distribution advantage?
+    - Would externalization reduce cross-vertical data and acceptance-network compounding for AgEvidence?
+  lock_requirements:
+    rationale_recorded: true
+    counterfactual_recorded: true
+    evidence_from_problem_reliance_buyer_artifact_and_pricing_tracks: true
