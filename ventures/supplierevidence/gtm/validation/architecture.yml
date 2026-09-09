@@ -45,6 +45,10 @@ phase_zero_architecture:
     - Is there meaningful SourceRelay-specific IP or is the application mostly configuration of reusable substrate?
     - Does separation create a strategic financing, neutrality, liability, or distribution advantage?
     - Would externalization reduce cross-vertical data and acceptance-network compounding for AgEvidence?
+  decision_record:
+    rationale: null
+    counterfactual: null
+    evidence_refs: []
   lock_requirements:
     rationale_recorded: true
     counterfactual_recorded: true
