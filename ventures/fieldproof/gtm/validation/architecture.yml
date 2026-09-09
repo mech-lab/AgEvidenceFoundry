@@ -44,6 +44,10 @@ phase_zero_architecture:
     - Can FieldProof sustain a product roadmap independent of the trust substrate?
     - Would a separate brand improve neutrality or buyer acceptance?
     - Is the opportunity independently venture-financeable?
+  decision_record:
+    rationale: null
+    counterfactual: null
+    evidence_refs: []
   lock_requirements:
     rationale_recorded: true
     counterfactual_recorded: true
