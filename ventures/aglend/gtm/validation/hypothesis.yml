@@ -6,6 +6,7 @@ phase_zero:
     - buyer
     - product_artifact
     - pricing
+    - architecture
   problem:
     hypothesis: Agricultural lenders repeatedly reconstruct non-financial farm evidence for underwriting, monitoring, and renewal decisions.
   reliance:
@@ -16,3 +17,5 @@ phase_zero:
     hypothesis: A lender evidence package would enter underwriting, facility review, or portfolio surveillance workflows.
   pricing:
     hypothesis: A paid underwriting evidence sprint can land in credit innovation, portfolio risk, or product budget and expand by financial product, facility, or portfolio.
+  architecture:
+    hypothesis: AgLend should become a spinout company if Phase 0 confirms the distinct financial-services buyer, governance or liability boundary, independent roadmap, and financing case; otherwise it should remain an AgEvidence product.
