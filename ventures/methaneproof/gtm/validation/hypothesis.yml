@@ -6,6 +6,7 @@ phase_zero:
     - buyer
     - product_artifact
     - pricing
+    - architecture
   problem:
     hypothesis: Commercialization teams at methane intervention companies repeatedly reconstruct delivery, measurement, and model evidence for downstream acceptance.
   reliance:
@@ -16,3 +17,5 @@ phase_zero:
     hypothesis: A methane evidence statement and verifier-ready reliance package would enter the real processor acceptance workflow.
   pricing:
     hypothesis: A paid evidence-to-reliance sprint can land inside commercialization or technical-services budget and expand by intervention program or reliance endpoint.
+  architecture:
+    hypothesis: MethaneProof should become a spinout company if Phase 0 proves a distinct buyer, vertical reliance workflow, separation benefit, and standalone financing case; otherwise it should remain an AgEvidence product.
