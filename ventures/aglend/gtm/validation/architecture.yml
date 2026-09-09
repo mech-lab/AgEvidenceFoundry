@@ -44,6 +44,10 @@ phase_zero_architecture:
     - Would a separate cap table attract financial-services founders, strategic investors, or bank partners otherwise unavailable to AgEvidence?
     - Is the lender-specific application layer substantial enough for an independent product and engineering roadmap?
     - What cross-vertical network value would be lost by externalizing it?
+  decision_record:
+    rationale: null
+    counterfactual: null
+    evidence_refs: []
   lock_requirements:
     rationale_recorded: true
     counterfactual_recorded: true
