@@ -28,6 +28,15 @@ phase_zero_gate:
         - P5
     land_price_range_defined: true
     expansion_model_hypothesis_defined: true
+  architecture:
+    decision_file: architecture.yml
+    disposition_required: true
+    allowed_dispositions:
+      - spinout_company
+      - agevidence_product
+    final_disposition_locked: true
+    rationale_required: true
+    counterfactual_required: true
   outcome:
     allowed:
       - PASS

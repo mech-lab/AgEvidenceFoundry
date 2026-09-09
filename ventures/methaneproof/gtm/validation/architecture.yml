@@ -1,0 +1,54 @@
+phase_zero_architecture:
+  question: Should MethaneProof graduate as an independent spinout company or remain an AgEvidence product?
+  status: hypothesis
+  allowed_dispositions:
+    - spinout_company
+    - agevidence_product
+  recommended_disposition: spinout_company
+  recommendation_confidence: medium
+  final_disposition: undecided
+  final_disposition_locked: false
+  rationale: >-
+    MethaneProof has a distinct economic buyer, methane-specific methodology and assurance surface,
+    a separable intervention-to-claim workflow, and a credible standalone financing and category thesis.
+    The default hypothesis is therefore a spinout, provided Phase 0 confirms that customers buy the
+    methane-specific reliance workflow rather than simply an AgEvidence verification feature.
+  spinout_signals:
+    distinct_economic_buyer: hypothesis_positive
+    standalone_budget_and_pricing: unproven
+    regulatory_or_liability_boundary: hypothesis_positive
+    independent_distribution_or_network: hypothesis_positive
+    separable_vertical_ip_and_roadmap: hypothesis_positive
+    independent_financing_case: hypothesis_positive
+  product_signals:
+    same_buyer_as_agevidence_core: hypothesis_negative
+    reusable_cross_vertical_workflow_dominates: unproven
+    parent_network_effects_dominate: hypothesis_negative
+    vertical_differentiation_is_thin: hypothesis_negative
+  decision_rule:
+    spinout_company:
+      minimum_confirmed_spinout_signals: 3
+      must_include_one_of:
+        - regulatory_or_liability_boundary
+        - independent_financing_case
+        - independent_distribution_or_network
+    agevidence_product:
+      use_when: >-
+        The methane-specific layer is primarily a reusable AgEvidence workflow, buyer overlap is high,
+        and separation would add corporate overhead without creating independent distribution,
+        liability isolation, financing capacity, or network value.
+  phase_zero_questions:
+    - Who signs and owns the budget for the methane-specific workflow?
+    - Would that buyer purchase MethaneProof without buying a broader AgEvidence deployment?
+    - Does methane methodology, assurance, or claim liability create a meaningful corporate boundary?
+    - Is there enough vertical product and GTM work for an independent roadmap and team?
+    - Would independent financing materially accelerate the opportunity?
+    - What value is lost if methane customer and network data remain inside AgEvidence?
+  decision_record:
+    rationale: null
+    counterfactual: null
+    evidence_refs: []
+  lock_requirements:
+    rationale_recorded: true
+    counterfactual_recorded: true
+    evidence_from_problem_reliance_buyer_artifact_and_pricing_tracks: true

@@ -7,7 +7,7 @@
   "properties": {
     "phase_zero_gate": {
       "type": "object",
-      "required": ["problem", "reliance", "buyer", "artifact", "pricing", "outcome"],
+      "required": ["problem", "reliance", "buyer", "artifact", "pricing", "architecture", "outcome"],
       "properties": {
         "problem": { "type": "object" },
         "reliance": { "type": "object" },
@@ -16,6 +16,22 @@
         "pricing": {
           "type": "object",
           "required": ["buying_unit_tested", "budget_owner_identified", "budget_source_identified", "price_tests", "minimum_evidence_level", "required_strong_signal", "land_price_range_defined", "expansion_model_hypothesis_defined"]
+        },
+        "architecture": {
+          "type": "object",
+          "required": ["decision_file", "disposition_required", "allowed_dispositions", "final_disposition_locked", "rationale_required", "counterfactual_required"],
+          "properties": {
+            "disposition_required": { "const": true },
+            "allowed_dispositions": {
+              "type": "array",
+              "items": { "enum": ["spinout_company", "agevidence_product"] },
+              "minItems": 2,
+              "uniqueItems": true
+            },
+            "final_disposition_locked": { "const": true },
+            "rationale_required": { "const": true },
+            "counterfactual_required": { "const": true }
+          }
         },
         "outcome": {
           "type": "object",

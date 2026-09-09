@@ -1,0 +1,54 @@
+phase_zero_architecture:
+  question: Should FieldProof graduate as an independent spinout company or remain an AgEvidence product?
+  status: hypothesis
+  allowed_dispositions:
+    - spinout_company
+    - agevidence_product
+  recommended_disposition: spinout_company
+  recommendation_confidence: medium
+  final_disposition: undecided
+  final_disposition_locked: false
+  rationale: >-
+    FieldProof targets a distinct vendor-to-procurement efficacy-claim market with its own buyer workflow,
+    commercial network, category language, and potential application-layer data asset. The default hypothesis
+    is a thin spinout on top of AgEvidence, but Phase 0 must prove that the claim network and customer relationship
+    are independently valuable rather than a reusable AgEvidence evidence-packaging feature.
+  spinout_signals:
+    distinct_economic_buyer: hypothesis_positive
+    standalone_budget_and_pricing: unproven
+    regulatory_or_liability_boundary: unproven
+    independent_distribution_or_network: hypothesis_positive
+    separable_vertical_ip_and_roadmap: hypothesis_positive
+    independent_financing_case: hypothesis_positive
+  product_signals:
+    same_buyer_as_agevidence_core: unproven
+    reusable_cross_vertical_workflow_dominates: unproven
+    parent_network_effects_dominate: hypothesis_negative
+    vertical_differentiation_is_thin: unproven
+  decision_rule:
+    spinout_company:
+      minimum_confirmed_spinout_signals: 3
+      must_include_one_of:
+        - independent_financing_case
+        - independent_distribution_or_network
+        - regulatory_or_liability_boundary
+    agevidence_product:
+      use_when: >-
+        Efficacy-claim workflows prove to be mostly generic evidence assembly and verification, buyer overlap
+        with AgEvidence is high, and a separate company does not create a distinct network, financing case,
+        liability boundary, or durable vertical roadmap.
+  phase_zero_questions:
+    - Is the funded agtech vendor a distinct economic buyer with a dedicated claims or commercialization budget?
+    - Does procurement adoption create a FieldProof-specific network effect?
+    - How much of the workflow is vertical semantics versus reusable AgEvidence claim infrastructure?
+    - Can FieldProof sustain a product roadmap independent of the trust substrate?
+    - Would a separate brand improve neutrality or buyer acceptance?
+    - Is the opportunity independently venture-financeable?
+  decision_record:
+    rationale: null
+    counterfactual: null
+    evidence_refs: []
+  lock_requirements:
+    rationale_recorded: true
+    counterfactual_recorded: true
+    evidence_from_problem_reliance_buyer_artifact_and_pricing_tracks: true

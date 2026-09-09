@@ -1,0 +1,54 @@
+phase_zero_architecture:
+  question: Should AgLend graduate as an independent spinout company or remain an AgEvidence product?
+  status: hypothesis
+  allowed_dispositions:
+    - spinout_company
+    - agevidence_product
+  recommended_disposition: spinout_company
+  recommendation_confidence: high
+  final_disposition: undecided
+  final_disposition_locked: false
+  rationale: >-
+    AgLend addresses an institutional-credit workflow with a distinct economic buyer, financial-services
+    integration surface, policy and liability boundary, enterprise sales motion, and standalone financing thesis.
+    Those separation benefits are unusually strong. Phase 0 should still test whether lenders value an
+    independently operated underwriting evidence company or prefer the capability bundled directly into AgEvidence.
+  spinout_signals:
+    distinct_economic_buyer: hypothesis_positive
+    standalone_budget_and_pricing: hypothesis_positive
+    regulatory_or_liability_boundary: hypothesis_positive
+    independent_distribution_or_network: hypothesis_positive
+    separable_vertical_ip_and_roadmap: hypothesis_positive
+    independent_financing_case: hypothesis_positive
+  product_signals:
+    same_buyer_as_agevidence_core: hypothesis_negative
+    reusable_cross_vertical_workflow_dominates: hypothesis_negative
+    parent_network_effects_dominate: unproven
+    vertical_differentiation_is_thin: hypothesis_negative
+  decision_rule:
+    spinout_company:
+      minimum_confirmed_spinout_signals: 3
+      must_include_one_of:
+        - regulatory_or_liability_boundary
+        - independent_financing_case
+        - independent_distribution_or_network
+    agevidence_product:
+      use_when: >-
+        Lender demand proves to be a feature-level extension of the AgEvidence enterprise platform, the same
+        contracts and channels dominate, and financial-services separation does not create material liability,
+        financing, distribution, or governance advantages.
+  phase_zero_questions:
+    - Is there a lender budget owner for underwriting evidence infrastructure distinct from sustainability software budgets?
+    - Does deployment require financial-services controls, procurement, liability allocation, or governance that justify separation?
+    - Can AgLend own a lender-specific institutional graph or acceptance network without weakening AgEvidence neutrality?
+    - Would a separate cap table attract financial-services founders, strategic investors, or bank partners otherwise unavailable to AgEvidence?
+    - Is the lender-specific application layer substantial enough for an independent product and engineering roadmap?
+    - What cross-vertical network value would be lost by externalizing it?
+  decision_record:
+    rationale: null
+    counterfactual: null
+    evidence_refs: []
+  lock_requirements:
+    rationale_recorded: true
+    counterfactual_recorded: true
+    evidence_from_problem_reliance_buyer_artifact_and_pricing_tracks: true

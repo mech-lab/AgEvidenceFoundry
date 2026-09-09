@@ -6,6 +6,7 @@ phase_zero:
     - buyer
     - product_artifact
     - pricing
+    - architecture
   problem:
     hypothesis: Commercial teams at agtech vendors repeatedly reconstruct field evidence when buyers, distributors, or investors challenge efficacy claims.
   reliance:
@@ -16,3 +17,5 @@ phase_zero:
     hypothesis: A field efficacy evidence package would enter buyer acceptance, distributor diligence, or investor review.
   pricing:
     hypothesis: A paid evidence-to-claim sprint can land in commercial, product, or trial budget and expand by claim family or buyer acceptance program.
+  architecture:
+    hypothesis: FieldProof should become a spinout company if Phase 0 proves an independently valuable claim network, distinct buyer and roadmap, and standalone financing case; otherwise it should remain an AgEvidence product.
