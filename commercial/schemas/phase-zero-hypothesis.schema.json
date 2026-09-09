@@ -7,7 +7,7 @@
   "properties": {
     "phase_zero": {
       "type": "object",
-      "required": ["status", "tracks", "problem", "reliance", "buyer", "product_artifact", "pricing"],
+      "required": ["status", "tracks", "problem", "reliance", "buyer", "product_artifact", "pricing", "architecture"],
       "properties": {
         "status": {
           "type": "string",
@@ -16,7 +16,7 @@
         "tracks": {
           "type": "array",
           "items": { "type": "string" },
-          "minItems": 5
+          "minItems": 6
         },
         "problem": {
           "type": "object",
@@ -35,6 +35,10 @@
           "required": ["hypothesis"]
         },
         "pricing": {
+          "type": "object",
+          "required": ["hypothesis"]
+        },
+        "architecture": {
           "type": "object",
           "required": ["hypothesis"]
         }
